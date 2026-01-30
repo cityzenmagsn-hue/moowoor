@@ -198,13 +198,13 @@ class HeroManager {
     }
 
     createHeroSection() {
-        const data = this.heroData[this.currentPage] || this.heroData.default;
-
-        // Supprimer l'ancienne hero section si elle existe
-        const existingHero = document.querySelector('.hero-section');
-        if (existingHero) {
-            existingHero.remove();
+        // Si une section hero existe déjà (statique), ne pas la recréer pour éviter le flash
+        if (document.querySelector('.hero-section')) {
+            console.log('Hero section already exists, skipping creation');
+            return;
         }
+
+        const data = this.heroData[this.currentPage] || this.heroData.default;
 
         // Créer le breadcrumb
         const breadcrumbHTML = data.breadcrumb ? this.createBreadcrumb(data.breadcrumb) : '';
@@ -404,7 +404,7 @@ const heroStyles = document.createElement('style');
 heroStyles.textContent = `
     .hero-section {
         position: relative;
-        overflow: hidden;
+        /* overflow: hidden; Removed to prevent scroll issues */
     }
     
     .hero-particles {
@@ -457,27 +457,27 @@ heroStyles.textContent = `
     
     .hero-title {
         margin-bottom: var(--spacing-sm);
-        opacity: 0;
-        animation: fadeInUp 0.6s ease forwards;
+        opacity: 1;
+        /* animation: fadeInUp 0.6s ease forwards; */
     }
     
     .hero-subtitle {
         color: var(--accent-primary);
         margin-bottom: var(--spacing-sm);
-        opacity: 0;
-        animation: fadeInUp 0.6s ease 0.1s forwards;
+        opacity: 1;
+        /* animation: fadeInUp 0.6s ease 0.1s forwards; */
     }
     
     .hero-description {
         max-width: 600px;
         margin-bottom: var(--spacing-lg);
-        opacity: 0;
-        animation: fadeInUp 0.6s ease 0.2s forwards;
+        opacity: 1;
+        /* animation: fadeInUp 0.6s ease 0.2s forwards; */
     }
     
     .hero-actions {
-        opacity: 0;
-        animation: fadeInUp 0.6s ease 0.3s forwards;
+        opacity: 1;
+        /* animation: fadeInUp 0.6s ease 0.3s forwards; */
     }
     
     .hero-actions .btn {

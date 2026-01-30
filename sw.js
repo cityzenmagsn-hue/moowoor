@@ -1,6 +1,6 @@
 // Service Worker for Moowoor Documentation - Offline Support
 
-const CACHE_NAME = 'moowoor-docs-v1.0.2';
+const CACHE_NAME = 'moowoor-docs-v1.0.3';
 const urlsToCache = [
   '/',
   '/index.html',
