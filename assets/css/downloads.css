@@ -1,0 +1,581 @@
+/* Downloads-specific CSS styles */
+
+/* Main Download Card */
+.main-download {
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-hover));
+    border: 2px solid var(--accent-primary);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-xl);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.main-download::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    opacity: 0.1;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.main-download:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
+}
+
+.main-download-icon {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--accent-primary);
+    animation: float 3s ease-in-out infinite;
+}
+
+.main-download h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.main-download p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+.download-meta {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var-spacing-lg);
+}
+
+.download-size,
+.download-date {
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.download-features {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    margin-bottom: var-spacing-lg);
+}
+
+.feature-tag {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+}
+
+.download-actions {
+    display: flex;
+    justify-content: center;
+    gap: var-spacing-md);
+    flex-wrap: wrap;
+}
+
+/* Download Items Grid */
+.downloads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.download-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.download-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-primary);
+}
+
+.download-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--bg-hover), var(--bg-card));
+    border-bottom: 1px solid var(--border-color);
+}
+
+.download-icon {
+    font-size: 2.5rem;
+    color: var(--accent-primary);
+    flex-shrink: 0;
+}
+
+.download-info {
+    flex: 1;
+}
+
+.download-info h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.download-info p {
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.download-meta {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-xs);
+}
+
+.download-size,
+.download-date {
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.download-actions {
+    padding: var(--spacing-lg);
+    background: var(--bg-hover);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    gap: var(--md);
+}
+
+/* Documentation Downloads */
+.docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.docs-download-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.docs-download-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.docs-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--bg-hover), var(--bg-card));
+    border-bottom: 1px solid var(--border-color);
+}
+
+.docs-icon {
+    font-size: 2rem;
+    color: var(--accent-primary);
+    flex-shrink: 0;
+}
+
+.docs-info {
+    flex: 1;
+}
+
+.docs-info h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.docs-info p {
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.docs-meta {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-xs);
+}
+
+.docs-type,
+.docs-pages {
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.docs-actions {
+    padding: var(--spacing-lg);
+    background: var(--bg-hover);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    gap: var(--md);
+}
+
+/* Requirements Grid */
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.requirement-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    transition: all var(--transition-normal);
+}
+
+.requirement-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.requirement-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--accent-primary);
+    text-align: center;
+}
+
+.requirement-card h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.requirement-specs {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm);
+    background: var(--bg-hover);
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--border-color);
+}
+
+.spec-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.spec-value {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Support Grid */
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.support-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    text-align: center;
+    transition: all var(--transition-normal);
+}
+
+.support-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.support-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--accent-primary);
+}
+
+.support-card h3 {
+    color: var(--text-primary);
+    margin-bottom: var-spacing-md);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.support-card p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    line-height:1.4;
+}
+
+.support-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.support-card li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.support-card a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.support-card a:hover {
+    color: var(--accent-secondary);
+}
+
+/* Progress Bar */
+.download-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    display: none;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--bg-hover);
+    border-radius: 2px;
+    overflow: hidden;
+    transition: width 1s ease-out;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--progress-start, var(--progress-end)), var(--progress-start));
+    width: 0;
+    transition: width 1s ease-out;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-top: 2px solid var(--accent-primary);
+    border-radius: 50%;
+    animation: rotateInfinite 1s linear infinite;
+    display: inline-block;
+}
+
+@keyframes rotateInfinite {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Success/Error States */
+.btn.success {
+    background: var(--accent-success);
+    color: var(--bg-primary);
+    border-color: var(--accent-success);
+}
+
+.btn.error {
+    background: var(--accent-danger);
+    color: var(--bg-primary);
+    border-color: var(--accent-danger);
+}
+
+/* Update Notification */
+.update-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    max-width: 400px;
+    animation: slideInRight 0.3s ease-out;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.notification-icon {
+    font-size: 2rem;
+    color: var(--accent-primary);
+    flex-shrink: 0;
+}
+
+.notification-info {
+    flex: 1;
+}
+
+.notification-info h4 {
+    color: var(--text-primary);
+    margin-bottom: var-spacing-xs);
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.notification-info p {
+    color: var(--text-secondary);
+    margin-bottom: var-spacing-md);
+    line-height: 1.4;
+}
+
+.notification-close {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    border-radius: var(--border-radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.notification-close:hover {
+    color: var(--accent-danger);
+    background: var(--bg-hover);
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-download {
+        padding: var(--spacing-lg);
+    }
+    
+    .downloads-grid,
+    .docs-grid,
+    .requirements-grid,
+    .support-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .download-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .download-meta {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-xs);
+    }
+    
+    .docs-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .requirement-specs {
+        grid-template-columns: 1fr;
+    }
+    
+    .spec-item {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-xs);
+    }
+    
+    .update-notification {
+        max-width: calc(100% - 40px);
+        right: 20px;
+        left: 20px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .main-download,
+    .download-item,
+    .docs-download-item,
+    .requirement-card,
+    .support-card {
+        break-inside: avoid;
+        border: 1px solid #000 !important;
+    }
+    
+    .download-progress {
+        display: none !important;
+    }
+    
+    .update-notification {
+        display: none !important;
+    }
+}

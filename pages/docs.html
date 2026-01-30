@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Technique - Moowoor</title>
+    <meta name="description" content="Documentation technique complète de la suite Moowoor pour développeurs et administrateurs système">
+    <meta name="keywords" content="documentation technique, API, installation, déploiement, Moowoor, Odoo">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+    <link rel="stylesheet" href="../assets/css/docs.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/images/logo-moowoor.svg">
+</head>
+<body>
+
+    <!-- Skip Links -->
+    <div class="skip-links">
+        <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+        <a href="#navigation" class="skip-link">Aller à la navigation</a>
+        <a href="#search" class="skip-link">Aller à la recherche</a>
+    </div>
+
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-container">
+            <a href="../index.html" class="header-logo">
+                <svg viewBox="0 0 40 40" fill="none" width="32" height="32">
+                    <circle cx="20" cy="20" r="18" stroke="#00d4ff" stroke-width="2" />
+                    <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="#00d4ff" />
+                    <circle cx="20" cy="20" r="3" fill="#0a0e27" />
+                </svg>
+                <span>MOOWOOR</span>
+            </a>
+            <nav class="header-nav">
+                <a href="modules.html">Modules</a>
+                <a href="metiers.html">Métiers</a>
+                <a href="gouvernance.html">Gouvernance</a>
+                <a href="search.html">Recherche</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Header -->
+    <section class="section" style="padding-top: 120px;" id="main-content">
+        <div class="container">
+            <div class="text-center mb-lg">
+                <h1 class="scroll-animate">Documentation Technique</h1>
+                <p class="scroll-animate">
+                    Guide complet pour l'installation, la configuration et le développement avec Moowoor
+                </p>
+            </div>
+
+            <!-- Quick Access -->
+            <div class="quick-access-grid scroll-animate">
+                <a href="#installation" class="quick-access-item">
+                    <div class="quick-access-icon">🚀</div>
+                    <h3>Installation</h3>
+                    <p>Guide d'installation complet</p>
+                </a>
+                <a href="#configuration" class="quick-access-item">
+                    <div class="quick-access-icon">⚙️</div>
+                    <h3>Configuration</h3>
+                    <p>Paramètres et configuration</p>
+                </a>
+                <a href="#api" class="quick-access-item">
+                    <div class="quick-access-icon">🔌</div>
+                    <h3>API</h3>
+                    <p>Documentation des API</p>
+                </a>
+                <a href="#development" class="quick-access-item">
+                    <div class="quick-access-icon">💻</div>
+                    <h3>Développement</h3>
+                    <p>Guide pour développeurs</p>
+                </a>
+                <a href="#troubleshooting" class="quick-access-item">
+                    <div class="quick-access-icon">🔧</div>
+                    <h3>Dépannage</h3>
+                    <p>Solutions aux problèmes</p>
+                </a>
+                <a href="#changelog" class="quick-access-item">
+                    <div class="quick-access-icon">📝</div>
+                    <h3>Notes de version</h3>
+                    <p>Historique des changements</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section class="section" id="installation">
+        <div class="container">
+            <div class="text-center mb-lg">
+                <h2 class="scroll-animate">Installation</h2>
+                <p class="scroll-animate">Guide d'installation de la suite Moowoor</p>
+            </div>
+
+            <div class="docs-grid">
+                <div class="docs-card scroll-animate">
+                    <h3>📋 Prérequis Système</h3>
+                    <div class="requirements-list">
+                        <div class="requirement-item">
+                            <strong>Odoo CE 18.0+</strong>
+                            <p>Version communautaire d'Odoo</p>
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Python 3.8+</strong>
+                            <p>Interpréteur Python</p>
+                        </div>
+                        <div class="requirement-item">
+                            <strong>PostgreSQL 12+</strong>
+                            <p>SGBD recommandé</p>
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Node.js 16+</strong>
+                            <p>Pour les dépendances frontend</p>
+                        </div>
+                        <div class="requirement-item">
+                            <strong>8GB RAM minimum</strong>
+                            <p>Mémoire vive recommandée</p>
+                        </div>
+                        <div class="requirement-item">
+                            <strong>50GB disque</strong>
+                            <p>Espace disque disponible</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-card scroll-animate">
+                    <h3>📦 Installation Automatisée</h3>
+                    <div class="code-block">
+                        <pre><code># Cloner le dépôt
+git clone https://github.com/moowoor/moowoor-suite.git
+cd moowoor-suite
+
+# Exécuter le script d'installation
+./install.sh
+
+# Suivre les instructions
+./setup.sh</code></pre>
+                    </div>
+                    <div class="installation-steps">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Cloner le dépôt</h4>
+                            <p>Télécharger le code source depuis GitHub</p>
+                        </div>
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Exécuter l'installateur</h4>
+                            <p>Script automatique d'installation des dépendances</p>
+                        </div>
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Configurer la base de données</h4>
+                            <p>Créer et configurer PostgreSQL</p>
+                        </div>
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Démarrer les services</h4>
+                            <p>Lancer Odoo avec les modules Moowoor</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-card scroll-animate">
+                    <h3>🔧 Installation Manuelle</h3>
+                    <div class="code-block">
+                        <pre><code># 1. Installer les dépendances Python
+pip install -r requirements.txt
+
+# 2. Installer les dépendances Node
+npm install
+
+# 3. Configurer la base de données
+createdb moowoor
+psql -d moowoor < schema.sql
+
+# 4. Lancer Odoo
+python odoo-bin -c odoo.conf -d moowoor</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Configuration Section -->
+    <section class="section" id="configuration">
+        <div class="container">
+            <div class="text-center mb-lg">
+                <h2 class="scroll-animate">Configuration</h2>
+                <p class="scroll-animate">Paramètres et configuration de Moowoor</p>
+            </div>
+
+            <div class="docs-grid">
+                <div class="docs-card scroll-animate">
+                    <h3>⚙️ Fichier de Configuration</h3>
+                    <div class="code-block">
+                        <pre><code>[options]
+db_host = localhost
+db_port = 5432
+db_user = moowoor
+db_password = password
+db_maxconn = 64
+
+addons_path = /opt/moowoor/addons
+logfile = /var/log/odoo/odoo.log
+log_level = info
+
+[moowoor]
+enable_api = True
+enable_webhooks = True
+default_language = fr_FR
+timezone = Africa/Dakar</code></pre>
+                    </div>
+                </div>
+
+                <div class="docs-card scroll-animate">
+                    <h3>🔐 Sécurité</h3>
+                    <div class="security-settings">
+                        <div class="security-item">
+                            <h4>Authentification</h4>
+                            <ul>
+                                <li>OAuth2 / JWT support</li>
+                                <li>Two-factor authentication</li>
+                                <li>Session timeout configuration</li>
+                                <li>Password policies</li>
+                            </ul>
+                        </div>
+                        <div class="security-item">
+                            <h4>Permissions</h4>
+                            <ul>
+                                <li>Role-based access control</li>
+                                <li>Field-level permissions</li>
+                                <li>Multi-tenant security</li>
+                                <li>Audit logging</li>
+                            </ul>
+                        </div>
+                        <div class="security-item">
+                            <h4>Données</h4>
+                            <ul>
+                                <li>Encryption at rest</li>
+                                <li>SSL/TLS enforcement</li>
+                                <li>Data backup policies</li>
+                                <li>GDPR compliance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-card scroll-animate">
+                    <h3>🌐 Réseau</h3>
+                    <div class="network-settings">
+                        <div class="network-item">
+                            <h4>Ports requis</h4>
+                            <ul>
+                                <li>8069 - HTTP</li>
+                                <li>8070 - HTTPS</li>
+                                <li>8071 - Long Polling</li>
+                                <li>5432 - PostgreSQL</li>
+                            </ul>
+                        </div>
+                        <div class="network-item">
+                            <h4>Firewall</h4>
+                            <ul>
+                                <li>Ouvrir ports 8069-8071</li>
+                                <li>Configurer reverse proxy</li>
+                                <li>SSL termination</li>
+                                <li>Load balancing</li>
+                            </ul>
+                        </div>
+                        <div class="network-item">
+                            <h4>Domaines</h4>
+                            <ul>
+                                <li>moowoor.sn (production)</li>
+                                <li>demo.moowoor.sn (staging)</li>
+                                <li>api.moowoor.sn (API)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Section -->
+    <section class="section" id="api">
+        <div class="container">
+            <div class="text-center mb-lg">
+                <h2 class="scroll-animate">API Documentation</h2>
+                <p class="scroll-animate">Interface de programmation de Moowoor</p>
+            </div>
+
+            <div class="api-overview scroll-animate">
+                <div class="api-info">
+                    <h3>🔌 API RESTful</h3>
+                    <p>API REST complète pour l'intégration avec des systèmes tiers</p>
+                    <div class="api-endpoints">
+                        <div class="endpoint-item">
+                            <code class="method">GET</code>
+                            <code class="url">/api/v1/modules</code>
+                            <span>Liste des modules</span>
+                        </div>
+                        <div class="endpoint-item">
+                            <code class="method">POST</code>
+                            <code class="url">/api/v1/patients</code>
+                            <span>Créer un patient</span>
+                        </div>
+                        <div class="endpoint-item">
+                            <code class="method">PUT</code>
+                            <code class="url">/api/v1/patients/{id}</code>
+                            <span>Mettre à jour un patient</span>
+                        </div>
+                        <div class="endpoint-item">
+                            <code class="method">DELETE</code>
+                            <code class="url">/api/v1/patients/{id}</code>
+                            <span>Supprimer un patient</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-info">
+                    <h3>🔑 Authentification</h3>
+                    <p>Sécurisation des endpoints API</p>
+                    <div class="auth-methods">
+                        <div class="auth-item">
+                            <h4>Bearer Token</h4>
+                            <p>Token JWT pour l'authentification</p>
+                        </div>
+                        <div class="auth-item">
+                            <h4>API Key</h4>
+                            <p>Clé d'API pour les intégrations</p>
+                        </div>
+                        <div class="auth-item">
+                            <h4>OAuth2</h4>
+                            <p>Flow OAuth2 pour les applications tierces</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-info">
+                    <h3>📊 Webhooks</h3>
+                    <p>Notifications en temps réel</p>
+                    <div class="webhook-events">
+                        <div class="webhook-item">
+                            <h4>patient.created</h4>
+                            <p>Nouveau patient créé</p>
+                        </div>
+                        <div class="webhook-item">
+                            <h4>appointment.scheduled</h4>
+                            <p>Rendez-vous planifié</p>
+                        </div>
+                        <div class="webhook-item">
+                            <h4>prescription.created</h4>
+                            <p>Prescription créée</p>
+                        </div>
+                        <div class="webhook-item">
+                            <h4>lab.result.available</h4>
+                            <p>Résultat de laboratoire disponible</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Section -->
+    <section class="section" id="development">
+        <div class="container">
+            <div class="text-center mb-lg">
+                <h2 class="scroll-animate">Développement</h2>
+                <p class="scroll-animate">Guide pour développeurs Moowoor</p>
+            </div>
+
+            <div class="dev-grid">
+                <div class="dev-card scroll-animate">
+                    <h3>🏗️ Architecture</h3>
+                    <div class="architecture-overview">
+                        <div class="arch-layer">
+                            <h4>Frontend</h4>
+                            <ul>
+                                <li>Vue.js / React</li>
+                                <li>Bootstrap / Tailwind CSS</li>
+                                <li>Webpack / Vite</li>
+                            </ul>
+                        </div>
+                        <div class="arch-layer">
+                            <h4>Backend</h4>
+                            <ul>
+                                <li>Odoo Framework</li>
+                                <li>Python 3.8+</li>
+                                <li>PostgreSQL</li>
+                            </ul>
+                        </div>
+                        <div class="arch-layer">
+                            <h4>Integration</h4>
+                            <ul>
+                                <li>REST API</li>
+                                <li>GraphQL</li>
+                                <li>Webhooks</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dev-card scroll-animate">
+                    <h3>🛠️ Outils de Développement</h3>
+                    <div class="dev-tools">
+                        <div class="tool-item">
+                            <h4>IDE</h4>
+                            <p>VS Code, PyCharm, WebStorm</p>
+                        </div>
+                        <div class="tool-item">
+                            <h4>Version Control</h4>
+                            <p>Git, GitHub, GitLab</p>
+                        </div>
+                        <div class="tool-item">
+                            <h4>Testing</h4>
+                            <p>Pytest, Jest, Cypress</p>
+                        </div>
+                        <div class="tool-item">
+                            <h4>CI/CD</h4>
+                            <p>GitHub Actions, GitLab CI</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dev-card scroll-animate">
+                    <h3>📚 Conventions de Code</h3>
+                    <div class="code-conventions">
+                        <div class="convention-item">
+                            <h4>Python</h4>
+                            <div class="code-block">
+                                <pre><code># PEP 8 compliance
+class PatientModel(models.Model):
+    _name = 'patient'
+    
+    def create_patient(self, vals):
+        """Create a new patient."""
+        return super().create(vals)</code></pre>
+                            </div>
+                        </div>
+                        <div class="convention-item">
+                            <h4>JavaScript</h4>
+                            <div class="code-block">
+                                <pre><code>// ES6+ conventions
+const createPatient = async (patientData) => {
+    try {
+        const patient = await Patient.create(patientData);
+        return patient;
+    } catch (error) {
+        console.error('Error:', error);
+        throw error;
+    }
+};</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Troubleshooting Section -->
+    <section class="section" id="troubleshooting">
+        <div class="container">
+            <div class="text-center mb-lg">
+                <h2 class="scroll-animate">Dépannage</h2>
+                <p class="scroll-animate">Solutions aux problèmes courants</p>
+            </div>
+
+            <div class="troubleshooting-grid">
+                <div class="trouble-card scroll-animate">
+                    <h3>🚫 Erreurs d'Installation</h3>
+                    <div class="trouble-solutions">
+                        <div class="solution-item">
+                            <h4>Module non trouvé</h4>
+                            <p>Vérifiez le chemin dans addons_path</p>
+                            <div class="code-block">
+                                <pre><code># Vérifier le chemin
+ls -la /opt/moowoor/addons/
+# Mettre à jour addons_path dans odoo.conf</code></pre>
+                            </div>
+                        </div>
+                        <div class="solution-item">
+                            <h4>Erreur de dépendance</h4>
+                            <p>Installez les dépendances manquantes</p>
+                            <div class="code-block">
+                                <pre><code>pip install -r requirements.txt
+pip install missing-package</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trouble-card scroll-animate">
+                    <h3>🔧 Problèmes de Performance</h3>
+                    <div class="trouble-solutions">
+                        <div class="solution-item">
+                            <h4>Lenteur au démarrage</h4>
+                            <p>Optimisez la configuration</p>
+                            <div class="code-block">
+                                <pre><code># Augmenter workers
+workers = 8
+max_cron_threads = 4
+# Activer le cache
+ir.ui.menu = True</code></pre>
+                            </div>
+                        </div>
+                        <div class="solution-item">
+                            <h4>Base de données lente</h4>
+                            <p>Optimisez PostgreSQL</p>
+                            <div class="code-block">
+                                <pre><code># PostgreSQL tuning
+shared_buffers = 256MB
+effective_cache_size = 1GB
+work_mem = 4MB</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trouble-card scroll-animate">
+                    <h3>🔐 Problèmes de Sécurité</h3>
+                    <div class="trouble-solutions">
+                        <div class="solution-item">
+                            <h4>Accès refusé</h4>
+                            <p>Vérifiez les permissions</p>
+                            <div class="code-block">
+                                <pre><code># Vérifier les permissions
+psql -d moowoor -c "SELECT * FROM res_users WHERE login='admin';"
+# Réinitialiser le mot de passe
+psql -d moowoor -c "UPDATE res_users SET password='crypt' WHERE login='admin';"</code></pre>
+                            </div>
+                        </div>
+                        <div class="solution-item">
+                            <h4>Erreur SSL</h4>
+                            <p>Configurez correctement SSL</p>
+                            <div class="code-block">
+                                <pre><code># SSL Configuration
+ssl = True
+ssl_cert = /path/to/cert.pem
+ssl_key = /path/to/key.pem</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Changelog Section -->
+    <section class="section" id="changelog">
+        <div class="container">
+            <div class="text-center mb-lg">
+                <h2 class="scroll-animate">Notes de Version</h2>
+                <p class="scroll-animate">Historique des changements</p>
+            </div>
+
+            <div class="changelog-timeline">
+                <div class="changelog-item scroll-animate">
+                    <div class="changelog-version">
+                        <span class="version-number">v2.0.0</span>
+                        <span class="version-date">2024-01-15</span>
+                    </div>
+                    <div class="changelog-content">
+                        <h4>Nouvelles fonctionnalités</h4>
+                        <ul>
+                            <li>Module de téléconsultation</li>
+                            <li>API RESTful complète</li>
+                            <li>Interface mobile responsive</li>
+                            <li>Support multilingue avancé</li>
+                        </ul>
+                        <h4>Améliorations</h4>
+                        <ul>
+                            <li>Performance optimisée</li>
+                            <li>Sécurité renforcée</li>
+                            <li>UX/UI amélioré</li>
+                        </ul>
+                        <h4>Corrections de bugs</h4>
+                        <ul>
+                            <li>Correction des filtres de recherche</li>
+                            <li>Stabilisation des webhooks</li>
+                            <li>Correction des erreurs d'affichage</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="changelog-item scroll-animate">
+                    <div class="changelog-version">
+                        <span class="version-number">v1.5.0</span>
+                        <span class="version-date">2023-12-01</span>
+                    </div>
+                    <div class="changelog-content">
+                        <h4>Nouvelles fonctionnalités</h4>
+                        <ul>
+                            <li>Module de gestion des rendez-vous</li>
+                            <li>Intégration avec les systèmes de santé</li>
+                            <li>Dashboard analytics</li>
+                        </ul>
+                        <h4>Améliorations</h4>
+                        <ul>
+                            <li>Interface utilisateur améliorée</li>
+                            <li>Performance des requêtes</li>
+                            <li>Gestion des erreurs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="changelog-item scroll-animate">
+                    <div class="changelog-version">
+                        <span class="version-number">v1.0.0</span>
+                        <span class="version-date">2023-09-15</span>
+                    </div>
+                    <div class="changelog-content">
+                        <h4>Version initiale</h4>
+                        <ul>
+                            <li>Modules de base (VACCEC, INASANI)</li>
+                            <li>Registres nationaux</li>
+                            <li>Interface web responsive</li>
+                            <li>Documentation complète</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-lg">
+                <h2 class="scroll-animate">Support Technique</h2>
+                <p class="scroll-animate">Obtenez de l'aide pour vos questions techniques</p>
+            </div>
+
+            <div class="support-grid">
+                <div class="support-card scroll-animate">
+                    <h3>📚 Documentation</h3>
+                    <p>Consultez notre documentation complète</p>
+                    <ul>
+                        <li><a href="#installation">Guide d'installation</a></li>
+                        <li><a href="#api">Documentation API</a></li>
+                        <li><a href="#troubleshooting">Dépannage</a></li>
+                    </ul>
+                </div>
+
+                <div class="support-card scroll-animate">
+                    <h3>💬 Communauté</h3>
+                    <p>Rejoignez notre communauté de développeurs</p>
+                    <ul>
+                        <li><a href="https://github.com/moowoor">GitHub</a></li>
+                        <li><a href="https://forum.moowoor.sn">Forum</a></li>
+                        <li><a href="https://discord.gg/moowoor">Discord</a></li>
+                    </ul>
+                </div>
+
+                <div class="support-card scroll-animate">
+                    <h3>📧 Support Commercial</h3>
+                    <p>Contactez notre équipe de support</p>
+                    <ul>
+                        <li>Email: support@moowoor.sn</li>
+                        <li>Téléphone: +221 33 864 00 00</li>
+                        <li>WhatsApp: +221 77 123 45 67</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/service-worker.js"></script>
+    <script src="../assets/js/sidebar.js"></script>
+    <script src="../assets/js/hero.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/animations.js"></script>
+    <script src="../assets/js/micro-interactions.js"></script>
+    <script src="../assets/js/docs.js"></script>
+</body>
+</html>

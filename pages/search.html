@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche - Moowoor</title>
+    <meta name="description" content="Recherchez dans toute la documentation Moowoor : modules, métiers, gouvernance">
+    <meta name="keywords" content="recherche, documentation, Moowoor, santé digitale">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/images/logo-moowoor.svg">
+</head>
+
+<body>
+
+    <!-- Skip Links -->
+    <div class="skip-links">
+        <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+        <a href="#navigation" class="skip-link">Aller à la navigation</a>
+        <a href="#search" class="skip-link">Aller à la recherche</a>
+    </div>
+
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-container">
+            <a href="../index.html" class="header-logo">
+                <svg viewBox="0 0 40 40" fill="none" width="32" height="32">
+                    <circle cx="20" cy="20" r="18" stroke="#00d4ff" stroke-width="2" />
+                    <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="#00d4ff" />
+                    <circle cx="20" cy="20" r="3" fill="#0a0e27" />
+                </svg>
+                <span>MOOWOOR</span>
+            </a>
+            <nav class="header-nav">
+                <a href="modules.html">Modules</a>
+                <a href="metiers.html">Métiers</a>
+                <a href="gouvernance.html">Gouvernance</a>
+                <a href="search.html">Recherche</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Search Header -->
+    <section class="section" style="padding-top: 120px;" id="main-content">
+        <div class="container">
+            <div class="text-center mb-lg">
+                <h1 class="scroll-animate">Recherche</h1>
+                <p class="scroll-animate">
+                    Trouvez rapidement ce que vous cherchez dans la documentation Moowoor
+                </p>
+            </div>
+
+            <!-- Search Box -->
+            <div class="search-container scroll-animate">
+                <div class="search-box">
+                    <div class="search-icon">🔍</div>
+                    <input type="text" id="searchInput"
+                        placeholder="Rechercher des modules, métiers, fonctionnalités..." autocomplete="off">
+                    <button class="search-clear" id="searchClear" style="display: none;">✕</button>
+                </div>
+                <div class="search-suggestions" id="searchSuggestions">
+                    <!-- Suggestions will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="quick-links scroll-animate">
+                <h3>Accès Rapide</h3>
+                <div class="quick-links-grid">
+                    <a href="modules.html" class="quick-link">
+                        <div class="quick-link-icon">🏥</div>
+                        <span>Modules</span>
+                    </a>
+                    <a href="metiers.html" class="quick-link">
+                        <div class="quick-link-icon">💼</div>
+                        <span>Métiers</span>
+                    </a>
+                    <a href="gouvernance.html" class="quick-link">
+                        <div class="quick-link-icon">🏛️</div>
+                        <span>Gouvernance</span>
+                    </a>
+                    <a href="parcours-patient.html" class="quick-link">
+                        <div class="quick-link-icon">👤</div>
+                        <span>Parcours Patient</span>
+                    </a>
+                    <a href="parcours-medicament.html" class="quick-link">
+                        <div class="quick-link-icon">💊</div>
+                        <span>Parcours Médicament</span>
+                    </a>
+                    <a href="about.html" class="quick-link">
+                        <div class="quick-link-icon">ℹ️</div>
+                        <span>À Propos</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results -->
+    <section class="section" id="resultsSection" style="display: none;">
+        <div class="container">
+            <div class="results-header">
+                <h2>Résultats de recherche</h2>
+                <p id="resultsCount">0 résultat(s) trouvé(s)</p>
+            </div>
+
+            <div class="results-container" id="resultsContainer">
+                <!-- Results will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- No Results -->
+    <section class="section" id="noResultsSection" style="display: none;">
+        <div class="container">
+            <div class="text-center">
+                <div class="no-results-icon">🔍</div>
+                <h2>Aucun résultat trouvé</h2>
+                <p>Essayez avec d'autres mots-clés ou naviguez dans la documentation</p>
+                <div class="no-results-actions">
+                    <a href="modules.html" class="btn btn-primary">Explorer les modules</a>
+                    <a href="metiers.html" class="btn btn-outline">Découvrir les métiers</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Searches -->
+    <section class="section" id="popularSection">
+        <div class="container">
+            <div class="text-center mb-lg">
+                <h2 class="scroll-animate">Recherches Populaires</h2>
+                <p class="scroll-animate">Découvrez les sujets les plus consultés</p>
+            </div>
+
+            <div class="popular-searches">
+                <div class="popular-search-item scroll-animate">
+                    <h3>🏥 VACCEC</h3>
+                    <p>Gestion hospitalière complète</p>
+                    <a href="modules.html#vaccec" class="btn btn-outline">En savoir plus</a>
+                </div>
+                <div class="popular-search-item scroll-animate">
+                    <h3>💼 E-Brancardier</h3>
+                    <p>Nouveau métier de la santé digitale</p>
+                    <a href="metiers.html#e-brancardier" class="btn btn-outline">Découvrir</a>
+                </div>
+                <div class="popular-search-item scroll-animate">
+                    <h3>📊 Data Manager Santé</h3>
+                    <p>Gestion et analyse des données de santé</p>
+                    <a href="metiers.html#data-manager" class="btn btn-outline">Explorer</a>
+                </div>
+                <div class="popular-search-item scroll-animate">
+                    <h3>⚖️ Gouvernance</h3>
+                    <p>Pilotage stratégique de la santé digitale</p>
+                    <a href="gouvernance.html" class="btn btn-outline">Consulter</a>
+                </div>
+                <div class="popular-search-item scroll-animate">
+                    <h3>👤 Parcours Patient</h3>
+                    <p>Expérience patient digitalisée</p>
+                    <a href="parcours-patient.html" class="btn btn-outline">Voir</a>
+                </div>
+                <div class="popular-search-item scroll-animate">
+                    <h3>💊 INASANI</h3>
+                    <p>Régulation pharmaceutique</p>
+                    <a href="parcours-medicament.html" class="btn btn-outline">Découvrir</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/service-worker.js"></script>
+    <script src="../assets/js/sidebar.js"></script>
+    <script src="../assets/js/hero.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/animations.js"></script>
+    <script src="../assets/js/micro-interactions.js"></script>
+    <script src="../assets/js/search.js"></script>
+</body>
+
+</html>

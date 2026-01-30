@@ -1,0 +1,754 @@
+{
+  "governance": {
+    "strategic": {
+      "name": "Pilotage Stratégique",
+      "description": "Définition des orientations nationales en matière de santé digitale et coordination des politiques publiques",
+      "objective": "Assurer la cohérence et l'alignement des initiatives de santé digitale avec les priorités nationales de santé",
+      "color": "#00d4ff",
+      "icon": "🎯",
+      "registries": [
+        {
+          "id": "conseil_national_sante_digitale",
+          "name": "Conseil National de Santé Digitale",
+          "description": "Instance supérieure de pilotage stratégique de la transformation digitale du secteur santé",
+          "objective": "Définir la vision nationale, les priorités stratégiques et le cadre de gouvernance de la santé digitale au Sénégal",
+          "responsibilities": [
+            "Définition de la politique nationale de santé digitale",
+            "Validation des grands programmes et projets",
+            "Suivi des indicateurs de performance nationaux",
+            "Coordination interministérielle",
+            "Validation des partenariats publics-privés"
+          ],
+          "members": [
+            "Ministre de la Santé et de l'Action Sociale",
+            "Ministre du Numérique et des Télécommunications",
+            "Représentants des ordres professionnels de santé",
+            "Représentants des établissements de santé",
+            "Experts en santé digitale",
+            "Représentants du secteur privé"
+          ],
+          "frequency": "Réunion semestrielle",
+          "decisions": "Orientations stratégiques et validation des politiques",
+          "reporting_to": "Présidence de la République"
+        },
+        {
+          "id": "comite_strategique_transformation",
+          "name": "Comité Stratégique de Transformation",
+          "description": "Comité technique chargé de la mise en œuvre des décisions stratégiques en santé digitale",
+          "objective": "Traduire les orientations stratégiques en plans d'action concrets et assurer leur coordination opérationnelle",
+          "responsibilities": [
+            "Élaboration des feuilles de route opérationnelles",
+            "Suivi de l'exécution des projets stratégiques",
+            "Coordination des différentes initiatives",
+            "Allocation des ressources budgétaires",
+            "Rapportage au Conseil National"
+          ],
+          "members": [
+            "Secrétaires généraux des ministères concernés",
+            "Directeurs généraux des agences publiques",
+            "Chefs de projets santé digitale",
+            "Experts techniques",
+            "Représentants des bailleurs de fonds"
+          ],
+          "frequency": "Réunion trimestrielle",
+          "decisions": "Plans d'action et allocation des ressources",
+          "reporting_to": "Conseil National de Santé Digitale"
+        },
+        {
+          "id": "observatoire_national_sante_digitale",
+          "name": "Observatoire National de la Santé Digitale",
+          "description": "Structure de veille, d'analyse et d'évaluation des politiques de santé digitale",
+          "objective": "Mener des études, produire des analyses et évaluer l'impact des initiatives de santé digitale",
+          "responsibilities": [
+            "Veille technologique et réglementaire",
+            "Études et recherches en santé digitale",
+            "Évaluation des politiques et programmes",
+            "Production d'indicateurs et tableaux de bord",
+            "Diffusion des bonnes pratiques"
+          ],
+          "members": [
+            "Chercheurs et universitaires",
+            "Statisticiens et épidémiologistes",
+            "Experts en systèmes d'information",
+            "Économistes de la santé",
+            "Data scientists"
+          ],
+          "frequency": "Réunion mensuelle",
+          "decisions": "Recommandations et publications d'études",
+          "reporting_to": "Comité Stratégique de Transformation"
+        }
+      ]
+    },
+    "regulation": {
+      "name": "Régulation",
+      "description": "Cadre réglementaire et contrôle de la conformité des systèmes et acteurs de la santé digitale",
+      "objective": "Garantir la qualité, la sécurité et la conformité des solutions de santé digitale avec les normes nationales et internationales",
+      "color": "#7c3aed",
+      "icon": "⚖️",
+      "registries": [
+        {
+          "id": "autorite_regulation_sante_digitale",
+          "name": "Autorité de Régulation de la Santé Digitale",
+          "description": "Autorité administrative indépendante chargée de la régulation du secteur de la santé digitale",
+          "objective": "Assurer la protection des patients, garantir l'équité d'accès et contrôler la qualité des services de santé digitale",
+          "responsibilities": [
+            "Agrément des solutions et services santé digitale",
+            "Définition des standards techniques et d'interopérabilité",
+            "Contrôle du respect des obligations légales et réglementaires",
+            "Traitement des plaintes et litiges",
+            "Sanction des manquements"
+          ],
+          "members": [
+            "Juristes spécialisés en santé",
+            "Experts en sécurité des systèmes d'information",
+            "Représentants des usagers",
+            "Professionnels de santé",
+            "Experts en éthique santé"
+          ],
+          "frequency": "Réunion mensuelle",
+          "decisions": "Agréments, sanctions et décisions réglementaires",
+          "reporting_to": "Ministre de la Santé et de l'Action Sociale"
+        },
+        {
+          "id": "comite_ethique_sante_digitale",
+          "name": "Comité d'Éthique de la Santé Digitale",
+          "description": "Comité consultatif sur les questions éthiques liées à l'utilisation du numérique en santé",
+          "objective": "Garantir le respect des principes éthiques dans le développement et l'utilisation des technologies santé digitale",
+          "responsibilities": [
+            "Analyse des impacts éthiques des nouvelles technologies",
+            "Élaboration de recommandations éthiques",
+            "Conseil sur l'utilisation de l'IA en santé",
+            "Protection des données personnelles santé",
+            "Transparence et explicabilité des algorithmes"
+          ],
+          "members": [
+            "Philosophes et éthiciens",
+            "Professionnels de santé",
+            "Représentants des patients",
+            "Experts en IA et algorithmes",
+            "Juristes spécialisés"
+          ],
+          "frequency": "Réunion trimestrielle",
+          "decisions": "Avis éthiques et recommandations",
+          "reporting_to": "Autorité de Régulation de la Santé Digitale"
+        }
+      ]
+    },
+    "execution": {
+      "name": "Exécution",
+      "description": "Mise en œuvre opérationnelle des politiques et gestion quotidienne des systèmes de santé digitale",
+      "objective": "Assurer le déploiement, la maintenance et l'optimisation des solutions de santé digitale sur le terrain",
+      "color": "#10b981",
+      "icon": "⚙️",
+      "registries": [
+        {
+          "id": "agence_nationale_sante_digitale",
+          "name": "Agence Nationale de la Santé Digitale",
+          "description": "Opérateur public chargé du déploiement et de la gestion des infrastructures de santé digitale",
+          "objective": "Assurer la disponibilité, la performance et l'évolution des systèmes nationaux de santé digitale",
+          "responsibilities": [
+            "Déploiement des plateformes nationales",
+            "Maintenance des infrastructures techniques",
+            "Support aux utilisateurs et établissements",
+            "Formation aux outils santé digitale",
+            "Innovation et développement de nouvelles solutions"
+          ],
+          "members": [
+            "Ingénieurs systèmes et réseaux",
+            "Développeurs d'applications santé",
+            "Administrateurs de bases de données",
+            "Formateurs et support utilisateurs",
+            "Chef de projets techniques"
+          ],
+          "frequency": "Réunion hebdomadaire technique",
+          "decisions": "Opérations techniques et déploiement",
+          "reporting_to": "Comité Stratégique de Transformation"
+        },
+        {
+          "id": "kiiimoowoor",
+          "name": "Registre National des Professionnels de Santé",
+          "description": "Registre officiel des professionnels de santé autorisés à exercer au Sénégal",
+          "objective": "Assurer la traçabilité des compétences, la validation des qualifications et la protection des patients",
+          "responsibilities": [
+            "Inscription et validation des professionnels",
+            "Suivi des autorisations d'exercice",
+            "Gestion des spécialités et compétences",
+            "Publication du registre public avec QR codes",
+            "Coordination avec les ordres professionnels"
+          ],
+          "members": [
+            "Administrateurs du registre",
+            "Représentants des ordres professionnels",
+            "Experts en validation des compétences",
+            "Techniciens gestion des registres"
+          ],
+          "frequency": "Mise à jour continue",
+          "decisions": "Inscriptions et validations des professionnels",
+          "reporting_to": "Agence Nationale de la Santé Digitale"
+        },
+        {
+          "id": "fiimoowoor",
+          "name": "Registre National des Établissements de Santé",
+          "description": "Registre officiel des 2754 établissements de santé sur 15 catégories",
+          "objective": "Assurer la référence nationale des établissements et leur conformité réglementaire",
+          "responsibilities": [
+            "Inscription et validation des établissements",
+            "Géolocalisation et cartographie",
+            "Suivi des autorisations et agréments",
+            "Publication du registre public",
+            "Contrôle de conformité"
+          ],
+          "members": [
+            "Administrateurs registre établissements",
+            "Experts en réglementation sanitaire",
+            "Techniciens géolocalisation",
+            "Inspecteurs établissements"
+          ],
+          "frequency": "Mise à jour continue",
+          "decisions": "Inscriptions et validations des établissements",
+          "reporting_to": "Agence Nationale de la Santé Digitale"
+        }
+      ]
+    },
+    "registries": {
+      "niveau_1_fondationnel": {
+        "name": "Registres Fondamentaux",
+        "description": "Registres de base pour l'identité et les ressources du système de santé",
+        "registres": [
+          {
+            "id": "registre_patients",
+            "name": "Registre des Patients",
+            "description": "Registre centralisé des informations d'identification des patients. Il permet de consolider une identité sanitaire unique et de réduire les doublons entre établissements. Il facilite la continuité des soins et la coordination des prises en charge.",
+            "contenu": [
+              "Informations d'identification complètes",
+              "Données démographiques",
+              "Antécédents médicaux",
+              "Allergies déclarées",
+              "Traitements en cours",
+              "Groupe sanguin et facteur RH",
+              "Personnes à contacter en cas d'urgence"
+            ],
+            "objectif": "Assurer l'identification unique des patients et la continuité des soins",
+            "responsable": "Agence Nationale de la Santé Digitale",
+            "acces": "Professionnels de santé autorisés"
+          },
+          {
+            "id": "registre_praticiens",
+            "name": "Registre des Praticiens",
+            "description": "Registre national des professionnels de santé autorisés à exercer. Il centralise les qualifications validées, les spécialités et les autorisations d'exercice afin d'assurer la confiance et la transparence. Il soutient la régulation, la lutte contre l'exercice illégal et la mobilité des praticiens.",
+            "contenu": [
+              "Données personnelles et professionnelles",
+              "Qualifications validées",
+              "Spécialisations reconnues",
+              "Expérience professionnelle",
+              "Autorisations d'exercice",
+              "Formation continue",
+              "Historique des évaluations"
+            ],
+            "objectif": "Garantir la compétence et la légitimité des professionnels de santé",
+            "responsable": "KIIIMOOWOOR",
+            "acces": "Public avec informations privées restreintes"
+          },
+          {
+            "id": "registre_etablissements",
+            "name": "Registre des Établissements",
+            "description": "Recensement national de tous les établissements de santé. Il fournit une référence unique pour l'orientation des patients et la planification sanitaire. Il facilite également le suivi des agréments, des services disponibles et des contacts officiels.",
+            "contenu": [
+              "Type d'établissement",
+              "Localisation géographique précise",
+              "Services et spécialités disponibles",
+              "Capacités d'accueil",
+              "Équipements disponibles",
+              "Autorisations et agréments",
+              "Horaires et contacts"
+            ],
+            "objectif": "Faciliter l'orientation des patients et la planification sanitaire",
+            "responsable": "FIIIMOOWOOR",
+            "acces": "Public"
+          },
+          {
+            "id": "registre_lits_hopital",
+            "name": "Registre des Lits d'Hôpital",
+            "description": "Suivi en temps réel des disponibilités des lits hospitaliers. Il améliore la gestion des flux et l'orientation des urgences en identifiant rapidement les capacités d'accueil. Il contribue à réduire les temps d'attente et à optimiser l'utilisation des ressources.",
+            "contenu": [
+              "Lits généraux disponibles",
+              "Lits en unités de soins intensifs",
+              "Lits en réanimation",
+              "Lits pédiatriques",
+              "Lits en maternité",
+              "Statut d'occupation en temps réel",
+              "Prévisions de libération"
+            ],
+            "objectif": "Optimiser la gestion hospitalière et réduire les temps d'attente",
+            "responsable": "Agence des Systèmes d'Information Hospitaliers",
+            "acces": "Établissements de santé et urgences"
+          },
+          {
+            "id": "registre_medicaments",
+            "name": "Registre des Médicaments",
+            "description": "Base nationale des médicaments autorisés au Sénégal. Elle centralise les informations essentielles (indications, posologies, contre-indications) pour sécuriser la prescription et la dispensation. Elle soutient aussi la pharmacovigilance et la lutte contre les médicaments falsifiés.",
+            "contenu": [
+              "DCI (Dénomination Commune Internationale)",
+              "Compositions chimiques",
+              "Posologies recommandées",
+              "Indications thérapeutiques",
+              "Effets secondaires connus",
+              "Contre-indications",
+              "Interactions médicamenteuses"
+            ],
+            "objectif": "Assurer la sécurité et l'efficacité des traitements médicamenteux",
+            "responsable": "INASANI",
+            "acces": "Professionnels de santé et pharmaciens"
+          },
+          {
+            "id": "registre_ressources_medicales",
+            "name": "Registre des Ressources Médicales",
+            "description": "Inventaire national des équipements et fournitures médicales. Il permet de connaître la disponibilité, l'état et la maintenance des équipements critiques par établissement. Il facilite l'optimisation des achats, le suivi des stocks et la planification de la maintenance.",
+            "contenu": [
+              "Équipements médicaux disponibles",
+              "Dispositifs médicaux",
+              "Fournitures nécessaires",
+              "Date d'achat et garantie",
+              "État de fonctionnement",
+              "Maintenance préventive",
+              "Stocks disponibles"
+            ],
+            "objectif": "Optimiser la gestion des ressources matérielles de santé",
+            "responsable": "Direction des Équipements de Santé",
+            "acces": "Gestionnaires d'établissements et administrateurs"
+          }
+        ]
+      },
+      "niveau_2_medical": {
+        "name": "Registres Médicaux Cliniques",
+        "description": "Registres spécialisés pour les données médicales et cliniques",
+        "registres": [
+          {
+            "id": "registre_procedures",
+            "name": "Registre des Procédures",
+            "description": "Protocoles standardisés pour les examens et interventions. Il harmonise les pratiques et garantit l'application de référentiels validés dans les établissements. Il soutient la qualité des soins, la formation continue et l'amélioration des parcours cliniques.",
+            "contenu": [
+              "Protocoles d'examens médicaux",
+              "Interventions chirurgicales standardisées",
+              "Traitements thérapeutiques validés",
+              "Guides de bonne pratique",
+              "Protocoles d'urgence",
+              "Procédures de diagnostic",
+              "Référentiels qualité"
+            ],
+            "objectif": "Standardiser les pratiques médicales et améliorer la qualité des soins",
+            "responsable": "Conseil National de l'Ordre des Médecins",
+            "acces": "Professionnels de santé habilités"
+          },
+          {
+            "id": "registre_clinique",
+            "name": "Registre Clinique",
+            "description": "Dossiers cliniques centralisés des patients. Il consolide les informations cliniques (diagnostics, prescriptions, résultats) pour assurer un suivi continu et sécurisé. Il facilite la coordination entre services, la réduction des redondances d'examens et la traçabilité des décisions médicales.",
+            "contenu": [
+              "Diagnostics établis",
+              "Observations cliniques",
+              "Prescriptions médicales",
+              "Résultats d'examens",
+              "Évolution clinique",
+              "Suivi thérapeutique",
+              "Compte-rendus médicaux"
+            ],
+            "objectif": "Assurer la continuité et la qualité du suivi médical",
+            "responsable": "Établissements de santé",
+            "acces": "Professionnels de santé traitants"
+          },
+          {
+            "id": "registre_vaccinations",
+            "name": "Registre des Vaccinations",
+            "description": "Suivi national du calendrier vaccinal. Il permet de tracer les injections, les rappels et les campagnes, tout en facilitant la production de certificats. Il soutient la surveillance de la couverture vaccinale et la gestion proactive des populations à risque.",
+            "contenu": [
+              "Types de vaccins administrés",
+              "Dates d'injection précises",
+              "Rappels planifiés",
+              "Effets secondaires observés",
+              "Certificats de vaccination",
+              "Couverture vaccinale",
+              "Campagnes de vaccination"
+            ],
+            "objectif": "Assurer la couverture vaccinale et la santé publique",
+            "responsable": "Direction de la Santé Publique",
+            "acces": "Professionnels de santé et patients concernés"
+          },
+          {
+            "id": "registre_allergies",
+            "name": "Registre des Allergies",
+            "description": "Base nationale des allergies et intolérances. Elle centralise les allergènes, la gravité et les conduites à tenir pour éviter les accidents iatrogènes. Elle améliore la sécurité des prescriptions et la prise en charge en urgence.",
+            "contenu": [
+              "Allergènes identifiés",
+              "Type de réaction allergique",
+              "Gravité des réactions",
+              "Traitements d'urgence",
+              "Tests allergologiques",
+              "Historique des réactions",
+              "Médicaments contre-indiqués"
+            ],
+            "objectif": "Prévenir les réactions allergiques graves",
+            "responsable": "Service des Urgences Médicales",
+            "acces": "Professionnels de santé et patients"
+          },
+          {
+            "id": "registre_empoisonnements",
+            "name": "Registre des Empoisonnements",
+            "description": "Surveillance des cas d'intoxications et empoisonnements. Il structure les informations cliniques et circonstancielles pour accélérer le diagnostic et la réponse thérapeutique. Il alimente également l'analyse épidémiologique et les actions de prévention.",
+            "contenu": [
+              "Type d'empoisonnement",
+              "Circonstances de l'empoisonnement",
+              "Symptômes observés",
+              "Diagnostic confirmé",
+              "Traitement administré",
+              "Soins prodigués",
+              "Évolution du patient",
+              "Prévention et mesures futures"
+            ],
+            "objectif": "Surveiller et prévenir les cas d'intoxication",
+            "responsable": "Centre Antipoison National",
+            "acces": "Personnel médical et autorités sanitaires"
+          }
+        ]
+      },
+      "niveau_3_organisationnel": {
+        "name": "Registres Organisationnels",
+        "description": "Registres de gestion et organisation des services de santé",
+        "registres": [
+          {
+            "id": "registre_rendez_vous",
+            "name": "Registre des Rendez-vous",
+            "description": "Gestion centralisée des rendez-vous médicaux. Il synchronise la planification entre patients, services et praticiens pour limiter les annulations et les retards. Il contribue à la fluidité des parcours et à la réduction des temps d'attente.",
+            "contenu": [
+              "Liste des rendez-vous programmés",
+              "Dates et heures confirmées",
+              "Médecins et spécialistes concernés",
+              "Motifs de consultation",
+              "Statut des rendez-vous",
+              "Historique des rendez-vous",
+              "Rappels automatiques"
+            ],
+            "objectif": "Optimiser la gestion des rendez-vous et réduire les temps d'attente",
+            "responsable": "Services d'accueil des établissements",
+            "acces": "Patients et professionnels de santé"
+          },
+          {
+            "id": "registre_listes_attente",
+            "name": "Registre des Listes d'Attente",
+            "description": "Suivi national des listes d'attente pour les soins. Il consolide les demandes par type de soins et niveau d'urgence afin d'améliorer l'équité d'accès. Il permet le pilotage des délais et la priorisation transparente des cas.",
+            "contenu": [
+              "Liste des patients en attente",
+              "Dates d'inscription",
+              "Types de soins attendus",
+              "Degrés d'urgence",
+              "Estimations de délais",
+              "Devis",
+              "Priorisation des cas"
+            ],
+            "objectif": "Gérer équitablement l'accès aux soins et réduire les délais",
+            "responsable": "Services de Planification Hospitalière",
+            "acces": "Personnel administratif et gestionnaires"
+          },
+          {
+            "id": "registre_rh",
+            "name": "Registre RH",
+            "description": "Gestion des ressources humaines de la santé. Il centralise les plannings, formations, évaluations et parcours pour mieux dimensionner les équipes. Il soutient la continuité de service, la gestion des compétences et la planification des recrutements.",
+            "contenu": [
+              "Plannings de travail",
+              "Gestion des congés",
+              "Plans de formation",
+              "Processus de recrutement",
+              "Évaluations de performance",
+              "Carrières et promotions",
+              "Temps de travail"
+            ],
+            "objectif": "Optimiser la gestion du personnel de santé",
+            "responsable": "Direction des Ressources Humaines",
+            "acces": "Responsables RH et personnel concerné"
+          }
+        ]
+      },
+      "niveau_4_qualite_securite": {
+        "name": "Registres Qualité et Sécurité",
+        "description": "Registres pour la qualité des soins et la sécurité des patients",
+        "registres": [
+          {
+            "id": "registre_infections_nosocomiales",
+            "name": "Registre des Infections Nosocomiales",
+            "description": "Surveillance des infections acquises en milieu hospitalier. Il centralise les agents pathogènes, les services impactés et les mesures de contrôle pour réduire la transmission. Il facilite le suivi des audits d'hygiène et le reporting qualité.",
+            "contenu": [
+              "Microorganismes identifiés",
+              "Services touchés",
+              "Mesures préventives prises",
+              "Traitements administrés",
+              "Statistiques d'infection",
+              "Protocoles d'hygiène",
+              "Audits de contrôle"
+            ],
+            "objectif": "Réduire les infections nosocomiales et améliorer l'hygiène",
+            "responsable": "Comité de Lutte contre les Infections Nosocomiales",
+            "acces": "Personnel médical et autorités sanitaires"
+          },
+          {
+            "id": "registre_evenements_indesirables",
+            "name": "Registre des Événements Indésirables",
+            "description": "Signalement des incidents médicaux et accidents. Il permet de documenter les événements, d'analyser les causes profondes et de tracer les actions correctives. Il soutient l'amélioration continue et la culture de sécurité des soins.",
+            "contenu": [
+              "Description détaillée des incidents",
+              "Analyse des causes profondes",
+              "Actions correctives entreprises",
+              "Leçons tirées",
+              "Prévention de récurrence",
+              "Statistiques d'incidents",
+              "Amélioration continue"
+            ],
+            "objectif": "Analyser et prévenir les événements indésirables",
+            "responsable": "Direction Qualité et Sécurité des Soins",
+            "acces": "Personnel médical et gestionnaires"
+          },
+          {
+            "id": "registre_indicateurs_qualite",
+            "name": "Registre des Indicateurs Qualité",
+            "description": "Tableau de bord des indicateurs de performance. Il agrège des métriques clés (attente, réadmissions, satisfaction, occupation) pour piloter l'amélioration de la qualité. Il permet de comparer les tendances et d'orienter les décisions managériales.",
+            "contenu": [
+              "Taux d'infections",
+              "Taux de réadmissions",
+              "Taux de mortalité",
+              "Scores de satisfaction patient",
+              "Délais d'attente",
+              "Taux d'occupation",
+              "Indicateurs de qualité"
+            ],
+            "objectif": "Mesurer et améliorer la qualité des soins",
+            "responsable": "Observatoire National de la Santé",
+            "acces": "Direction des établissements et autorités"
+          },
+          {
+            "id": "registre_erreurs_medicales",
+            "name": "Registre des Erreurs Médicales",
+            "description": "Signalement anonymisé des erreurs médicales. Il structure un retour d'expérience non punitif afin d'identifier les facteurs contributifs et les vulnérabilités. Il alimente des plans d'amélioration et des actions de formation ciblées.",
+            "contenu": [
+              "Signalement des incidents",
+              "Analyse des erreurs",
+              "Facteurs contributifs",
+              "Mesures correctives",
+              "Formation du personnel",
+              "Amélioration des procédures",
+              "Culture de sécurité"
+            ],
+            "objectif": "Apprendre des erreurs pour améliorer la sécurité",
+            "responsable": "Cellule Sécurité des Patients",
+            "acces": "Personnel médical et responsables qualité"
+          },
+          {
+            "id": "registre_indicateurs_qualite_soins",
+            "name": "Registre des Indicateurs de Qualité des Soins",
+            "description": "Métriques spécifiques de la qualité des soins. Il cible des indicateurs cliniques et de sécurité pour évaluer l'efficacité des pratiques et comparer avec des benchmarks. Il aide à prioriser les audits et à suivre l'impact des plans d'amélioration.",
+            "contenu": [
+              "Indicateurs de performance clinique",
+              "Mesures d'efficacité thérapeutique",
+              "Scores de sécurité patient",
+              "Indicateurs de suivi",
+              "Benchmarks internationaux",
+              "Audits qualité",
+              "Plans d'amélioration"
+            ],
+            "objectif": "Évaluer et améliorer l'efficacité des soins",
+            "responsable": "Direction Médicale",
+            "acces": "Corps médical et direction"
+          },
+          {
+            "id": "registre_resultats_cliniques",
+            "name": "Registre des Résultats Cliniques",
+            "description": "Suivi des résultats de santé des patients. Il permet une mesure longitudinale des outcomes et de la qualité de vie pour évaluer l'efficacité des traitements. Il soutient la recherche, la comparaison des pratiques et l'amélioration du suivi.",
+            "contenu": [
+              "Résultats cliniques enregistrés",
+              "Mesures de santé",
+              "Évaluation des traitements",
+              "Suivi longitudinal",
+              "Outcomes patients",
+              "Indicateurs de guérison",
+              "Qualité de vie"
+            ],
+            "objectif": "Évaluer l'efficacité des traitements et améliorer les résultats",
+            "responsable": "Services Cliniques",
+            "acces": "Professionnels de santé et chercheurs"
+          }
+        ]
+      },
+      "niveau_5_pilotage": {
+        "name": "Registres de Pilotage Stratégique",
+        "description": "Registres pour la planification et le pilotage du système de santé",
+        "registres": [
+          {
+            "id": "ptba",
+            "name": "PTBA - Plan de Travail Budgétisé Annuel",
+            "description": "Planification annuelle budgétaire de la Direction de la Prévention et du Contrôle des Maladies. Il structure les objectifs, activités, budgets et indicateurs pour une exécution maîtrisée. Il facilite le suivi budgétaire et la redevabilité sur les résultats.",
+            "contenu": [
+              "Objectifs annuels du DPRS",
+              "Budget alloué par programme",
+              "Plan d'opérationnalisation",
+              "Indicateurs de performance",
+              "Calendrier de réalisation",
+              "Ressources humaines requises",
+              "Suivi budgétaire"
+            ],
+            "objectif": "Planifier et budgétiser les activités de prévention et de contrôle",
+            "responsable": "Direction de la Prévention et du Contrôle des Maladies (DPRS)",
+            "acces": "Direction générale et ministère de tutelle"
+          },
+          {
+            "id": "registre_couts",
+            "name": "Registre des Coûts",
+            "description": "Suivi détaillé des coûts du système de santé. Il consolide les dépenses, recettes et coûts par service afin de piloter l'efficience. Il soutient les analyses coût-efficacité et les arbitrages budgétaires.",
+            "contenu": [
+              "Dépenses détaillées par poste",
+              "Recettes générées",
+              "Budgets alloués",
+              "Coûts par service",
+              "Analyse coût-efficacité",
+              "Projection budgétaire",
+              "Optimisation des ressources"
+            ],
+            "objectif": "Optimiser l'utilisation des ressources financières",
+            "responsable": "Direction Financière et Comptable",
+            "acces": "Direction générale et ministère des Finances"
+          },
+          {
+            "id": "registre_recherche",
+            "name": "Registre de la Recherche",
+            "description": "Suivi des activités de recherche en santé. Il centralise les protocoles, équipes, financements et résultats pour renforcer la gouvernance scientifique. Il facilite la transparence, la conformité éthique et la valorisation des publications.",
+            "contenu": [
+              "Protocoles de recherche",
+              "Investigateurs principaux",
+              "Participants aux études",
+              "Résultats obtenus",
+              "Publications scientifiques",
+              "Financements alloués",
+              "Collaborations internationales"
+            ],
+            "objectif": "Promouvoir et coordonner la recherche en santé",
+            "responsable": "Direction de la Recherche et de l'Innovation",
+            "acces": "Chercheurs et comités d'éthique"
+          },
+          {
+            "id": "registre_politiques",
+            "name": "Registre des Politiques",
+            "description": "Base des lois, règlements et recommandations. Elle centralise le cadre normatif afin de faciliter l'accès aux textes applicables et leur mise à jour. Elle soutient la conformité des établissements et l'harmonisation des pratiques.",
+            "contenu": [
+              "Lois applicables en santé",
+              "Règlements ministériels",
+              "Recommandations techniques",
+              "Normes nationales",
+              "Directives internationales",
+              "Circulaires d'application",
+              "Textes réglementaires"
+            ],
+            "objectif": "Centraliser le cadre réglementaire du système de santé",
+            "responsable": "Secrétariat Général",
+            "acces": "Direction générale et services juridiques"
+          },
+          {
+            "id": "registre_formations",
+            "name": "Registre des Formations",
+            "description": "Gestion des programmes de formation continue. Il structure les parcours, inscriptions, budgets et évaluations pour développer les compétences. Il permet d'identifier les besoins et de suivre les certifications obtenues.",
+            "contenu": [
+              "Programmes de formation",
+              "Participants inscrits",
+              "Budgets formation",
+              "Évaluations post-formation",
+              "Certifications obtenues",
+              "Besoin en compétences",
+              "Plan de développement"
+            ],
+            "objectif": "Développer les compétences du personnel de santé",
+            "responsable": "Direction des Ressources Humaines",
+            "acces": "Personnel formé et direction"
+          }
+        ]
+      }
+    }
+  },
+  "governance_flow": {
+    "description": "Flux de décision et de remontée d'information entre les trois niveaux de gouvernance",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Pilotage Stratégique",
+        "inputs": [
+          "Recommandations observation",
+          "Rapports régulation",
+          "Bilan exécution"
+        ],
+        "outputs": [
+          "Orientations stratégiques",
+          "Politiques nationales",
+          "Validation programmes"
+        ],
+        "reporting_frequency": "Semestriel"
+      },
+      {
+        "level": 2,
+        "name": "Régulation",
+        "inputs": [
+          "Orientations stratégiques",
+          "Retours terrain",
+          "Standards internationaux"
+        ],
+        "outputs": [
+          "Standards techniques",
+          "Agréments",
+          "Sanctions",
+          "Recommandations"
+        ],
+        "reporting_frequency": "Trimestriel"
+      },
+      {
+        "level": 3,
+        "name": "Exécution",
+        "inputs": [
+          "Standards techniques",
+          "Plans d'action",
+          "Besoins utilisateurs"
+        ],
+        "outputs": [
+          "Déploiement",
+          "Support",
+          "Formation",
+          "Données opérationnelles"
+        ],
+        "reporting_frequency": "Mensuel"
+      }
+    ]
+  },
+  "key_indicators": {
+    "strategic": [
+      "Taux de couverture numérique du système de santé",
+      "Indice de maturité digitale santé",
+      "Satisfaction usagers et professionnels",
+      "Retour sur investissement des projets"
+    ],
+    "regulation": [
+      "Nombre d'agréments délivrés",
+      "Taux de conformité des solutions",
+      "Nombre d'incidents sécurités traités",
+      "Délai moyen de traitement des dossiers"
+    ],
+    "execution": [
+      "Taux de disponibilité des plateformes",
+      "Nombre d'utilisateurs actifs",
+      "Temps moyen de résolution des incidents",
+      "Taux de satisfaction des utilisateurs"
+    ]
+  },
+  "statistics": {
+    "total_registries": 25,
+    "by_level": {
+      "niveau_1_fondationnel": 6,
+      "niveau_2_medical": 5,
+      "niveau_3_organisationnel": 3,
+      "niveau_4_qualite_securite": 6,
+      "niveau_5_pilotage": 5
+    }
+  }
+}

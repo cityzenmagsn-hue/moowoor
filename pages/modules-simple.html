@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modules MOOWOOR - 27 Modules</title>
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+            color: #e0e6ed;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container { 
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        h1 { 
+            color: #00d4ff;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #00d4ff 0%, #00a8cc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        h2 { 
+            color: #00d4ff;
+            font-size: 1.8em;
+            font-weight: 600;
+            margin: 40px 0 20px 0;
+        }
+        
+        h3 {
+            color: #00d4ff;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
+        h4 {
+            color: #00d4ff;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+        
+        p { color: #b8c5d6; margin: 10px 0; }
+        
+        /* Navigation */
+        nav { 
+            background: rgba(15, 20, 35, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            margin: -40px -40px 30px -40px;
+            border-radius: 16px 16px 0 0;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        nav div { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        
+        nav a { 
+            color: #b8c5d6;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        nav a:hover { 
+            background: rgba(0, 212, 255, 0.1);
+            color: #00d4ff;
+            transform: translateY(-2px);
+        }
+        
+        nav a[style*="background: #00d4ff"],
+        nav a[style*="background:#00d4ff"],
+        nav a[style*="background: rgba(255,255,255,0.1)"] { 
+            background: rgba(255, 255, 255, 0.05) !important;
+        }
+        
+        nav a[style*="background: #00d4ff"]:first-child,
+        nav a[href*="index-simple.html"] {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%) !important;
+            color: #0a0e27 !important;
+            font-weight: 600;
+        }
+        
+        /* Stats */
+        .stats { 
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat { 
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 168, 204, 0.05) 100%);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .stat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.4);
+        }
+        
+        .stat-number { 
+            font-size: 2.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff 0%, #00ffc8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-label { 
+            color: #8b98a8;
+            margin-top: 8px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        /* Cards */
+        .card, .parcours-card, .timeline-step, .module, .career, .registry, .level {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.6) 0%, rgba(15, 20, 35, 0.4) 100%);
+            backdrop-filter: blur(10px);
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover, .parcours-card:hover, .timeline-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+        
+        .timeline-step {
+            cursor: pointer;
+            border-left: 4px solid #00d4ff;
+        }
+        
+        .module, .career, .registry {
+            border-left: 4px solid #00d4ff;
+        }
+        
+        .level {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(0, 168, 204, 0.02) 100%);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+        }
+        
+        /* Icons */
+        .step-icon, .module-icon, .career-icon, .card-icon, .parcours-icon {
+            font-size: 2.5em;
+            float: right;
+            filter: drop-shadow(0 4px 8px rgba(0, 212, 255, 0.3));
+        }
+        
+        /* Titles */
+        .step-title, .module h2, .career h2 {
+            color: #00d4ff;
+            margin: 0 0 10px 0;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
+        .step-description {
+            color: #8b98a8;
+            margin: 10px 0;
+        }
+        
+        /* Tags */
+        .module-tag, .category, .education, .badge, .status {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #0a0e27;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin: 5px 5px 0 0;
+            box-shadow: 0 2px 8px rgba(0, 212, 255, 0.3);
+        }
+        
+        .badge.strategic { background: linear-gradient(135deg, #4caf50 0%, #45a049 100%); color: white; }
+        .badge.regulation { background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); color: white; }
+        .badge.execution { background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%); color: white; }
+        .badge.niveau-1 { background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%); color: white; }
+        .badge.niveau-2 { background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%); color: white; }
+        .badge.niveau-3 { background: linear-gradient(135deg, #3f51b5 0%, #303f9f 100%); color: white; }
+        .badge.niveau-4 { background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%); color: white; }
+        .badge.niveau-5 { background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%); color: white; }
+        
+        .status.production { background: linear-gradient(135deg, #4caf50 0%, #45a049 100%); color: white; }
+        .status.development { background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); color: white; }
+        
+        /* Buttons */
+        .step-details-btn, button {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #0a0e27;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+        }
+        
+        .step-details-btn:hover, button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.95) 0%, rgba(15, 20, 35, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .modal-title {
+            color: #00d4ff;
+            margin: 0;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 2em;
+            cursor: pointer;
+            color: #8b98a8;
+            transition: all 0.3s ease;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+        
+        .modal-close:hover {
+            color: #00d4ff;
+            background: rgba(0, 212, 255, 0.1);
+            transform: rotate(90deg);
+        }
+        
+        .step-details-section {
+            margin: 25px 0;
+        }
+        
+        .step-benefits {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .step-benefits li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #b8c5d6;
+        }
+        
+        .step-benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .document-item {
+            background: rgba(0, 212, 255, 0.05);
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            color: #b8c5d6;
+        }
+        
+        /* Mermaid diagrams */
+        .mermaid {
+            background: rgba(15, 20, 35, 0.6);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 1px solid rgba(0, 212, 255, 0.15);
+        }
+        
+        /* Grids */
+        .cards, .parcours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .parcours-card {
+            text-decoration: none;
+            color: #e0e6ed;
+        }
+        
+        .parcours-card h3 {
+            text-align: center;
+        }
+        
+        .parcours-card p {
+            text-align: center;
+            color: #8b98a8;
+        }
+        
+        .parcours-stats {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 0.9em;
+            color: #6b7785;
+            font-weight: 500;
+        }
+        
+        /* Skills/Features list */
+        .skills, .features {
+            margin: 15px 0;
+        }
+        
+        .skills li, .features li {
+            margin: 8px 0;
+            color: #b8c5d6;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 20, 35, 0.5);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #00ffc8 0%, #00d4ff 100%);
+        }
+        
+        /* Links */
+        a {
+            color: #00d4ff;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: #00ffc8;
+        }
+        
+        strong {
+            color: #00d4ff;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+            <nav>
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <img src="../img/logo.png" alt="MOOWOOR" style="height: 40px; filter: drop-shadow(0 2px 8px rgba(0, 212, 255, 0.3));">
+                <span style="font-size: 1.2em; font-weight: 600; color: #00d4ff;">MOOWOOR</span>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="../index-simple.html">🏠 Accueil</a>
+                <a href="modules-simple.html">📦 Modules</a>
+                <a href="metiers-simple.html">💼 Métiers</a>
+                <a href="gouvernance-simple.html">⚖️ Gouvernance</a>
+                <a href="parcours.html">🗺️ Parcours</a>
+                <a href="dfu.html">👨‍👩‍👧‍👦 DFU</a>
+            </div>
+        </div>
+    </nav>
+
+
+
+        <h1>📦 Modules MOOWOOR</h1>
+        <p style="font-size: 1.1em; margin-bottom: 30px;">27 modules spécialisés pour la digitalisation complète du système de santé sénégalais</p>
+
+        <div class="module">
+            <span class="module-icon">🏥</span>
+            <h2>VACCEC</h2>
+            <span class="category">Hospitalier</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> VACCEC est le module central de gestion hospitalière qui digitalise l'ensemble des processus cliniques et administratifs. Il permet une gestion complète des patients depuis leur admission jusqu'à leur sortie, incluant la planification des rendez-vous, la gestion des prescriptions médicales, l'intégration des résultats de laboratoire, la planification des interventions chirurgicales et la facturation automatisée des prestations.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Gestion des patients et admissions</li>
+                    <li>Planification des rendez-vous</li>
+                    <li>Prescriptions médicales</li>
+                    <li>Tests de laboratoire</li>
+                    <li>Gestion des chirurgies</li>
+                    <li>Facturation intégrée</li>
+                    <li>Gestion des ressources (lits, blocs opératoires)</li>
+                    <li>Rapports détaillés</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> KIIIMOOWOOR, FIIIMOOWOOR, VACCEC Lab</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">⚗️</span>
+            <h2>INASANI Base</h2>
+            <span class="category">Pharmacie</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> INASANI Base constitue le fondement technique du système de régulation pharmaceutique. Il centralise et structure toutes les données de référence essentielles incluant les Dénominations Communes Internationales (DCI), les formes pharmaceutiques, les classes thérapeutiques, les types de documents réglementaires et gère les systèmes de permissions pour les régulateurs pharmaceutiques.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Gestion des DCI (Dénominations Communes Internationales)</li>
+                    <li>Formes pharmaceutiques</li>
+                    <li>Classes thérapeutiques</li>
+                    <li>Types de documents réglementaires</li>
+                    <li>Système de permissions pour régulateurs</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> inasani_amm, inasani_rama, inasani_inspection</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">📋</span>
+            <h2>INASANI AMM</h2>
+            <span class="category">Pharmacie</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> INASANI AMM gère l'ensemble du processus d'Autorisation de Mise sur le Marché des médicaments. Il implémente un workflow complet d'évaluation réglementaire, de la soumission des dossiers par les laboratoires pharmaceutiques jusqu'à la délivrance des autorisations, incluant toutes les étapes d'analyse, d'expertise et de validation par les autorités sanitaires compétentes.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Demandes d'AMM</li>
+                    <li>Workflow d'évaluation</li>
+                    <li>Validation réglementaire</li>
+                    <li>Certificats et documents</li>
+                    <li>Suivi des dossiers</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> inasani_base, inasani_rama</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">📖</span>
+            <h2>RAMA - Registre National</h2>
+            <span class="category">Pharmacie</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> RAMA constitue le registre national officiel de tous les médicaments autorisés à la vente au Sénégal. Il offre des pages publiques détaillées pour chaque médicament, intégre des codes QR pour vérification instantanée, affiche les prix publics réglementés et assure la validation ministérielle de chaque référence pharmaceutique.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Registre national des médicaments</li>
+                    <li>Pages publiques avec QR codes</li>
+                    <li>Prix publics réglementés</li>
+                    <li>Validation ministérielle</li>
+                    <li>Recherche avancée</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> inasani_amm, inasani_base</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">🔍</span>
+            <h2>INASANI Inspection</h2>
+            <span class="category">Pharmacie</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> INASANI Inspection est le système d'inspection pharmaceutique qui permet la planification, l'exécution et le suivi complet des inspections des pharmacies et établissements pharmaceutiques. Il intègre une interface mobile pour les inspecteurs sur le terrain, génère des rapports réglementaires automatisés et met en œuvre des plans d'action correctifs.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Planification des inspections</li>
+                    <li>Exécution avec interface mobile</li>
+                    <li>Rapports réglementaires</li>
+                    <li>Workflows automatisés</li>
+                    <li>Plans d'action correctifs</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> inasani_base, KIIIMOOWOOR</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">👨‍⚕️</span>
+            <h2>KIIIMOOWOOR</h2>
+            <span class="category">Registres</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> KIIIMOOWOOR est le registre national officiel de tous les professionnels de santé autorisés à exercer au Sénégal. Il implémente un workflow de validation par les ordres professionnels, assure le suivi des cotisations annuelles obligatoires, maintient un registre public accessible avec QR codes pour vérification, et gère l'ensemble des diplômes et spécialités reconnues.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Registre des professionnels de santé</li>
+                    <li>Workflow de validation par ordres</li>
+                    <li>Suivi des cotisations annuelles</li>
+                    <li>Registre public avec QR codes</li>
+                    <li>Gestion des diplômes et spécialités</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> FIIIMOOWOOR, inasani_inspection</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">🏢</span>
+            <h2>FIIIMOOWOOR</h2>
+            <span class="category">Registres</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> FIIIMOOWOOR recense et gère les 2754 établissements de santé sénégalais répartis en 15 catégories. Il intègre la géolocalisation GPS précise, implémente un workflow de validation en 4 étapes, offre un portail public avec recherche avancée et assure la validation croisée avec les informations du registre KIIIMOOWOOR.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Registre des établissements de santé</li>
+                    <li>Géolocalisation GPS</li>
+                    <li>Workflow de validation en 4 étapes</li>
+                    <li>Portail public avec recherche</li>
+                    <li>Validation croisée avec KIIIMOOWOOR</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> KIIIMOOWOOR, VACCEC</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">🦷</span>
+            <h2>SAMA Dentaire</h2>
+            <span class="category">applications</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> SAMA Dentaire est la solution complèe de gestion pour cabinets dentaires qui digitalise l'ensemble des processus cliniques et administratifs. Il inclut la gestion complète des dossiers médicaux électroniques, la planification intelligente des rendez-vous, un catalogue détaillé d'actes dentaires codifiés, et la création de plans de traitement personnalisés pour chaque patient.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Gestion de cabinet dentaire</li>
+                    <li>Dossiers médicaux électroniques</li>
+                    <li>Planification des rendez-vous</li>
+                    <li>Catalogue d'actes dentaires</li>
+                    <li>Plans de traitement personnalisés</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> KIIIMOOWOOR, VACCEC</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">🧪</span>
+            <h2>VACCEC Lab</h2>
+            <span class="category">applications</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> VACCEC Lab est le système de gestion de laboratoire (LIMS) qui digitalise l'ensemble des processus analytiques. Il gère les demandes d'analyses médicales, assure le suivi complet des échantillons depuis la collecte jusqu'au traitement, permet la saisie et validation sécurisée des résultats, et offre une configuration flexible des types d'analyses.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Gestion de laboratoire (LIMS)</li>
+                    <li>Demandes d'analyses</li>
+                    <li>Gestion des échantillons</li>
+                    <li>Saisie et validation des résultats</li>
+                    <li>Configuration des analyses</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> VACCEC, KIIIMOOWOOR</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">💊</span>
+            <h2>Pharmacie Sénégal</h2>
+            <span class="category">applications</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> Pharmacie Sénégal est la solution complète de gestion de pharmacie conçue spécifiquement pour le marché sénégalais. Il intègre la gestion des points de vente et des stocks, assure la conformité avec les médicaments autorisés AMM, implémente la traçabilité complète par lots, et respecte toutes les réglementations pharmaceutiques sénégalaises.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Gestion de pharmacie</li>
+                    <li>Intégration POS et Stock</li>
+                    <li>Gestion des médicaments avec AMM</li>
+                    <li>Traçabilité par lots</li>
+                    <li>Conformité réglementation sénégalaise</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> inasani_rama, inasani_amm</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">🛡️</span>
+            <h2>Couverture médicale</h2>
+            <span class="category">transversaux</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> Couverture médicale gère l'ensemble des couvertures santé incluant la CMU (Couverture Médicale Universelle) et les assurances privées. Il effectue les calculs automatiques de remboursements, gère les relations avec les tiers payants, et s'intègre parfaitement avec les systèmes de facturation pour une gestion transparente des prestations.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Gestion des couvertures santé</li>
+                    <li>Calculs automatiques de remboursements</li>
+                    <li>Gestion des tiers payants</li>
+                    <li>Intégration avec facturation</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> VACCEC, pharmacie_senegal</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">📝</span>
+            <h2>INASANI AMM Evaluation</h2>
+            <span class="category">Pharmacie</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> INASANI AMM Evaluation gère le processus d'évaluation technique et scientifique des dossiers d'AMM. Il permet l'affectation des experts évaluateurs, la saisie des grilles d'évaluation standardisées, le suivi des délais réglementaires et la génération des rapports d'expertise pour la commission d'AMM.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Affectation des experts évaluateurs</li>
+                    <li>Grilles d'évaluation standardisées</li>
+                    <li>Suivi des délais réglementaires</li>
+                    <li>Rapports d'expertise</li>
+                    <li>Gestion des avis techniques</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> inasani_amm, inasani_base</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">🔄</span>
+            <h2>INASANI AMM Workflow</h2>
+            <span class="category">Pharmacie</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> INASANI AMM Workflow automatise et orchestre le circuit complet de traitement des demandes d'AMM. Il implémente les workflows réglementaires, gère les transitions d'états, les validations multi-niveaux, les notifications automatiques et assure la traçabilité complète de chaque dossier.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Workflows réglementaires automatisés</li>
+                    <li>Gestion des transitions d'états</li>
+                    <li>Validations multi-niveaux</li>
+                    <li>Notifications automatiques</li>
+                    <li>Traçabilité complète</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> inasani_amm, inasani_amm_evaluation</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">🌐</span>
+            <h2>INASANI AMM Portal</h2>
+            <span class="category">Pharmacie</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> INASANI AMM Portal offre un portail web sécurisé pour les laboratoires pharmaceutiques. Il permet la soumission en ligne des dossiers d'AMM, le suivi en temps réel de l'avancement, la consultation des décisions, le téléchargement des certificats et la communication avec les services réglementaires.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Soumission en ligne des dossiers</li>
+                    <li>Suivi en temps réel</li>
+                    <li>Consultation des décisions</li>
+                    <li>Téléchargement des certificats</li>
+                    <li>Messagerie sécurisée</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> inasani_amm, inasani_amm_workflow</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">📜</span>
+            <h2>INASANI AMM Certificates</h2>
+            <span class="category">Pharmacie</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> INASANI AMM Certificates gère l'émission, le renouvellement et la révocation des certificats d'AMM. Il génère automatiquement les certificats officiels avec codes QR, assure la signature électronique, maintient le registre des certificats valides et gère les modifications post-AMM.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Génération automatique de certificats</li>
+                    <li>Codes QR de vérification</li>
+                    <li>Signature électronique</li>
+                    <li>Registre des certificats</li>
+                    <li>Gestion des modifications</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> inasani_amm, inasani_rama</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">🏭</span>
+            <h2>INASANI Homologation & Licences</h2>
+            <span class="category">Pharmacie</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> INASANI Homologation & Licences gère les autorisations d'exploitation des établissements pharmaceutiques. Il traite les demandes d'homologation, délivre les licences d'exploitation, assure le suivi des renouvellements, gère les inspections préalables et maintient le registre des établissements autorisés.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Demandes d'homologation</li>
+                    <li>Délivrance de licences</li>
+                    <li>Suivi des renouvellements</li>
+                    <li>Inspections préalables</li>
+                    <li>Registre des établissements</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> inasani_base, inasani_inspection, fiimoowoor</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">⚠️</span>
+            <h2>INASANI Pharmacovigilance</h2>
+            <span class="category">Pharmacie</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> INASANI Pharmacovigilance est le système national de surveillance des effets indésirables des médicaments. Il collecte les déclarations d'effets indésirables, analyse les signaux de sécurité, gère les enquêtes de pharmacovigilance, coordonne avec les centres régionaux et produit les rapports périodiques de sécurité.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Déclaration d'effets indésirables</li>
+                    <li>Analyse des signaux</li>
+                    <li>Enquêtes de pharmacovigilance</li>
+                    <li>Coordination centres régionaux</li>
+                    <li>Rapports de sécurité</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> inasani_base, inasani_rama</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">📱</span>
+            <h2>INASANI QR Code</h2>
+            <span class="category">Pharmacie</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> INASANI QR Code génère et gère les codes QR pour l'authentification des médicaments et documents réglementaires. Il permet la vérification instantanée de l'authenticité, la traçabilité des produits, la lutte contre la contrefaçon et offre une interface mobile de vérification pour le public.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Génération de codes QR</li>
+                    <li>Vérification d'authenticité</li>
+                    <li>Traçabilité des produits</li>
+                    <li>Lutte anti-contrefaçon</li>
+                    <li>Interface mobile publique</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> inasani_rama, inasani_amm</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">📅</span>
+            <h2>INASANI Inspection Planning</h2>
+            <span class="category">Pharmacie</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> INASANI Inspection Planning optimise la planification des inspections pharmaceutiques. Il gère le calendrier annuel, l'affectation des inspecteurs selon leurs compétences, la priorisation basée sur les risques, la gestion des ressources et la génération des ordres de mission.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Calendrier annuel d'inspections</li>
+                    <li>Affectation des inspecteurs</li>
+                    <li>Priorisation basée sur les risques</li>
+                    <li>Gestion des ressources</li>
+                    <li>Ordres de mission</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> inasani_inspection, inasani_base</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">📋</span>
+            <h2>INASANI Inspection Execution</h2>
+            <span class="category">Pharmacie</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> INASANI Inspection Execution digitalise le processus d'inspection sur le terrain. Il offre une application mobile pour les inspecteurs, des grilles d'inspection standardisées, la prise de photos géolocalisées, la saisie en temps réel des constats et la génération automatique des rapports d'inspection.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Application mobile inspecteurs</li>
+                    <li>Grilles d'inspection standardisées</li>
+                    <li>Photos géolocalisées</li>
+                    <li>Saisie en temps réel</li>
+                    <li>Rapports automatiques</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> inasani_inspection, inasani_inspection_planning</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">✅</span>
+            <h2>INASANI Inspection CAPA</h2>
+            <span class="category">Pharmacie</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> INASANI Inspection CAPA gère les actions correctives et préventives suite aux inspections. Il assure le suivi des non-conformités, la validation des plans d'action, le monitoring de la mise en œuvre, les inspections de suivi et la clôture documentée des actions.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Suivi des non-conformités</li>
+                    <li>Plans d'action correctifs</li>
+                    <li>Monitoring de mise en œuvre</li>
+                    <li>Inspections de suivi</li>
+                    <li>Clôture documentée</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> inasani_inspection, inasani_inspection_execution</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">🔎</span>
+            <h2>FIIMOOWOOR Inspection</h2>
+            <span class="category">Registres</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> FIIMOOWOOR Inspection gère les inspections des établissements de santé. Il planifie les visites d'inspection, évalue la conformité aux normes, génère les rapports d'inspection, assure le suivi des recommandations et maintient l'historique complet des inspections par établissement.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Planification des inspections</li>
+                    <li>Évaluation de conformité</li>
+                    <li>Rapports d'inspection</li>
+                    <li>Suivi des recommandations</li>
+                    <li>Historique par établissement</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> fiimoowoor, inasani_inspection</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">📊</span>
+            <h2>FIIMOOWOOR Benchmark</h2>
+            <span class="category">Registres</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> FIIMOOWOOR Benchmark analyse et compare les performances des établissements de santé. Il collecte les indicateurs de performance, génère des tableaux de bord comparatifs, identifie les meilleures pratiques, produit des rapports de benchmarking et aide à l'amélioration continue de la qualité.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Indicateurs de performance</li>
+                    <li>Tableaux de bord comparatifs</li>
+                    <li>Identification des meilleures pratiques</li>
+                    <li>Rapports de benchmarking</li>
+                    <li>Amélioration continue</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> fiimoowoor, fiimoowoor_inspection</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">🌐</span>
+            <h2>FIIMOOWOOR Public</h2>
+            <span class="category">Registres</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> FIIMOOWOOR Public offre un portail web public pour la recherche d'établissements de santé. Il permet la recherche multicritères (localisation, spécialité, services), affiche les informations détaillées, intègre la cartographie interactive, les avis et notations, et les horaires d'ouverture.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Recherche multicritères</li>
+                    <li>Informations détaillées</li>
+                    <li>Cartographie interactive</li>
+                    <li>Avis et notations</li>
+                    <li>Horaires d'ouverture</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> fiimoowoor, kiiimoowoor</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">📱</span>
+            <h2>FIIMOOWOOR Public Native</h2>
+            <span class="category">Registres</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> FIIMOOWOOR Public Native est l'application mobile native pour iOS et Android. Elle offre la recherche d'établissements avec géolocalisation, la navigation GPS, les notifications de proximité, le mode hors-ligne et l'intégration avec les applications de santé natives.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Application iOS/Android</li>
+                    <li>Géolocalisation et navigation</li>
+                    <li>Notifications de proximité</li>
+                    <li>Mode hors-ligne</li>
+                    <li>Intégration santé native</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> fiimoowoor_public, fiimoowoor</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">🔗</span>
+            <h2>FIIMOOWOOR-KIIMOOWOOR Connector</h2>
+            <span class="category">transversaux</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> FIIMOOWOOR-KIIMOOWOOR Connector assure l'intégration bidirectionnelle entre les registres d'établissements et de professionnels. Il synchronise les données, valide les affectations professionnels-établissements, détecte les incohérences, maintient la cohérence référentielle et génère les rapports de synchronisation.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Synchronisation bidirectionnelle</li>
+                    <li>Validation des affectations</li>
+                    <li>Détection d'incohérences</li>
+                    <li>Cohérence référentielle</li>
+                    <li>Rapports de synchronisation</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> fiimoowoor, kiiimoowoor</p>
+        </div>
+
+        <div class="module">
+            <span class="module-icon">📢</span>
+            <h2>Social Media</h2>
+            <span class="category">transversaux</span>
+            <span class="status production">production</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Description:</strong> Social Media intègre les fonctionnalités de communication et d'engagement social dans l'écosystème Moowoor. Il permet le partage d'informations sanitaires, la gestion des campagnes de sensibilisation, l'interaction avec les communautés de patients et la diffusion des actualités de santé publique.</p>
+            <div class="features">
+                <strong style="color: #00d4ff;">Fonctionnalités:</strong>
+                <ul>
+                    <li>Partage d'informations sanitaires</li>
+                    <li>Campagnes de sensibilisation</li>
+                    <li>Communautés de patients</li>
+                    <li>Actualités santé publique</li>
+                    <li>Engagement social</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Intégrations:</strong> vaccec, inasani_base, kiiimoowoor</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "download_stats": {
+    "total_downloads": 15420,
+    "this_month": 2435,
+    "popular_files": {
+      "moowoor-suite-18.0.1.0.0.zip": 892,
+      "vaccec-18.0.1.0.0.zip": 567,
+      "documentation-18.0.1.0.0.pdf": 423
+    }
+  },
+  "recent_updates": [
+    {
+      "version": "18.0.1.0.0",
+      "date": "2024-01-15",
+      "changelog": [
+        "Module de téléconsultation",
+        "API RESTful complète",
+        "Interface mobile responsive",
+        "Support multilingue avancé"
+      ]
+    },
+    {
+      "version": "18.0.0.0.0",
+      "date": "2023-12-01",
+      "changelog": [
+        "Module de gestion des rendez-vous",
+        "Intégration avec systèmes de santé",
+        "Dashboard analytics",
+        "Interface utilisateur améliorée"
+      ]
+    }
+  ]
+  }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modules Moowoor - Suite de Santé Digitale</title>
+    <meta name="description"
+        content="Découvrez les 27 modules de la suite Moowoor pour la digitalisation du système de santé sénégalais">
+    <meta name="keywords" content="Moowoor, modules, santé digitale, Odoo, gestion hospitalière, registres">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+    <link rel="stylesheet" href="../assets/css/micro-interactions.css">
+    <link rel="stylesheet" href="../assets/css/modules.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/images/logo-moowoor.svg">
+</head>
+
+<body>
+    <!-- Skip Links -->
+    <div class="skip-links">
+        <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+        <a href="#navigation" class="skip-link">Aller à la navigation</a>
+        <a href="#search" class="skip-link">Aller à la recherche</a>
+    </div>
+
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-container">
+            <a href="../index.html" class="header-logo">
+                <svg viewBox="0 0 40 40" fill="none" width="32" height="32">
+                    <circle cx="20" cy="20" r="18" stroke="#00d4ff" stroke-width="2" />
+                    <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="#00d4ff" />
+                    <circle cx="20" cy="20" r="3" fill="#0a0e27" />
+                </svg>
+                <span>MOOWOOR</span>
+            </a>
+            <nav class="header-nav">
+                <a href="modules.html">Modules</a>
+                <a href="metiers.html">Métiers</a>
+                <a href="gouvernance.html">Gouvernance</a>
+                <a href="search.html">Recherche</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sidebar and Main Content will be created by JavaScript -->
+
+    <!-- Stats Overview -->
+    <div class="container" id="main-content">
+        <div class="stats-container mb-lg">
+            <div class="stat-card scroll-animate">
+                <div class="stat-number" data-target="27">0</div>
+                <div class="stat-label">Modules Spécialisés</div>
+            </div>
+            <div class="stat-card scroll-animate">
+                <div class="stat-number" data-target="5">0</div>
+                <div class="stat-label">Catégories</div>
+            </div>
+            <div class="stat-card scroll-animate">
+                <div class="stat-number" data-target="100">0</div>
+                <div class="stat-label">% Intégration</div>
+            </div>
+            <div class="stat-card scroll-animate">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Disponibilité</div>
+            </div>
+        </div>
+
+        <!-- Module Categories -->
+        <section class="section" id="modules">
+            <div class="text-center mb-lg">
+                <h2 class="scroll-animate">Les 27 Modules Moowoor</h2>
+                <p class="scroll-animate">
+                    Une suite complète couvrant tous les aspects de la gestion sanitaire digitale
+                </p>
+            </div>
+
+            <div class="modules-grid" id="modulesGrid">
+                <!-- Modules will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <!-- Module Details -->
+        <section class="section" id="module-details">
+            <div class="text-center mb-lg">
+                <h2 class="scroll-animate">Détails des Modules</h2>
+                <p class="scroll-animate">
+                    Explorez les fonctionnalités de chaque module Moowoor
+                </p>
+            </div>
+
+            <div class="module-cards" id="moduleCards">
+                <!-- Module cards will be dynamically loaded here -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Module Modal -->
+    <div class="modal" id="moduleModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Module Details</h2>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be dynamically loaded -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="modalCloseBtn">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/service-worker.js"></script>
+    <script src="../assets/js/sidebar.js"></script>
+    <script src="../assets/js/hero.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/animations.js"></script>
+    <script src="../assets/js/micro-interactions.js"></script>
+    <script src="../assets/js/modules.js"></script>
+</body>
+
+</html>

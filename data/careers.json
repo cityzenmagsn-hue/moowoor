@@ -1,0 +1,1333 @@
+{
+  "careers": [
+    {
+      "id": "e-conseiller-patients",
+      "title": "E-Conseiller Patients",
+      "category": "accompagnement",
+      "objective": "Guider les patients dans l'utilisation des plateformes de santé en ligne et les aider à comprendre leurs options de traitement",
+      "description": "L'E-Conseiller Patients accompagne les patients dans leur parcours de santé digitale. Il les guide dans l'utilisation des plateformes en ligne, les aide à comprendre leurs options de traitement et facilite leur gestion de santé numérique. Ce professionnel joue un rôle clé dans l'adoption des outils digitaux par les patients.",
+      "content": [
+        "Accompagnement personnalisé des patients",
+        "Formation à l'utilisation des plateformes santé",
+        "Explication des options de traitement",
+        "Gestion des rendez-vous en ligne",
+        "Support technique de premier niveau"
+      ],
+      "skills": [
+        "Compétences numériques avancées",
+        "Connaissance des plateformes santé",
+        "Compétences relationnelles et écoute active",
+        "Communication pédagogique",
+        "Confidentialité des données santé",
+        "Empathie et patience"
+      ],
+      "education_level": "Licence (BAC+3)",
+      "required_diploma": "Licence en Sciences de la Santé ou équivalent",
+      "training_duration": "6 mois de formation spécialisée",
+      "training_content": [
+        "Module 1: Plateformes santé digitale (3 mois)",
+        "Module 2: Accompagnement patient (2 mois)",
+        "Module 3: Communication santé (2 mois)",
+        "Module 4: Éthique et confidentialité (1 mois)",
+        "Module 5: Gestion de projet santé (1 mois)",
+        "Stage pratique en centre de santé (3 mois)"
+      ],
+      "career_prospects": [
+        "Responsable de parcours patient",
+        "Coordinateur plateforme santé",
+        "Formateur digital santé",
+        "Chef de projet e-santé"
+      ],
+      "salary_range": {
+        "start": "180,000 XOF",
+        "mid": "300,000 XOF",
+        "senior": "450,000 XOF"
+      },
+      "employment_sectors": [
+        "Hôpitaux et cliniques",
+        "Plateformes de télémédecine",
+        "Assurance maladie",
+        "Applications santé mobile",
+        "Centres de santé communautaires"
+      ],
+      "icon": "👥",
+      "remote_work": true,
+      "team_work": true
+    },
+    {
+      "id": "responsable-intermediation",
+      "title": "Responsable Platforme d'Intermédiation Numérique",
+      "category": "plateforme",
+      "objective": "Superviser les plateformes de télémédecine, de prise de rendez-vous et d'accès aux dossiers médicaux électroniques",
+      "description": "Le Responsable de Plateforme d'Intermédiation Numérique supervise les plateformes de télémédecine, de prise de rendez-vous en ligne et d'accès aux dossiers médicaux électroniques. Il assure la disponibilité, la performance et la sécurité des systèmes.",
+      "content": [
+        "Supervision des plateformes de télémédecine",
+        "Gestion des accès aux DME",
+        "Coordination des prises de rendez-vous",
+        "Monitoring de la performance",
+        "Gestion des incidents techniques"
+      ],
+      "skills": [
+        "Gestion de systèmes d'information",
+        "Connaissance des normes santé (HL7, FHIR)",
+        "Management d'équipes techniques",
+        "Analyse de données santé",
+        "Cybersécurité santé",
+        "Projets de transformation digitale"
+      ],
+      "education_level": "Master (BAC+5)",
+      "required_diploma": "Master en Systèmes d'Information Santé",
+      "training_duration": "2 ans de formation spécialisée",
+      "training_content": [
+        "Module 1: Systèmes d'information santé (6 mois)",
+        "Module 2: Management de plateforme (4 mois)",
+        "Module 3: Normes et standards santé (3 mois)",
+        "Module 4: Cybersécurité santé (2 mois)",
+        "Module 5: Gestion de projet (3 mois)",
+        "Stage pratique en établissement (10 mois)"
+      ],
+      "career_prospects": [
+        "Directeur des systèmes d'information santé",
+        "Responsable transformation digitale",
+        "Consultant en e-santé",
+        "Entrepreneur plateforme santé"
+      ],
+      "salary_range": {
+        "start": "350,000 XOF",
+        "mid": "550,000 XOF",
+        "senior": "800,000 XOF"
+      },
+      "employment_sectors": [
+        "Hôpitaux publics et privés",
+        "Editeurs de logiciels santé",
+        "Assureurs santé",
+        "Startups e-santé",
+        "Administrations sanitaires"
+      ],
+      "icon": "🔗",
+      "remote_work": true,
+      "team_work": true
+    },
+    {
+      "id": "attache-donnees-cliniques",
+      "title": "Attaché en Données Cliniques",
+      "category": "données",
+      "objective": "Collecter, analyser et interpréter les données cliniques pour améliorer les soins et la recherche médicale",
+      "description": "L'Attaché en Données Cliniques collecte, analyse et interprète les données cliniques pour améliorer les soins et la recherche médicale. Il assure la qualité des données et produit des analyses pour la prise de décision.",
+      "content": [
+        "Collecte des données cliniques",
+        "Analyse statistique",
+        "Interprétation des résultats",
+        "Reporting aux équipes médicales",
+        "Gestion de la qualité des données"
+      ],
+      "skills": [
+        "Analyse de données santé",
+        "Statistiques médicales",
+        "Connaissance des terminologies médicales (SNOMED, CIHI)",
+        "Logiciels d'analyse de données",
+        "Recherche clinique",
+        "Éthique de la recherche"
+      ],
+      "education_level": "Master (BAC+4)",
+      "required_diploma": "Master en Biostatistiques ou Épidémiologie",
+      "training_duration": "18 mois de formation",
+      "training_content": [
+        "Module 1: Données cliniques (4 mois)",
+        "Module 2: Statistiques médicales (3 mois)",
+        "Module 3: Terminologies médicales (2 mois)",
+        "Module 4: Logiciels d'analyse (2 mois)",
+        "Module 5: Éthique recherche (1 mois)",
+        "Stage pratique (4 mois)"
+      ],
+      "career_prospects": [
+        "Data Manager santé",
+        "Biostatisticien",
+        "Chercheur clinique",
+        "Responsable qualité données"
+      ],
+      "salary_range": {
+        "start": "250,000 XOF",
+        "mid": "400,000 XOF",
+        "senior": "600,000 XOF"
+      },
+      "employment_sectors": [
+        "Établissements de santé",
+        "Instituts de recherche",
+        "Industrie pharmaceutique",
+        "Autorités sanitaires",
+        "Sociétés de services santé"
+      ],
+      "icon": "📊",
+      "remote_work": true,
+      "team_work": true
+    },
+    {
+      "id": "e-brancardier",
+      "title": "E-Brancardier Digital",
+      "category": "logistique",
+      "objective": "Optimiser les transferts de patients au sein des établissements de santé en utilisant des outils numériques de planification, de suivi et de coordination",
+      "description": "L'E-Brancardier Digital coordonne les transports médicaux via des applications mobiles et des systèmes de géolocalisation. Il optimise les parcours et assure la traçabilité des transferts de patients.",
+      "content": [
+        "Coordination des transports médicaux",
+        "Utilisation d'applications mobiles",
+        "Géolocalisation des ambulances",
+        "Optimisation des parcours",
+        "Traçabilité des transferts"
+      ],
+      "skills": [
+        "Compétences digitales (applications mobiles, tablettes)",
+        "Connaissance des établissements de santé",
+        "Gestion logistique et planification",
+        "Communication professionnelle",
+        "Gestion du stress et d'urgence",
+        "Secourisme et sécurité patient"
+      ],
+      "education_level": "Licence Professionnelle (BAC+2/3)",
+      "required_diploma": "Licence Professionnelle en Logistique Santé",
+      "training_duration": "6 mois de formation",
+      "training_content": [
+        "Module 1: Digitalisation sanitaire (2 semaines)",
+        "Module 2: Applications de transfert (3 semaines)",
+        "Module 3: Communication et coordination (2 semaines)",
+        "Module 4: Gestion logistique (2 semaines)",
+        "Module 5: Sécurité et qualité (1 semaine)",
+        "Stage pratique en établissement (8 semaines)"
+      ],
+      "career_prospects": [
+        "Responsable des services logistiques hospitaliers",
+        "Coordinateur des transferts sanitaires",
+        "Formateur aux outils digitaux santé",
+        "Chef d'équipe e-brancardiers"
+      ],
+      "salary_range": {
+        "start": "150,000 XOF",
+        "mid": "250,000 XOF",
+        "senior": "350,000 XOF"
+      },
+      "employment_sectors": [
+        "Hôpitaux publics et privés",
+        "Cliniques spécialisées",
+        "Services d'ambulances",
+        "Centres de transfert"
+      ],
+      "certifications": [
+        "Certificat E-Brancardier Digital Moowoor",
+        "Certificat SST (Sauveteur Secouriste du Travail)",
+        "Permis de conduire"
+      ],
+      "icon": "📱",
+      "remote_work": false,
+      "team_work": true
+    },
+    {
+      "id": "responsable-parcours-domicile",
+      "title": "Responsable de Parcours Intégré et Projet de Vie à Domicile",
+      "category": "coordination",
+      "objective": "Assurer la coordination des soins entre différents prestataires et faciliter le suivi des patients à domicile",
+      "description": "Le Responsable de Parcours Intégré et Projet de Vie à Domicile assure la coordination des soins entre différents prestataires et facilite le suivi des patients à domicile. Il garantit la continuité et la qualité des soins.",
+      "content": [
+        "Coordination des prestataires de soins",
+        "Suivi des patients à domicile",
+        "Planification des interventions",
+        "Gestion des équipements médicaux",
+        "Liaison avec les familles"
+      ],
+      "skills": [
+        "Coordination de soins multi-acteurs",
+        "Gestion de projet santé domicile",
+        "Connaissance des services sociaux",
+        "Compétences numériques santé domicile",
+        "Communication avec familles",
+        "Gestion des urgences à domicile"
+      ],
+      "education_level": "Licence (BAC+3)",
+      "required_diploma": "Master en Coordination des Soins",
+      "training_duration": "2 ans de formation",
+      "training_content": [
+        "Module 1: Coordination de soins (3 mois)",
+        "Module 2: Santé à domicile (2 mois)",
+        "Module 3: Outils numériques domicile (2 mois)",
+        "Module 4: Gestion sociale (2 mois)",
+        "Module 5: Éthique et droit domicile (1 mois)",
+        "Stage pratique (2 mois)"
+      ],
+      "career_prospects": [
+        "Coordinateur réseau de soins",
+        "Directeur HAD (Hospitalisation à Domicile)",
+        "Case manager santé",
+        "Consultant parcours patient"
+      ],
+      "salary_range": {
+        "start": "200,000 XOF",
+        "mid": "350,000 XOF",
+        "senior": "500,000 XOF"
+      },
+      "employment_sectors": [
+        "Services HAD",
+        "Réseaux de soins",
+        "Assurance maladie",
+        "Collectivités locales",
+        "Associations de patients"
+      ],
+      "icon": "🏠",
+      "remote_work": true,
+      "team_work": true
+    },
+    {
+      "id": "referent-dialogue-ethique",
+      "title": "Référent/Responsable du Dialogue Éthique",
+      "category": "ethique",
+      "objective": "Aborder les questions éthiques liées à la santé digitale, la confidentialité des données, l'utilisation de l'IA et recueillir les feedback utilisateurs",
+      "description": "Le Référent du Dialogue Éthique aborde les questions éthiques liées à la santé digitale, telles que la confidentialité des données, les expériences et feedback sur le système de santé et l'utilisation de l'IA. Il conseille les équipes sur les enjeux éthiques.",
+      "content": [
+        "Analyse des enjeux éthiques",
+        "Conseil sur la confidentialité",
+        "Évaluation de l'utilisation de l'IA",
+        "Recueil des feedbacks patients",
+        "Formation aux bonnes pratiques éthiques"
+      ],
+      "skills": [
+        "Éthique biomédicale et digitale",
+        "Droit des données de santé",
+        "Philosophie de la santé",
+        "Médiation et communication",
+        "Connaissance des IA et algorithmes",
+        "Analyse d'impact éthique"
+      ],
+      "education_level": "Master (BAC+5)",
+      "required_diploma": "Master en Éthique Médicale ou Doctorat",
+      "training_duration": "2-3 ans de formation",
+      "training_content": [
+        "Module 1: Éthique santé digitale (6 mois)",
+        "Module 2: Droit des données santé (4 mois)",
+        "Module 3: IA et algorithmes (3 mois)",
+        "Module 4: Médiation éthique (2 mois)",
+        "Module 5: Approche utilisateur (3 mois)",
+        "Stage pratique (4 mois)"
+      ],
+      "career_prospects": [
+        "Responsable éthique et conformité",
+        "Médiateur santé",
+        "Conseiller éthique IA santé",
+        "Chercheur en éthique digitale"
+      ],
+      "salary_range": {
+        "start": "300,000 XOF",
+        "mid": "500,000 XOF",
+        "senior": "700,000 XOF"
+      },
+      "employment_sectors": [
+        "Hôpitaux et cliniques",
+        "Editeurs logiciels santé",
+        "Autorités sanitaires",
+        "Comités d'éthique",
+        "Startups IA santé"
+      ],
+      "icon": "⚖️",
+      "remote_work": true,
+      "team_work": true
+    },
+    {
+      "id": "teleconsultant",
+      "title": "Téléconsultant",
+      "category": "consultation",
+      "objective": "Réaliser des consultations médicales à distance via plateforme numérique en garantissant la qualité des soins et le suivi des patients",
+      "description": "Le Téléconsultant est un médecin diplômé (Doctorat en médecine obligatoire) qui réalise des consultations médicales à distance via des plateformes de télémédecine sécurisées. ⚠️ Important : La téléconsultation est exclusivement réservée aux docteurs en médecine titulaires d'un diplôme reconnu et inscrits à l'Ordre des Médecins. Il diagnostique, prescrit et assure le suivi des patients en ligne.",
+      "content": [
+        "Consultations médicales à distance",
+        "Vérification diplôme médecine et autorisation d'exercice",
+        "Diagnostic en ligne",
+        "Prescriptions électroniques",
+        "Suivi des patients chroniques",
+        "Coordination avec les médecins traitants"
+      ],
+      "skills": [
+        "Diplôme de Docteur en Médecine",
+        "Compétences cliniques et diagnostic",
+        "Maîtrise des outils de téléconsultation",
+        "Communication à distance et empathie",
+        "Gestion des dossiers médicaux électroniques",
+        "Connaissance des plateformes de télémédecine",
+        "Respect de la confidentialité et éthique"
+      ],
+      "education_level": "Doctorat (BAC+8)",
+      "required_diploma": "Doctorat en Médecine (BAC+7 minimum)",
+      "training_duration": "3 mois",
+      "training_content": [
+        "Module 1: Plateforme de téléconsultation Moowoor (2 semaines)",
+        "Module 2: Communication et relation patient à distance (2 semaines)",
+        "Module 3: Diagnostic et prescription numérique (2 semaines)",
+        "Module 4: Éthique et confidentialité numérique (1 semaine)",
+        "Module 5: Gestion des urgences à distance (1 semaine)",
+        "Stage pratique supervisé (6 semaines)"
+      ],
+      "career_prospects": [
+        "Médecin téléconsultant senior",
+        "Responsable plateforme télémédecine",
+        "Formateur en téléconsultation",
+        "Médecin coordinateur réseau santé"
+      ],
+      "salary_range": {
+        "start": "400,000 XOF",
+        "mid": "600,000 XOF",
+        "senior": "800,000 XOF"
+      },
+      "employment_sectors": [
+        "Plateformes de télémédecine",
+        "Hôpitaux avec service de téléconsultation",
+        "Cabinets médicaux digitaux",
+        "Services de santé publique"
+      ],
+      "certifications": [
+        "Certificat Téléconsultant Moowoor",
+        "Certificat Télémédecine",
+        "Autorisation d'exercice téléconsultation"
+      ],
+      "icon": "👨‍⚕️",
+      "color": "#7c3aed"
+    },
+    {
+      "id": "data_manager_sante",
+      "title": "Data Manager Santé",
+      "category": "données",
+      "objective": "Gérer, analyser et sécuriser les données de santé pour optimiser les processus décisionnels et améliorer la qualité des soins",
+      "description": "Le data manager santé collecte, traite et analyse les données médicales, administratives et opérationnelles pour produire des indicateurs pertinents et supporter la prise de décision",
+      "content": [
+        "Collecte et validation des données de santé",
+        "Analyse statistique et reporting",
+        "Gestion de la qualité des données",
+        "Sécurisation et confidentialité des informations",
+        "Création de tableaux de bord et indicateurs",
+        "Support à la décision stratégique"
+      ],
+      "skills": [
+        "Analyse de données et statistiques",
+        "Maîtrise des outils BI (Power BI, Tableau)",
+        "Connaissance des systèmes d'information santé",
+        "Sécurité des données et RGPD",
+        "Visualisation et reporting",
+        "Compétences en bases de données (SQL)"
+      ],
+      "education_level": "Licence (BAC+3)",
+      "required_diploma": "Licence en informatique, statistiques ou santé publique",
+      "training_duration": "4 mois",
+      "training_content": [
+        "Module 1: Systèmes d'information santé (3 semaines)",
+        "Module 2: Analyse de données médicales (4 semaines)",
+        "Module 3: Outils BI et visualisation (3 semaines)",
+        "Module 4: Sécurité et conformité (2 semaines)",
+        "Module 5: Indicateurs et reporting santé (2 semaines)",
+        "Stage pratique en établissement (6 semaines)"
+      ],
+      "career_prospects": [
+        "Responsable data santé",
+        "Analyste senior systèmes d'information",
+        "Consultant en données de santé",
+        "Chef de projet transformation digitale"
+      ],
+      "salary_range": {
+        "start": "250,000 XOF",
+        "mid": "400,000 XOF",
+        "senior": "550,000 XOF"
+      },
+      "employment_sectors": [
+        "Hôpitaux et cliniques",
+        "Ministère de la Santé",
+        "Organismes de santé publique",
+        "Sociétés de services santé"
+      ],
+      "certifications": [
+        "Certificat Data Manager Santé Moowoor",
+        "Certificat BI et Analytics",
+        "Certificat Sécurité Données Santé"
+      ],
+      "icon": "📊",
+      "color": "#10b981"
+    },
+    {
+      "id": "coordinateur_parcours_patient",
+      "title": "Coordinateur Parcours Patient",
+      "category": "coordination",
+      "objective": "Assurer la fluidité et la continuité du parcours patient dans l'écosystème de santé digitale en coordonnant les différents intervenants et services",
+      "description": "Le coordinateur de parcours patient utilise les outils numériques pour suivre le patient à travers les différents services, anticiper les besoins et garantir une prise en charge optimale",
+      "content": [
+        "Suivi du parcours patient digital",
+        "Coordination des services et intervenants",
+        "Planification des rendez-vous et examens",
+        "Communication avec patient et famille",
+        "Gestion des autorisations et remboursements",
+        "Optimisation des temps d'attente"
+      ],
+      "skills": [
+        "Coordination et organisation",
+        "Maîtrise des plateformes patient journey",
+        "Communication et relationnel",
+        "Gestion des plannings et agendas",
+        "Connaissance des parcours de soins",
+        "Résolution de problèmes"
+      ],
+      "education_level": "Licence (BAC+3)",
+      "required_diploma": "Licence en gestion de santé ou administration",
+      "training_duration": "3 mois",
+      "training_content": [
+        "Module 1: Parcours patient digital (2 semaines)",
+        "Module 2: Coordination des services (2 semaines)",
+        "Module 3: Communication patient (2 semaines)",
+        "Module 4: Gestion des plannings (1 semaine)",
+        "Module 5: Optimisation parcours (1 semaine)",
+        "Stage pratique en coordination (6 semaines)"
+      ],
+      "career_prospects": [
+        "Responsable coordination patient",
+        "Directeur des services hospitaliers",
+        "Consultant en optimisation parcours",
+        "Coordinateur réseau santé"
+      ],
+      "salary_range": {
+        "start": "200,000 XOF",
+        "mid": "350,000 XOF",
+        "senior": "500,000 XOF"
+      },
+      "employment_sectors": [
+        "Hôpitaux et cliniques",
+        "Réseaux de santé",
+        "Services d'accueil patient",
+        "Plateformes de coordination"
+      ],
+      "certifications": [
+        "Certificat Coordinateur Parcours Patient Moowoor",
+        "Certificat Gestion Services Santé",
+        "Certificat Relation Patient"
+      ],
+      "icon": "🔄",
+      "color": "#fbbf24"
+    },
+    {
+      "id": "technicien_support_sante",
+      "title": "Technicien Support Santé Digitale",
+      "category": "support",
+      "objective": "Assurer le support technique et la formation des utilisateurs des solutions de santé digitale Moowoor",
+      "description": "Le technicien support santé digitale assiste les professionnels de santé dans l'utilisation des applications, résout les problèmes techniques et assure la maintenance des systèmes",
+      "content": [
+        "Support technique aux utilisateurs",
+        "Formation aux applications Moowoor",
+        "Diagnostic et résolution de problèmes",
+        "Maintenance des systèmes",
+        "Documentation et guides utilisateurs",
+        "Veille technologique santé"
+      ],
+      "skills": [
+        "Support technique et helpdesk",
+        "Connaissance des applications santé",
+        "Formation et pédagogie",
+        "Diagnostic et résolution problèmes",
+        "Communication avec utilisateurs",
+        "Veille technologique"
+      ],
+      "education_level": "Licence Professionnelle (BAC+2/3)",
+      "required_diploma": "BTS informatique ou maintenance avec spécialisation santé",
+      "training_duration": "4 mois",
+      "training_content": [
+        "Module 1: Écosystème Moowoor (3 semaines)",
+        "Module 2: Support technique (3 semaines)",
+        "Module 3: Formation utilisateurs (2 semaines)",
+        "Module 4: Maintenance systèmes (2 semaines)",
+        "Module 5: Documentation (1 semaine)",
+        "Stage pratique support (7 semaines)"
+      ],
+      "career_prospects": [
+        "Responsable support technique",
+        "Formateur santé digitale",
+        "Administrateur systèmes santé",
+        "Consultant support applicatif"
+      ],
+      "salary_range": {
+        "start": "180,000 XOF",
+        "mid": "300,000 XOF",
+        "senior": "420,000 XOF"
+      },
+      "employment_sectors": [
+        "Éditeurs de logiciels santé",
+        "Hôpitaux et cliniques",
+        "Sociétés de services informatiques",
+        "Centres de support santé"
+      ],
+      "certifications": [
+        "Certificat Support Santé Moowoor",
+        "Certificat ITIL Foundation",
+        "Certificat Formateur Professionnel"
+      ],
+      "icon": "🛠️",
+      "color": "#ef4444"
+    },
+    {
+      "id": "gestionnaire_dossiers_medicaux",
+      "title": "Gestionnaire Dossiers Médicaux Électroniques",
+      "category": "gestion",
+      "objective": "Assurer la gestion, la mise à jour et la sécurité des dossiers médicaux électroniques dans le respect des normes et réglementations",
+      "description": "Le gestionnaire de dossiers médicaux électroniques supervise la digitalisation, l'archivage et l'accès aux informations médicales tout en garantissant la confidentialité et la conformité",
+      "content": [
+        "Gestion des dossiers médicaux électroniques",
+        "Digitalisation et archivage documents",
+        "Contrôle d'accès et sécurité",
+        "Mise à jour des informations patient",
+        "Extraction et reporting des données",
+        "Formation des professionnels de santé"
+      ],
+      "skills": [
+        "Gestion documentaire santé",
+        "Maîtrise des DME et EMR",
+        "Sécurité et confidentialité",
+        "Archivage numérique",
+        "Extraction de données médicales",
+        "Conformité réglementaire"
+      ],
+      "education_level": "Licence Professionnelle (BAC+2/3)",
+      "required_diploma": "BTS gestion administrative ou équivalent santé",
+      "training_duration": "3 mois",
+      "training_content": [
+        "Module 1: Dossiers médicaux électroniques (2 semaines)",
+        "Module 2: Digitalisation et archivage (2 semaines)",
+        "Module 3: Sécurité et accès (2 semaines)",
+        "Module 4: Extraction et reporting (1 semaine)",
+        "Module 5: Conformité et éthique (1 semaine)",
+        "Stage pratique DME (6 semaines)"
+      ],
+      "career_prospects": [
+        "Responsable dossiers médicaux",
+        "Administrateur système DME",
+        "Consultant gestion documentaire santé",
+        "Formateur DME"
+      ],
+      "salary_range": {
+        "start": "160,000 XOF",
+        "mid": "280,000 XOF",
+        "senior": "380,000 XOF"
+      },
+      "employment_sectors": [
+        "Hôpitaux et cliniques",
+        "Cabinets médicaux",
+        "Services d'archivage santé",
+        "Plateformes DME"
+      ],
+      "certifications": [
+        "Certificat Gestionnaire DME Moowoor",
+        "Certificat Archivage Numérique",
+        "Certificat Sécurité Données Santé"
+      ],
+      "icon": "📁",
+      "color": "#8b5cf6"
+    },
+    {
+      "id": "analyste_qualite_donnees_sante",
+      "title": "Analyste Qualité Données Santé",
+      "category": "qualité",
+      "objective": "Garantir la qualité, l'exhaustivité et la conformité des données de santé dans les systèmes d'information",
+      "description": "L'analyste qualité données santé met en place des procédures de contrôle, identifie les anomalies et assure l'amélioration continue de la qualité des données médicales",
+      "content": [
+        "Contrôle qualité des données santé",
+        "Définition des règles de validation",
+        "Identification et correction d'anomalies",
+        "Mise en place d'indicateurs de qualité",
+        "Audit des systèmes d'information",
+        "Formation aux bonnes pratiques"
+      ],
+      "skills": [
+        "Analyse qualité données",
+        "Contrôle et validation",
+        "Audit qualité",
+        "Statistiques et indicateurs",
+        "Connaissance normes santé",
+        "Résolution problèmes"
+      ],
+      "education_level": "Licence (BAC+3)",
+      "required_diploma": "Licence qualité, statistiques ou santé publique",
+      "training_duration": "3 mois",
+      "training_content": [
+        "Module 1: Qualité données santé (2 semaines)",
+        "Module 2: Contrôle et validation (2 semaines)",
+        "Module 3: Indicateurs et reporting (2 semaines)",
+        "Module 4: Audit qualité (1 semaine)",
+        "Module 5: Amélioration continue (1 semaine)",
+        "Stage pratique qualité (6 semaines)"
+      ],
+      "career_prospects": [
+        "Responsable qualité données santé",
+        "Auditeur systèmes santé",
+        "Consultant qualité santé",
+        "Chef de projet qualité"
+      ],
+      "salary_range": {
+        "start": "220,000 XOF",
+        "mid": "380,000 XOF",
+        "senior": "520,000 XOF"
+      },
+      "employment_sectors": [
+        "Hôpitaux et cliniques",
+        "Ministère de la Santé",
+        "Organismes de qualité santé",
+        "Sociétés de conseil"
+      ],
+      "certifications": [
+        "Certificat Qualité Données Santé Moowoor",
+        "Certificat Audit Qualité",
+        "Certificat ISO 9001 Santé"
+      ],
+      "icon": "✅",
+      "color": "#14b8a6"
+    },
+    {
+      "id": "specialiste_integration_systemes_sante",
+      "title": "Spécialiste Intégration Systèmes Santé",
+      "category": "intégration",
+      "objective": "Assurer l'intégration et l'interopérabilité des différents systèmes d'information santé dans l'écosystème Moowoor",
+      "description": "Le spécialiste integration conçoit et met en œuvre les interfaces entre les applications santé, garantissant l'échange fluide et sécurisé des informations",
+      "content": [
+        "Conception des interfaces systèmes",
+        "Développement des connecteurs",
+        "Tests d'intégration et d'interopérabilité",
+        "Maintenance des interfaces",
+        "Documentation technique",
+        "Support aux équipes projets"
+      ],
+      "skills": [
+        "Intégration systèmes",
+        "Développement API et connecteurs",
+        "Interopérabilité santé (HL7, FHIR)",
+        "Tests et validation",
+        "Documentation technique",
+        "Résolution problèmes complexes"
+      ],
+      "education_level": "Licence (BAC+3)",
+      "required_diploma": "Licence informatique ou génie logiciel",
+      "training_duration": "4 mois",
+      "training_content": [
+        "Module 1: Standards santé (HL7, FHIR) (3 semaines)",
+        "Module 2: Développement API (3 semaines)",
+        "Module 3: Intégration Moowoor (3 semaines)",
+        "Module 4: Tests et validation (2 semaines)",
+        "Module 5: Documentation et support (1 semaine)",
+        "Stage pratique intégration (6 semaines)"
+      ],
+      "career_prospects": [
+        "Architecte systèmes santé",
+        "Responsable intégration",
+        "Consultant interopérabilité",
+        "Expert technique santé"
+      ],
+      "salary_range": {
+        "start": "300,000 XOF",
+        "mid": "480,000 XOF",
+        "senior": "650,000 XOF"
+      },
+      "employment_sectors": [
+        "Éditeurs logiciels santé",
+        "Hôpitaux et cliniques",
+        "Sociétés de services santé",
+        "Intégrateurs systèmes"
+      ],
+      "certifications": [
+        "Certificat Intégration Santé Moowoor",
+        "Certificat HL7/FHIR",
+        "Certificat Architecture Systèmes"
+      ],
+      "icon": "🔗",
+      "color": "#f97316"
+    },
+    {
+      "id": "conseiller_accompagnement_digital_sante",
+      "title": "Conseiller Accompagnement Digital Santé",
+      "category": "conseil",
+      "objective": "Accompagner les établissements de santé dans leur transformation digitale et l'adoption des solutions Moowoor",
+      "description": "Le conseiller accompagne les clients dans la définition de leurs besoins, la mise en œuvre des solutions et l'optimisation de leurs processus santé digitale",
+      "content": [
+        "Conseil en transformation digitale",
+        "Accompagnement déploiement Moowoor",
+        "Analyse des processus existants",
+        "Formation et changement",
+        "Support post-déploiement",
+        "Veille et innovation santé"
+      ],
+      "skills": [
+        "Conseil et stratégie",
+        "Connaissance écosystème santé",
+        "Accompagnement changement",
+        "Formation et pédagogie",
+        "Analyse processus",
+        "Communication et relation client"
+      ],
+      "education_level": "Licence (BAC+3)",
+      "required_diploma": "Licence en conseil, management ou santé",
+      "training_duration": "3 mois",
+      "training_content": [
+        "Module 1: Transformation digitale santé (2 semaines)",
+        "Module 2: Accompagnement changement (2 semaines)",
+        "Module 3: Conseil et stratégie (2 semaines)",
+        "Module 4: Formation utilisateurs (1 semaine)",
+        "Module 5: Support et suivi (1 semaine)",
+        "Stage pratique conseil (6 semaines)"
+      ],
+      "career_prospects": [
+        "Consultant santé digitale",
+        "Directeur projet transformation",
+        "Responsable clientèle santé",
+        "Conseiller stratégique"
+      ],
+      "salary_range": {
+        "start": "250,000 XOF",
+        "mid": "420,000 XOF",
+        "senior": "600,000 XOF"
+      },
+      "employment_sectors": [
+        "Éditeurs solutions santé",
+        "Cabinets de conseil santé",
+        "Sociétés de services digitales",
+        "Direction des systèmes d'information"
+      ],
+      "certifications": [
+        "Certificat Conseiller Digital Santé Moowoor",
+        "Certificat Management Projet",
+        "Certificat Accompagnement Changement"
+      ],
+      "icon": "💡",
+      "color": "#ec4899"
+    },
+    {
+      "id": "superviseur_operations_digitales_sante",
+      "title": "Superviseur Opérations Digitales Santé",
+      "category": "supervision",
+      "objective": "Superviser et optimiser les opérations des systèmes de santé digitale pour garantir la performance et la satisfaction des utilisateurs",
+      "description": "Le superviseur des opérations digitales coordonne les équipes techniques, surveille les performances des systèmes et assure la qualité de service des applications santé",
+      "content": [
+        "Supervision équipes techniques",
+        "Monitoring des systèmes santé",
+        "Gestion des incidents et pannes",
+        "Optimisation des performances",
+        "Reporting et tableaux de bord",
+        "Relation avec les clients"
+      ],
+      "skills": [
+        "Supervision et management",
+        "Monitoring systèmes",
+        "Gestion incidents",
+        "Optimisation performance",
+        "Reporting et indicateurs",
+        "Communication et relation client"
+      ],
+      "education_level": "Licence (BAC+3)",
+      "required_diploma": "Licence informatique ou management avec expérience santé",
+      "training_duration": "3 mois",
+      "training_content": [
+        "Module 1: Supervision systèmes (2 semaines)",
+        "Module 2: Gestion incidents (2 semaines)",
+        "Module 3: Monitoring et alertes (2 semaines)",
+        "Module 4: Reporting et KPI (1 semaine)",
+        "Module 5: Management d'équipe (1 semaine)",
+        "Stage pratique supervision (6 semaines)"
+      ],
+      "career_prospects": [
+        "Responsable opérations santé",
+        "Directeur des systèmes d'information",
+        "Superviseur support technique",
+        "Manager services santé"
+      ],
+      "salary_range": {
+        "start": "280,000 XOF",
+        "mid": "450,000 XOF",
+        "senior": "620,000 XOF"
+      },
+      "employment_sectors": [
+        "Éditeurs logiciels santé",
+        "Hôpitaux et cliniques",
+        "Centres de services santé",
+        "Opérateurs infrastructure"
+      ],
+      "certifications": [
+        "Certificat Superviseur Opérations Moowoor",
+        "Certificat ITIL Operations",
+        "Formation continue spécialisée"
+      ],
+      "icon": "🔧"
+    },
+    {
+      "id": "pharmacien_digital",
+      "title": "Pharmacien Digital",
+      "category": "pharmacie",
+      "objective": "Gérer une pharmacie digitale avec conseil en ligne et livraison de médicaments",
+      "description": "Le pharmacien digital combine expertise pharmaceutique et compétences numériques pour offrir conseil, dispensation et suivi via plateformes digitales.",
+      "content": [
+        "Conseil pharmaceutique en ligne",
+        "Validation ordonnances électroniques",
+        "Gestion stock digital",
+        "Suivi observance patients",
+        "Coordination livraisons",
+        "Pharmacovigilance digitale"
+      ],
+      "skills": [
+        "Expertise pharmaceutique",
+        "Conseil en ligne",
+        "Gestion plateforme e-commerce",
+        "Pharmacovigilance",
+        "Logistique médicaments",
+        "Relation patient digitale"
+      ],
+      "education_level": "Master 2 (BAC+5)",
+      "required_diploma": "Doctorat en pharmacie",
+      "training_duration": "4 mois",
+      "training_content": [
+        "Module 1: Pharmacie digitale (4 semaines)",
+        "Module 2: Conseil en ligne (3 semaines)",
+        "Module 3: E-commerce santé (3 semaines)",
+        "Module 4: Logistique médicaments (2 semaines)",
+        "Stage pratique (4 semaines)"
+      ],
+      "career_prospects": [
+        "Responsable pharmacie en ligne",
+        "Consultant e-pharmacie",
+        "Formateur pharmacie digitale",
+        "Directeur plateforme santé"
+      ],
+      "salary_range": {
+        "start": "400,000 XOF",
+        "mid": "600,000 XOF",
+        "senior": "850,000 XOF"
+      },
+      "employment_sectors": [
+        "Pharmacies en ligne",
+        "Plateformes e-santé",
+        "Chaînes pharmaceutiques",
+        "Startups santé"
+      ],
+      "icon": "💊",
+      "remote_work": true,
+      "team_work": true
+    },
+    {
+      "id": "gestionnaire_registre_sante",
+      "title": "Gestionnaire Registre Santé",
+      "category": "registres",
+      "objective": "Administrer et maintenir les registres nationaux de santé (professionnels, établissements)",
+      "description": "Le gestionnaire de registre santé assure la mise à jour, la validation et la sécurité des données des registres nationaux KIIIMOOWOOR et FIIIMOOWOOR.",
+      "content": [
+        "Administration registres nationaux",
+        "Validation des inscriptions",
+        "Mise à jour données",
+        "Contrôle qualité informations",
+        "Génération rapports statistiques",
+        "Support utilisateurs registres"
+      ],
+      "skills": [
+        "Gestion bases de données",
+        "Validation administrative",
+        "Contrôle qualité données",
+        "Reporting statistique",
+        "Connaissance réglementation",
+        "Support utilisateurs"
+      ],
+      "education_level": "Licence (BAC+3)",
+      "required_diploma": "Licence administration ou gestion",
+      "training_duration": "3 mois",
+      "training_content": [
+        "Module 1: Registres nationaux (3 semaines)",
+        "Module 2: Validation données (3 semaines)",
+        "Module 3: Contrôle qualité (2 semaines)",
+        "Module 4: Reporting (2 semaines)",
+        "Stage pratique (2 semaines)"
+      ],
+      "career_prospects": [
+        "Responsable registres nationaux",
+        "Administrateur données santé",
+        "Consultant registres",
+        "Auditeur qualité données"
+      ],
+      "salary_range": {
+        "start": "220,000 XOF",
+        "mid": "380,000 XOF",
+        "senior": "520,000 XOF"
+      },
+      "employment_sectors": [
+        "Ministère de la Santé",
+        "Ordres professionnels",
+        "Agences sanitaires",
+        "Administrations publiques"
+      ],
+      "icon": "📋",
+      "remote_work": false,
+      "team_work": true
+    },
+    {
+      "id": "inspecteur_pharmaceutique_digital",
+      "title": "Inspecteur Pharmaceutique Digital",
+      "category": "inspection",
+      "objective": "Réaliser des inspections pharmaceutiques avec outils digitaux et applications mobiles",
+      "description": "L'inspecteur pharmaceutique digital utilise des applications mobiles et tablettes pour conduire des inspections, collecter des données en temps réel et générer des rapports automatisés.",
+      "content": [
+        "Inspections avec tablettes",
+        "Collecte données temps réel",
+        "Photos géolocalisées",
+        "Rapports automatisés",
+        "Suivi non-conformités",
+        "Plans d'action correctifs"
+      ],
+      "skills": [
+        "Inspection pharmaceutique",
+        "Outils mobiles inspection",
+        "Analyse risques",
+        "Rédaction rapports",
+        "Connaissance BPF/BPD",
+        "Communication professionnelle"
+      ],
+      "education_level": "Master 2 (BAC+5)",
+      "required_diploma": "Doctorat en pharmacie ou diplôme équivalent",
+      "training_duration": "4 mois",
+      "training_content": [
+        "Module 1: Inspection digitale (4 semaines)",
+        "Module 2: Applications mobiles (3 semaines)",
+        "Module 3: BPF/BPD (3 semaines)",
+        "Module 4: Rapports automatisés (2 semaines)",
+        "Stage pratique (4 semaines)"
+      ],
+      "career_prospects": [
+        "Inspecteur principal",
+        "Responsable inspections",
+        "Auditeur pharmaceutique",
+        "Consultant qualité"
+      ],
+      "salary_range": {
+        "start": "350,000 XOF",
+        "mid": "550,000 XOF",
+        "senior": "750,000 XOF"
+      },
+      "employment_sectors": [
+        "Autorités sanitaires",
+        "Agences réglementation",
+        "Cabinets audit",
+        "Organisations internationales"
+      ],
+      "icon": "🔍",
+      "remote_work": false,
+      "team_work": true
+    },
+    {
+      "id": "coordinateur_telesante",
+      "title": "Coordinateur Télésanté",
+      "category": "coordination",
+      "objective": "Coordonner les services de télésanté entre patients, professionnels et plateformes",
+      "description": "Le coordinateur télésanté organise et facilite les consultations à distance, gère les plannings, assure le support technique et garantit la qualité du service.",
+      "content": [
+        "Planification téléconsultations",
+        "Support technique patients",
+        "Coordination professionnels",
+        "Gestion plateforme télésanté",
+        "Suivi qualité service",
+        "Formation utilisateurs"
+      ],
+      "skills": [
+        "Coordination services santé",
+        "Support technique",
+        "Gestion planning",
+        "Plateformes télémédecine",
+        "Communication multicanal",
+        "Résolution problèmes"
+      ],
+      "education_level": "Licence (BAC+3)",
+      "required_diploma": "Licence santé ou gestion",
+      "training_duration": "3 mois",
+      "training_content": [
+        "Module 1: Télésanté (3 semaines)",
+        "Module 2: Coordination (3 semaines)",
+        "Module 3: Support technique (2 semaines)",
+        "Module 4: Qualité service (2 semaines)",
+        "Stage pratique (2 semaines)"
+      ],
+      "career_prospects": [
+        "Responsable télésanté",
+        "Manager plateforme",
+        "Consultant télémédecine",
+        "Formateur télésanté"
+      ],
+      "salary_range": {
+        "start": "240,000 XOF",
+        "mid": "400,000 XOF",
+        "senior": "550,000 XOF"
+      },
+      "employment_sectors": [
+        "Plateformes télémédecine",
+        "Hôpitaux",
+        "Centres santé",
+        "Assurances santé"
+      ],
+      "icon": "📞",
+      "remote_work": true,
+      "team_work": true
+    },
+    {
+      "id": "analyste_parcours_patient",
+      "title": "Analyste Parcours Patient",
+      "category": "données",
+      "objective": "Analyser les parcours patients pour optimiser les processus et améliorer l'expérience",
+      "description": "L'analyste parcours patient étudie les données de parcours, identifie les points de friction, propose des améliorations et mesure l'impact des optimisations.",
+      "content": [
+        "Analyse parcours patients",
+        "Identification points friction",
+        "Optimisation processus",
+        "Tableaux de bord parcours",
+        "Mesure satisfaction",
+        "Recommandations amélioration"
+      ],
+      "skills": [
+        "Analyse de données",
+        "Cartographie parcours",
+        "Process mining",
+        "Visualisation données",
+        "Amélioration continue",
+        "Communication résultats"
+      ],
+      "education_level": "Master 1 (BAC+4)",
+      "required_diploma": "Master santé publique ou data science",
+      "training_duration": "4 mois",
+      "training_content": [
+        "Module 1: Parcours patient (4 semaines)",
+        "Module 2: Analyse données (4 semaines)",
+        "Module 3: Process mining (3 semaines)",
+        "Module 4: Optimisation (2 semaines)",
+        "Stage pratique (3 semaines)"
+      ],
+      "career_prospects": [
+        "Responsable expérience patient",
+        "Consultant parcours",
+        "Data scientist santé",
+        "Chef projet amélioration"
+      ],
+      "salary_range": {
+        "start": "280,000 XOF",
+        "mid": "450,000 XOF",
+        "senior": "650,000 XOF"
+      },
+      "employment_sectors": [
+        "Hôpitaux",
+        "Assurances santé",
+        "Cabinets conseil",
+        "Plateformes santé"
+      ],
+      "icon": "📈",
+      "remote_work": true,
+      "team_work": true
+    },
+    {
+      "id": "infirmier_telesante",
+      "title": "Infirmier Télésanté",
+      "category": "consultation",
+      "objective": "Assurer le suivi infirmier à distance, l'éducation thérapeutique et la coordination de soins via des outils de télésanté",
+      "description": "L'Infirmier Télésanté accompagne les patients à distance en réalisant des entretiens de suivi, de l'éducation thérapeutique et des actions de prévention via des plateformes sécurisées. Il contribue à la continuité des soins, au triage infirmier et à l'orientation des patients vers le bon niveau de prise en charge. Il travaille en coordination étroite avec les médecins téléconsultants et les équipes terrain.",
+      "content": [
+        "Suivi infirmier à distance et évaluation des symptômes",
+        "Éducation thérapeutique et conseils de prévention",
+        "Triage infirmier et orientation vers les services appropriés",
+        "Surveillance des paramètres et alertes (tensiomètre, glycémie, etc.)",
+        "Coordination avec les équipes médicales et paramédicales",
+        "Traçabilité des échanges et mise à jour du dossier patient"
+      ],
+      "skills": [
+        "Compétences infirmières et évaluation clinique",
+        "Maîtrise des outils de télésanté et DME",
+        "Communication à distance, écoute et pédagogie",
+        "Respect des protocoles et des parcours de soins",
+        "Gestion de la confidentialité et des données de santé",
+        "Coordination interprofessionnelle"
+      ],
+      "education_level": "Licence (BAC+3)",
+      "required_diploma": "Licence en sciences infirmières (Diplôme d'État) et autorisation d'exercice",
+      "training_duration": "2 mois",
+      "training_content": [
+        "Module 1: Outils de télésanté Moowoor (2 semaines)",
+        "Module 2: Triage infirmier et protocoles (2 semaines)",
+        "Module 3: Éducation thérapeutique à distance (1 semaine)",
+        "Module 4: Éthique, confidentialité et traçabilité (1 semaine)",
+        "Stage pratique supervisé (2 semaines)"
+      ],
+      "career_prospects": [
+        "Infirmier référent télésanté",
+        "Coordinateur de soins à distance",
+        "Responsable cellule télésuivi",
+        "Formateur en pratiques de télésanté"
+      ],
+      "salary_range": {
+        "start": "220,000 XOF",
+        "mid": "350,000 XOF",
+        "senior": "500,000 XOF"
+      },
+      "employment_sectors": [
+        "Plateformes de télésanté",
+        "Hôpitaux et cliniques",
+        "Centres de santé",
+        "Programmes de santé publique",
+        "Assurances santé"
+      ],
+      "certifications": [
+        "Certificat Télésanté Moowoor",
+        "Formation RGPD / confidentialité données santé"
+      ],
+      "icon": "👩‍⚕️",
+      "color": "#7c3aed",
+      "remote_work": true,
+      "team_work": true
+    }
+  ],
+  "categories": {
+    "pharmacie": {
+      "name": "Pharmacie Digitale",
+      "description": "Métiers liés à la pharmacie et la dispensation digitale",
+      "color": "#8b5cf6"
+    },
+    "registres": {
+      "name": "Gestion Registres",
+      "description": "Métiers liés à l'administration des registres nationaux",
+      "color": "#10b981"
+    },
+    "inspection": {
+      "name": "Inspection et Contrôle",
+      "description": "Métiers d'inspection et de contrôle pharmaceutique digital",
+      "color": "#f59e0b"
+    },
+    "logistique": {
+      "name": "Logistique et Transferts",
+      "description": "Métiers liés à l'optimisation des flux logistiques santé",
+      "color": "#00d4ff"
+    },
+    "consultation": {
+      "name": "Consultation et Soins",
+      "description": "Métiers liés aux consultations médicales à distance",
+      "color": "#7c3aed"
+    },
+    "données": {
+      "name": "Données et Analytics",
+      "description": "Métiers spécialisés dans la gestion et l'analyse des données santé",
+      "color": "#10b981"
+    },
+    "coordination": {
+      "name": "Coordination et Parcours",
+      "description": "Métiers axés sur la coordination des parcours patients",
+      "color": "#fbbf24"
+    },
+    "support": {
+      "name": "Support Technique",
+      "description": "Métiers de support et maintenance des systèmes santé",
+      "color": "#ef4444"
+    },
+    "gestion": {
+      "name": "Gestion et Administration",
+      "description": "Métiers de gestion des dossiers et systèmes santé",
+      "color": "#8b5cf6"
+    },
+    "qualité": {
+      "name": "Qualité et Conformité",
+      "description": "Métiers spécialisés dans la qualité des données santé",
+      "color": "#14b8a6"
+    },
+    "intégration": {
+      "name": "Intégration Systèmes",
+      "description": "Métiers techniques d'intégration et d'interopérabilité",
+      "color": "#f97316"
+    },
+    "conseil": {
+      "name": "Conseil et Accompagnement",
+      "description": "Métiers de conseil en transformation digitale santé",
+      "color": "#ec4899"
+    },
+    "supervision": {
+      "name": "Supervision et Management",
+      "description": "Métiers de supervision des opérations santé digitale",
+      "color": "#0ea5e9"
+    },
+    "accompagnement": {
+      "name": "Accompagnement Patient",
+      "description": "Métiers d'accompagnement et de conseil aux patients",
+      "color": "#06b6d4"
+    },
+    "plateforme": {
+      "name": "Gestion de Plateforme",
+      "description": "Métiers de supervision des plateformes d'intermédiation numérique",
+      "color": "#6366f1"
+    },
+    "ethique": {
+      "name": "Éthique et Conformité",
+      "description": "Métiers liés à l'éthique digitale et la protection des données",
+      "color": "#a855f7"
+    }
+  },
+  "statistics": {
+    "total_careers": 22,
+    "by_education_level": {
+      "licence_pro": 3,
+      "licence": 9,
+      "master_1": 3,
+      "master_2": 7
+    },
+    "by_category": {
+      "accompagnement": 1,
+      "plateforme": 1,
+      "données": 3,
+      "logistique": 1,
+      "coordination": 3,
+      "ethique": 1,
+      "consultation": 2,
+      "support": 1,
+      "gestion": 1,
+      "qualité": 1,
+      "intégration": 1,
+      "conseil": 1,
+      "supervision": 1,
+      "pharmacie": 1,
+      "registres": 1,
+      "inspection": 1
+    }
+  },
+  "education_levels": {
+    "licence_pro": {
+      "name": "Licence Professionnelle",
+      "duration": "2-3 ans",
+      "level": "BAC+2/3",
+      "description": "Formation technique et professionnelle"
+    },
+    "licence": {
+      "name": "Licence",
+      "duration": "3 ans",
+      "level": "BAC+3",
+      "description": "Formation universitaire générale"
+    },
+    "master": {
+      "name": "Master",
+      "duration": "5 ans",
+      "level": "BAC+5",
+      "description": "Formation spécialisée et expertise"
+    },
+    "doctorat": {
+      "name": "Doctorat",
+      "duration": "8 ans",
+      "level": "BAC+8",
+      "description": "Recherche et innovation"
+    }
+  },
+  "training_centers": [
+    {
+      "name": "Moowoor Academy",
+      "type": "Propre",
+      "specialization": "Formation continue santé digitale",
+      "certification": "Certificats Moowoor"
+    },
+    {
+      "name": "Universités Sénégalaises",
+      "type": "Public",
+      "specialization": "Licences et Masters santé",
+      "certification": "Diplômes nationaux"
+    },
+    {
+      "name": "Écoles Spécialisées",
+      "type": "Privé",
+      "specialization": "Formations techniques santé",
+      "certification": "Certificats professionnels"
+    }
+  ]
+}

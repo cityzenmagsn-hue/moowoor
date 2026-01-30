@@ -1,0 +1,148 @@
+{
+  "registres_summary": {
+    "total_registres": 28,
+    "niveaux": 5,
+    "categories": [
+      "Fondamentaux",
+      "Médicaux", 
+      "Organisationnels",
+      "Qualité et Sécurité",
+      "Pilotage Stratégique"
+    ]
+  },
+  "quick_stats": {
+    "niveau_1": {
+      "name": "Registres Fondamentaux",
+      "count": 6,
+      "icon": "🏗️",
+      "description": "Base du système d'information santé",
+      "registres": [
+        "Registre des Patients",
+        "Registre des Praticiens", 
+        "Registre des Établissements",
+        "Registre des Lits d'Hôpital",
+        "Registre des Médicaments",
+        "Registre des Ressources Médicales"
+      ]
+    },
+    "niveau_2": {
+      "name": "Registres Médicaux",
+      "count": 5,
+      "icon": "⚕️",
+      "description": "Données cliniques et procédures médicales",
+      "registres": [
+        "Registre des Procédures",
+        "Registre Clinique",
+        "Registre des Vaccinations",
+        "Registre des Allergies",
+        "Registre des Empoisonnements"
+      ]
+    },
+    "niveau_3": {
+      "name": "Registres Organisationnels",
+      "count": 3,
+      "icon": "📋",
+      "description": "Gestion et organisation des services",
+      "registres": [
+        "Registre des Rendez-vous",
+        "Registre des Listes d'Attente",
+        "Registre RH"
+      ]
+    },
+    "niveau_4": {
+      "name": "Registres Qualité et Sécurité",
+      "count": 6,
+      "icon": "🛡️",
+      "description": "Qualité des soins et sécurité patients",
+      "registres": [
+        "Registre des Infections Nosocomiales",
+        "Registre des Événements Indésirables",
+        "Registre des Indicateurs Qualité",
+        "Registre des Erreurs Médicales",
+        "Registre des Indicateurs Qualité Soins",
+        "Registre des Résultats Cliniques"
+      ]
+    },
+    "niveau_5": {
+      "name": "Registres de Pilotage",
+      "count": 5,
+      "icon": "🎯",
+      "description": "Planification et pilotage stratégique",
+      "registres": [
+        "PTBA (Plan de Travail Budgétisé Annuel)",
+        "Registre des Coûts",
+        "Registre de Recherche",
+        "Registre des Politiques",
+        "Registre des Formations"
+      ]
+    }
+  },
+  "nouveaux_metiers": {
+    "total_metiers": 6,
+    "categories": {
+      "accompagnement": 1,
+      "plateforme": 1,
+      "donnees": 1,
+      "logistique": 1,
+      "coordination": 1,
+      "ethique": 1
+    },
+    "metiers": [
+      {
+        "id": "e-conseiller-patients",
+        "title": "E-Conseiller Patients",
+        "category": "accompagnement",
+        "icon": "👥",
+        "level": "BAC+3",
+        "focus": "Accompagnement digital des patients"
+      },
+      {
+        "id": "responsable-intermediation",
+        "title": "Responsable Platforme d'Intermédiation Numérique",
+        "category": "plateforme",
+        "icon": "🔗",
+        "level": "BAC+5",
+        "focus": "Gestion des plateformes de santé digitale"
+      },
+      {
+        "id": "attache-donnees-cliniques",
+        "title": "Attaché en Données Cliniques",
+        "category": "donnees",
+        "icon": "📊",
+        "level": "BAC+4",
+        "focus": "Analyse et gestion des données cliniques"
+      },
+      {
+        "id": "e-brancardier",
+        "title": "E-Brancardier Digital",
+        "category": "logistique",
+        "icon": "🚑",
+        "level": "BAC+2",
+        "focus": "Digitalisation des transferts patients"
+      },
+      {
+        "id": "responsable-parcours-domicile",
+        "title": "Responsable de Parcours Intégré et Projet de Vie à Domicile",
+        "category": "coordination",
+        "icon": "🏠",
+        "level": "BAC+3",
+        "focus": "Coordination des soins à domicile"
+      },
+      {
+        "id": "referent-dialogue-ethique",
+        "title": "Référent/Responsable du Dialogue Éthique",
+        "category": "ethique",
+        "icon": "⚖️",
+        "level": "BAC+5",
+        "focus": "Éthique et gouvernance de la santé digitale"
+      }
+    ]
+  },
+  "integration_status": {
+    "registres_updated": true,
+    "metiers_added": true,
+    "data_integrated": true,
+    "last_update": "2024-01-26",
+    "version": "2.0"
+  }
+}

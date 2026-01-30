@@ -1,0 +1,1074 @@
+{
+  "modules": [
+    {
+      "id": "vaccec",
+      "name": "VACCEC",
+      "category": "hospital",
+      "subcategory": "gestion",
+      "version": "18.0.1.0.0",
+      "description": "VACCEC est le module central de gestion hospitalière qui digitalise l'ensemble des processus cliniques et administratifs. Il permet une gestion complète des patients depuis leur admission jusqu'à leur sortie, incluant la planification des rendez-vous, la gestion des prescriptions médicales, l'intégration des résultats de laboratoire, la planification des interventions chirurgicales et la facturation automatisée des prestations.",
+      "features": [
+        "Gestion des patients et admissions",
+        "Planification des rendez-vous",
+        "Prescriptions médicales",
+        "Tests de laboratoire",
+        "Gestion des chirurgies",
+        "Facturation intégrée",
+        "Gestion des ressources (lits, blocs opératoires)",
+        "Rapports détaillés"
+      ],
+      "integrations": [
+        "KIIIMOOWOOR",
+        "FIIIMOOWOOR",
+        "VACCEC Lab"
+      ],
+      "status": "production",
+      "icon": "🏥",
+      "path": "/module_vaccec/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "base",
+        "medical_coverage_management"
+      ],
+      "parcours": {
+        "patient": [
+          "Inscription et création du dossier patient",
+          "Prise de rendez-vous en ligne ou au guichet",
+          "Consultation médicale et diagnostic",
+          "Prescription et traitement",
+          "Examens complémentaires",
+          "Suivi et contrôle",
+          "Facturation et prise en charge",
+          "Feedback qualité"
+        ]
+      }
+    },
+    {
+      "id": "inasani_base",
+      "name": "INASANI Base",
+      "category": "pharmacie",
+      "subcategory": "régulation",
+      "version": "18.0.1.0.0",
+      "description": "INASANI Base constitue le fondement technique du système de régulation pharmaceutique. Il centralise et structure toutes les données de référence essentielles incluant les Dénominations Communes Internationales (DCI), les formes pharmaceutiques, les classes thérapeutiques, les types de documents réglementaires et gère les systèmes de permissions pour les régulateurs pharmaceutiques.",
+      "features": [
+        "Gestion des DCI (Dénominations Communes Internationales)",
+        "Formes pharmaceutiques",
+        "Classes thérapeutiques",
+        "Types de documents réglementaires",
+        "Système de permissions pour régulateurs"
+      ],
+      "description_complete": "INASANI Base constitue le socle technique fondamental du système de régulation pharmaceutique sénégalais. Cette plateforme centralisée structure et organise toutes les données de référence essentielles pour l'industrie pharmaceutique, incluant les Dénominations Communes Internationales (DCI) pour standardiser tous les médicaments, les formes pharmaceutiques pour garantir la qualité et la sécurité, les classes thérapeutiques pour faciliter la classification médicale, les types de documents réglementaires pour assurer la conformité avec les autorités sanitaires, et un système sophistiqué de permissions pour les régulateurs pharmaceutiques afin de contrôler l'accès et la gestion des données sensibles.",
+      "integrations": [
+        "inasani_amm",
+        "inasani_rama",
+        "inasani_inspection"
+      ],
+      "status": "production",
+      "icon": "⚗️",
+      "path": "/inasani/inasani_base/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "base"
+      ],
+      "parcours": {
+        "medicament": [
+          "Demande d'AMM par laboratoire",
+          "Évaluation technique/scientifique",
+          "Autorisation mise marché",
+          "Enregistrement RAMA",
+          "Distribution pharmacies",
+          "Vente patients",
+          "Traçabilité lots/QR",
+          "Pharmacovigilance",
+          "Renouvellement AMM"
+        ]
+      }
+    },
+    {
+      "id": "inasani_amm",
+      "name": "INASANI AMM",
+      "category": "pharmacie",
+      "subcategory": "régulation",
+      "version": "18.0.1.0.0",
+      "description": "INASANI AMM gère l'ensemble du processus d'Autorisation de Mise sur le Marché des médicaments. Il implémente un workflow complet d'évaluation réglementaire, de la soumission des dossiers par les laboratoires pharmaceutiques jusqu'à la délivrance des autorisations, incluant toutes les étapes d'analyse, d'expertise et de validation par les autorités sanitaires compétentes.",
+      "features": [
+        "Demandes d'AMM",
+        "Workflow d'évaluation",
+        "Validation réglementaire",
+        "Certificats et documents",
+        "Suivi des dossiers"
+      ],
+      "integrations": [
+        "inasani_base",
+        "inasani_rama"
+      ],
+      "status": "production",
+      "icon": "📋",
+      "path": "/inasani/inasani_amm_core/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "inasani_base"
+      ],
+      "parcours": {
+        "medicament": [
+          "Demande d'AMM par laboratoire",
+          "Évaluation technique/scientifique",
+          "Autorisation mise marché",
+          "Enregistrement RAMA",
+          "Distribution pharmacies",
+          "Vente patients",
+          "Traçabilité lots/QR",
+          "Pharmacovigilance",
+          "Renouvellement AMM"
+        ]
+      }
+    },
+    {
+      "id": "inasani_rama",
+      "name": "RAMA - Registre National",
+      "category": "pharmacie",
+      "subcategory": "registre",
+      "version": "18.0.1.0.0",
+      "description": "RAMA constitue le registre national officiel de tous les médicaments autorisés à la vente au Sénégal. Il offre des pages publiques détaillées pour chaque médicament, intégre des codes QR pour vérification instantanée, affiche les prix publics réglementés et assure la validation ministérielle de chaque référence pharmaceutique.",
+      "features": [
+        "Registre national des médicaments",
+        "Pages publiques avec QR codes",
+        "Prix publics réglementés",
+        "Validation ministérielle",
+        "Recherche avancée"
+      ],
+      "integrations": [
+        "inasani_amm",
+        "inasani_base"
+      ],
+      "status": "production",
+      "icon": "📖",
+      "path": "/inasani/inasani_rama/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "inasani_base",
+        "inasani_amm"
+      ],
+      "parcours": {
+        "medicament": [
+          "Demande d'AMM par laboratoire",
+          "Évaluation technique/scientifique",
+          "Autorisation mise marché",
+          "Enregistrement RAMA",
+          "Distribution pharmacies",
+          "Vente patients",
+          "Traçabilité lots/QR",
+          "Pharmacovigilance",
+          "Renouvellement AMM"
+        ]
+      }
+    },
+    {
+      "id": "inasani_inspection",
+      "name": "INASANI Inspection",
+      "category": "pharmacie",
+      "subcategory": "contrôle",
+      "version": "18.0.1.0.0",
+      "description": "INASANI Inspection est le système d'inspection pharmaceutique qui permet la planification, l'exécution et le suivi complet des inspections des pharmacies et établissements pharmaceutiques. Il intègre une interface mobile pour les inspecteurs sur le terrain, génère des rapports réglementaires automatisés et met en œuvre des plans d'action correctifs.",
+      "features": [
+        "Planification des inspections",
+        "Exécution avec interface mobile",
+        "Rapports réglementaires",
+        "Workflows automatisés",
+        "Plans d'action correctifs"
+      ],
+      "integrations": [
+        "inasani_base",
+        "KIIIMOOWOOR"
+      ],
+      "status": "production",
+      "icon": "🔍",
+      "path": "/inasani/inasani_inspection/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "inasani_base"
+      ],
+      "parcours": {
+        "medicament": [
+          "Demande d'AMM par laboratoire",
+          "Évaluation technique/scientifique",
+          "Autorisation mise marché",
+          "Enregistrement RAMA",
+          "Distribution pharmacies",
+          "Vente patients",
+          "Traçabilité lots/QR",
+          "Pharmacovigilance",
+          "Renouvellement AMM"
+        ]
+      }
+    },
+    {
+      "id": "kiiimoowoor",
+      "name": "KIIIMOOWOOR",
+      "category": "registres",
+      "subcategory": "personnel",
+      "version": "18.0.1.0.0",
+      "description": "KIIIMOOWOOR est le registre national officiel de tous les professionnels de santé autorisés à exercer au Sénégal. Il implémente un workflow de validation par les ordres professionnels, assure le suivi des cotisations annuelles obligatoires, maintient un registre public accessible avec QR codes pour vérification, et gère l'ensemble des diplômes et spécialités reconnues.",
+      "features": [
+        "Registre des professionnels de santé",
+        "Workflow de validation par ordres",
+        "Suivi des cotisations annuelles",
+        "Registre public avec QR codes",
+        "Gestion des diplômes et spécialités"
+      ],
+      "integrations": [
+        "FIIIMOOWOOR",
+        "inasani_inspection"
+      ],
+      "status": "production",
+      "icon": "👨‍⚕️",
+      "path": "/rps_senegal/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "base"
+      ],
+      "parcours": {
+        "professionnel": [
+          "Inscription et création du dossier professionnel",
+          "Soumission des diplômes et qualifications",
+          "Validation par l'ordre professionnel",
+          "Enregistrement au registre national",
+          "Paiement de la cotisation annuelle",
+          "Délivrance du certificat d'inscription",
+          "Affectation aux établissements de santé",
+          "Renouvellement annuel et mise à jour"
+        ]
+      }
+    },
+    {
+      "id": "fiimoowoor",
+      "name": "FIIIMOOWOOR",
+      "category": "registres",
+      "subcategory": "établissements",
+      "version": "18.0.1.0.0",
+      "description": "FIIIMOOWOOR recense et gère les 2754 établissements de santé sénégalais répartis en 15 catégories. Il intègre la géolocalisation GPS précise, implémente un workflow de validation en 4 étapes, offre un portail public avec recherche avancée et assure la validation croisée avec les informations du registre KIIIMOOWOOR.",
+      "features": [
+        "Registre des établissements de santé",
+        "Géolocalisation GPS",
+        "Workflow de validation en 4 étapes",
+        "Portail public avec recherche",
+        "Validation croisée avec KIIIMOOWOOR"
+      ],
+      "integrations": [
+        "KIIIMOOWOOR",
+        "VACCEC"
+      ],
+      "status": "production",
+      "icon": "🏢",
+      "path": "/fiimoowoor/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "base"
+      ],
+      "parcours": {
+        "etablissement": [
+          "Demande d'inscription de l'établissement",
+          "Soumission des documents réglementaires",
+          "Inspection préalable des locaux",
+          "Validation technique et sanitaire",
+          "Enregistrement au registre national",
+          "Délivrance de l'autorisation d'exploitation",
+          "Affectation des professionnels de santé",
+          "Inspections périodiques et renouvellement"
+        ]
+      }
+    },
+    {
+      "id": "sama_dental",
+      "name": "SAMA Dentaire",
+      "category": "applications",
+      "subcategory": "spécialisées",
+      "version": "18.0.1.0.0",
+      "description": "SAMA Dentaire est la solution complèe de gestion pour cabinets dentaires qui digitalise l'ensemble des processus cliniques et administratifs. Il inclut la gestion complète des dossiers médicaux électroniques, la planification intelligente des rendez-vous, un catalogue détaillé d'actes dentaires codifiés, et la création de plans de traitement personnalisés pour chaque patient.",
+      "features": [
+        "Gestion de cabinet dentaire",
+        "Dossiers médicaux électroniques",
+        "Planification des rendez-vous",
+        "Catalogue d'actes dentaires",
+        "Plans de traitement personnalisés"
+      ],
+      "integrations": [
+        "KIIIMOOWOOR",
+        "VACCEC"
+      ],
+      "status": "production",
+      "icon": "🦷",
+      "path": "/sama_dental/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "base"
+      ]
+    },
+    {
+      "id": "vaccec_lab",
+      "name": "VACCEC Lab",
+      "category": "applications",
+      "subcategory": "spécialisées",
+      "version": "18.0.1.0.0",
+      "description": "VACCEC Lab est le système de gestion de laboratoire (LIMS) qui digitalise l'ensemble des processus analytiques. Il gère les demandes d'analyses médicales, assure le suivi complet des échantillons depuis la collecte jusqu'au traitement, permet la saisie et validation sécurisée des résultats, et offre une configuration flexible des types d'analyses.",
+      "features": [
+        "Gestion de laboratoire (LIMS)",
+        "Demandes d'analyses",
+        "Gestion des échantillons",
+        "Saisie et validation des résultats",
+        "Configuration des analyses"
+      ],
+      "integrations": [
+        "VACCEC",
+        "KIIIMOOWOOR"
+      ],
+      "status": "production",
+      "icon": "🧪",
+      "path": "/vaccec_lab/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "base"
+      ]
+    },
+    {
+      "id": "pharmacie_senegal",
+      "name": "Pharmacie Sénégal",
+      "category": "applications",
+      "subcategory": "spécialisées",
+      "version": "18.0.1.0.0",
+      "description": "Pharmacie Sénégal est la solution complète de gestion de pharmacie conçue spécifiquement pour le marché sénégalais. Il intègre la gestion des points de vente et des stocks, assure la conformité avec les médicaments autorisés AMM, implémente la traçabilité complète par lots, et respecte toutes les réglementations pharmaceutiques sénégalaises.",
+      "features": [
+        "Gestion de pharmacie",
+        "Intégration POS et Stock",
+        "Gestion des médicaments avec AMM",
+        "Traçabilité par lots",
+        "Conformité réglementation sénégalaise"
+      ],
+      "integrations": [
+        "inasani_rama",
+        "inasani_amm"
+      ],
+      "status": "production",
+      "icon": "💊",
+      "path": "/pharmacie_senegal_enhanced/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "base",
+        "inasani_base"
+      ]
+    },
+    {
+      "id": "medical_coverage",
+      "name": "Medical Coverage",
+      "category": "transversaux",
+      "subcategory": "gestion",
+      "version": "18.0.1.0.0",
+      "description": "Medical Coverage gère l'ensemble des couvertures santé incluant la CMU (Couverture Médicale Universelle) et les assurances privées. Il effectue les calculs automatiques de remboursements, gère les relations avec les tiers payants, et s'intègre parfaitement avec les systèmes de facturation pour une gestion transparente des prestations.",
+      "features": [
+        "Gestion des couvertures santé",
+        "Calculs automatiques de remboursements",
+        "Gestion des tiers payants",
+        "Intégration avec facturation"
+      ],
+      "integrations": [
+        "VACCEC",
+        "pharmacie_senegal"
+      ],
+      "status": "production",
+      "icon": "🛡️",
+      "path": "/medical_coverage_management/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "base"
+      ]
+    },
+    {
+      "id": "inasani_amm_evaluation",
+      "name": "INASANI AMM Evaluation",
+      "category": "pharmacie",
+      "subcategory": "régulation",
+      "version": "18.0.1.0.0",
+      "description": "INASANI AMM Evaluation gère le processus d'évaluation technique et scientifique des dossiers d'AMM. Il permet l'affectation des experts évaluateurs, la saisie des grilles d'évaluation standardisées, le suivi des délais réglementaires et la génération des rapports d'expertise pour la commission d'AMM.",
+      "features": [
+        "Affectation des experts évaluateurs",
+        "Grilles d'évaluation standardisées",
+        "Suivi des délais réglementaires",
+        "Rapports d'expertise",
+        "Gestion des avis techniques"
+      ],
+      "integrations": [
+        "inasani_amm",
+        "inasani_base"
+      ],
+      "status": "production",
+      "icon": "📝",
+      "path": "/inasani/inasani_amm_evaluation/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "inasani_amm_core"
+      ],
+      "parcours": {
+        "medicament": [
+          "Demande d'AMM par laboratoire",
+          "Évaluation technique/scientifique",
+          "Autorisation mise marché",
+          "Enregistrement RAMA",
+          "Distribution pharmacies",
+          "Vente patients",
+          "Traçabilité lots/QR",
+          "Pharmacovigilance",
+          "Renouvellement AMM"
+        ]
+      }
+    },
+    {
+      "id": "inasani_amm_workflow",
+      "name": "INASANI AMM Workflow",
+      "category": "pharmacie",
+      "subcategory": "régulation",
+      "version": "18.0.1.0.0",
+      "description": "INASANI AMM Workflow automatise et orchestre le circuit complet de traitement des demandes d'AMM. Il implémente les workflows réglementaires, gère les transitions d'états, les validations multi-niveaux, les notifications automatiques et assure la traçabilité complète de chaque dossier.",
+      "features": [
+        "Workflows réglementaires automatisés",
+        "Gestion des transitions d'états",
+        "Validations multi-niveaux",
+        "Notifications automatiques",
+        "Traçabilité complète"
+      ],
+      "integrations": [
+        "inasani_amm",
+        "inasani_amm_evaluation"
+      ],
+      "status": "production",
+      "icon": "🔄",
+      "path": "/inasani/inasani_amm_workflow/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "inasani_amm_core"
+      ],
+      "parcours": {
+        "medicament": [
+          "Demande d'AMM par laboratoire",
+          "Évaluation technique/scientifique",
+          "Autorisation mise marché",
+          "Enregistrement RAMA",
+          "Distribution pharmacies",
+          "Vente patients",
+          "Traçabilité lots/QR",
+          "Pharmacovigilance",
+          "Renouvellement AMM"
+        ]
+      }
+    },
+    {
+      "id": "inasani_amm_portal",
+      "name": "INASANI AMM Portal",
+      "category": "pharmacie",
+      "subcategory": "régulation",
+      "version": "18.0.1.0.0",
+      "description": "INASANI AMM Portal offre un portail web sécurisé pour les laboratoires pharmaceutiques. Il permet la soumission en ligne des dossiers d'AMM, le suivi en temps réel de l'avancement, la consultation des décisions, le téléchargement des certificats et la communication avec les services réglementaires.",
+      "features": [
+        "Soumission en ligne des dossiers",
+        "Suivi en temps réel",
+        "Consultation des décisions",
+        "Téléchargement des certificats",
+        "Messagerie sécurisée"
+      ],
+      "integrations": [
+        "inasani_amm",
+        "inasani_amm_workflow"
+      ],
+      "status": "production",
+      "icon": "🌐",
+      "path": "/inasani/inasani_amm_portal/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "inasani_amm_core",
+        "portal"
+      ],
+      "parcours": {
+        "medicament": [
+          "Demande d'AMM par laboratoire",
+          "Évaluation technique/scientifique",
+          "Autorisation mise marché",
+          "Enregistrement RAMA",
+          "Distribution pharmacies",
+          "Vente patients",
+          "Traçabilité lots/QR",
+          "Pharmacovigilance",
+          "Renouvellement AMM"
+        ]
+      }
+    },
+    {
+      "id": "inasani_amm_certificates",
+      "name": "INASANI AMM Certificates",
+      "category": "pharmacie",
+      "subcategory": "régulation",
+      "version": "18.0.1.0.0",
+      "description": "INASANI AMM Certificates gère l'émission, le renouvellement et la révocation des certificats d'AMM. Il génère automatiquement les certificats officiels avec codes QR, assure la signature électronique, maintient le registre des certificats valides et gère les modifications post-AMM.",
+      "features": [
+        "Génération automatique de certificats",
+        "Codes QR de vérification",
+        "Signature électronique",
+        "Registre des certificats",
+        "Gestion des modifications"
+      ],
+      "integrations": [
+        "inasani_amm",
+        "inasani_rama"
+      ],
+      "status": "production",
+      "icon": "📜",
+      "path": "/inasani/inasani_amm_certificates/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "inasani_amm_core"
+      ],
+      "parcours": {
+        "medicament": [
+          "Demande d'AMM par laboratoire",
+          "Évaluation technique/scientifique",
+          "Autorisation mise marché",
+          "Enregistrement RAMA",
+          "Distribution pharmacies",
+          "Vente patients",
+          "Traçabilité lots/QR",
+          "Pharmacovigilance",
+          "Renouvellement AMM"
+        ]
+      }
+    },
+    {
+      "id": "inasani_homologation_licences",
+      "name": "INASANI Homologation & Licences",
+      "category": "pharmacie",
+      "subcategory": "régulation",
+      "version": "18.0.1.0.0",
+      "description": "INASANI Homologation & Licences gère les autorisations d'exploitation des établissements pharmaceutiques. Il traite les demandes d'homologation, délivre les licences d'exploitation, assure le suivi des renouvellements, gère les inspections préalables et maintient le registre des établissements autorisés.",
+      "features": [
+        "Demandes d'homologation",
+        "Délivrance de licences",
+        "Suivi des renouvellements",
+        "Inspections préalables",
+        "Registre des établissements"
+      ],
+      "integrations": [
+        "inasani_base",
+        "inasani_inspection",
+        "fiimoowoor"
+      ],
+      "status": "production",
+      "icon": "🏭",
+      "path": "/inasani/inasani_homologation_licences/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "inasani_base"
+      ],
+      "parcours": {
+        "medicament": [
+          "Demande d'AMM par laboratoire",
+          "Évaluation technique/scientifique",
+          "Autorisation mise marché",
+          "Enregistrement RAMA",
+          "Distribution pharmacies",
+          "Vente patients",
+          "Traçabilité lots/QR",
+          "Pharmacovigilance",
+          "Renouvellement AMM"
+        ]
+      }
+    },
+    {
+      "id": "inasani_pv_core",
+      "name": "INASANI Pharmacovigilance",
+      "category": "pharmacie",
+      "subcategory": "contrôle",
+      "version": "18.0.1.0.0",
+      "description": "INASANI Pharmacovigilance est le système national de surveillance des effets indésirables des médicaments. Il collecte les déclarations d'effets indésirables, analyse les signaux de sécurité, gère les enquêtes de pharmacovigilance, coordonne avec les centres régionaux et produit les rapports périodiques de sécurité.",
+      "features": [
+        "Déclaration d'effets indésirables",
+        "Analyse des signaux",
+        "Enquêtes de pharmacovigilance",
+        "Coordination centres régionaux",
+        "Rapports de sécurité"
+      ],
+      "integrations": [
+        "inasani_base",
+        "inasani_rama"
+      ],
+      "status": "production",
+      "icon": "⚠️",
+      "path": "/inasani/inasani_pv_core/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "inasani_base"
+      ],
+      "parcours": {
+        "medicament": [
+          "Demande d'AMM par laboratoire",
+          "Évaluation technique/scientifique",
+          "Autorisation mise marché",
+          "Enregistrement RAMA",
+          "Distribution pharmacies",
+          "Vente patients",
+          "Traçabilité lots/QR",
+          "Pharmacovigilance",
+          "Renouvellement AMM"
+        ]
+      }
+    },
+    {
+      "id": "inasani_qrcode",
+      "name": "INASANI QR Code",
+      "category": "pharmacie",
+      "subcategory": "traçabilité",
+      "version": "18.0.1.0.0",
+      "description": "INASANI QR Code génère et gère les codes QR pour l'authentification des médicaments et documents réglementaires. Il permet la vérification instantanée de l'authenticité, la traçabilité des produits, la lutte contre la contrefaçon et offre une interface mobile de vérification pour le public.",
+      "features": [
+        "Génération de codes QR",
+        "Vérification d'authenticité",
+        "Traçabilité des produits",
+        "Lutte anti-contrefaçon",
+        "Interface mobile publique"
+      ],
+      "integrations": [
+        "inasani_rama",
+        "inasani_amm"
+      ],
+      "status": "production",
+      "icon": "📱",
+      "path": "/inasani/inasani_qrcode/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "inasani_base"
+      ],
+      "parcours": {
+        "medicament": [
+          "Demande d'AMM par laboratoire",
+          "Évaluation technique/scientifique",
+          "Autorisation mise marché",
+          "Enregistrement RAMA",
+          "Distribution pharmacies",
+          "Vente patients",
+          "Traçabilité lots/QR",
+          "Pharmacovigilance",
+          "Renouvellement AMM"
+        ]
+      }
+    },
+    {
+      "id": "inasani_inspection_planning",
+      "name": "INASANI Inspection Planning",
+      "category": "pharmacie",
+      "subcategory": "contrôle",
+      "version": "18.0.1.0.0",
+      "description": "INASANI Inspection Planning optimise la planification des inspections pharmaceutiques. Il gère le calendrier annuel, l'affectation des inspecteurs selon leurs compétences, la priorisation basée sur les risques, la gestion des ressources et la génération des ordres de mission.",
+      "features": [
+        "Calendrier annuel d'inspections",
+        "Affectation des inspecteurs",
+        "Priorisation basée sur les risques",
+        "Gestion des ressources",
+        "Ordres de mission"
+      ],
+      "integrations": [
+        "inasani_inspection",
+        "inasani_base"
+      ],
+      "status": "production",
+      "icon": "📅",
+      "path": "/inasani/inasani_inspection_planning/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "inasani_inspection"
+      ],
+      "parcours": {
+        "medicament": [
+          "Demande d'AMM par laboratoire",
+          "Évaluation technique/scientifique",
+          "Autorisation mise marché",
+          "Enregistrement RAMA",
+          "Distribution pharmacies",
+          "Vente patients",
+          "Traçabilité lots/QR",
+          "Pharmacovigilance",
+          "Renouvellement AMM"
+        ]
+      }
+    },
+    {
+      "id": "inasani_inspection_execution",
+      "name": "INASANI Inspection Execution",
+      "category": "pharmacie",
+      "subcategory": "contrôle",
+      "version": "18.0.1.0.0",
+      "description": "INASANI Inspection Execution digitalise le processus d'inspection sur le terrain. Il offre une application mobile pour les inspecteurs, des grilles d'inspection standardisées, la prise de photos géolocalisées, la saisie en temps réel des constats et la génération automatique des rapports d'inspection.",
+      "features": [
+        "Application mobile inspecteurs",
+        "Grilles d'inspection standardisées",
+        "Photos géolocalisées",
+        "Saisie en temps réel",
+        "Rapports automatiques"
+      ],
+      "integrations": [
+        "inasani_inspection",
+        "inasani_inspection_planning"
+      ],
+      "status": "production",
+      "icon": "📋",
+      "path": "/inasani/inasani_inspection_execution/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "inasani_inspection"
+      ],
+      "parcours": {
+        "medicament": [
+          "Demande d'AMM par laboratoire",
+          "Évaluation technique/scientifique",
+          "Autorisation mise marché",
+          "Enregistrement RAMA",
+          "Distribution pharmacies",
+          "Vente patients",
+          "Traçabilité lots/QR",
+          "Pharmacovigilance",
+          "Renouvellement AMM"
+        ]
+      }
+    },
+    {
+      "id": "inasani_inspection_capa",
+      "name": "INASANI Inspection CAPA",
+      "category": "pharmacie",
+      "subcategory": "contrôle",
+      "version": "18.0.1.0.0",
+      "description": "INASANI Inspection CAPA gère les actions correctives et préventives suite aux inspections. Il assure le suivi des non-conformités, la validation des plans d'action, le monitoring de la mise en œuvre, les inspections de suivi et la clôture documentée des actions.",
+      "features": [
+        "Suivi des non-conformités",
+        "Plans d'action correctifs",
+        "Monitoring de mise en œuvre",
+        "Inspections de suivi",
+        "Clôture documentée"
+      ],
+      "integrations": [
+        "inasani_inspection",
+        "inasani_inspection_execution"
+      ],
+      "status": "production",
+      "icon": "✅",
+      "path": "/inasani/inasani_inspection_capa/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "inasani_inspection"
+      ],
+      "parcours": {
+        "medicament": [
+          "Demande d'AMM par laboratoire",
+          "Évaluation technique/scientifique",
+          "Autorisation mise marché",
+          "Enregistrement RAMA",
+          "Distribution pharmacies",
+          "Vente patients",
+          "Traçabilité lots/QR",
+          "Pharmacovigilance",
+          "Renouvellement AMM"
+        ]
+      }
+    },
+    {
+      "id": "fiimoowoor_inspection",
+      "name": "FIIMOOWOOR Inspection",
+      "category": "registres",
+      "subcategory": "contrôle",
+      "version": "18.0.1.0.0",
+      "description": "FIIMOOWOOR Inspection gère les inspections des établissements de santé. Il planifie les visites d'inspection, évalue la conformité aux normes, génère les rapports d'inspection, assure le suivi des recommandations et maintient l'historique complet des inspections par établissement.",
+      "features": [
+        "Planification des inspections",
+        "Évaluation de conformité",
+        "Rapports d'inspection",
+        "Suivi des recommandations",
+        "Historique par établissement"
+      ],
+      "integrations": [
+        "fiimoowoor",
+        "inasani_inspection"
+      ],
+      "status": "production",
+      "icon": "🔎",
+      "path": "/fiimoowoor/fiimoowoor_inspection/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "fiimoowoor"
+      ],
+      "parcours": {
+        "etablissement": [
+          "Demande d'inscription de l'établissement",
+          "Soumission des documents réglementaires",
+          "Inspection préalable des locaux",
+          "Validation technique et sanitaire",
+          "Enregistrement au registre national",
+          "Délivrance de l'autorisation d'exploitation",
+          "Affectation des professionnels de santé",
+          "Inspections périodiques et renouvellement"
+        ]
+      }
+    },
+    {
+      "id": "fiimoowoor_benchmark",
+      "name": "FIIMOOWOOR Benchmark",
+      "category": "registres",
+      "subcategory": "analyse",
+      "version": "18.0.1.0.0",
+      "description": "FIIMOOWOOR Benchmark analyse et compare les performances des établissements de santé. Il collecte les indicateurs de performance, génère des tableaux de bord comparatifs, identifie les meilleures pratiques, produit des rapports de benchmarking et aide à l'amélioration continue de la qualité.",
+      "features": [
+        "Indicateurs de performance",
+        "Tableaux de bord comparatifs",
+        "Identification des meilleures pratiques",
+        "Rapports de benchmarking",
+        "Amélioration continue"
+      ],
+      "integrations": [
+        "fiimoowoor",
+        "fiimoowoor_inspection"
+      ],
+      "status": "production",
+      "icon": "📊",
+      "path": "/fiimoowoor/fiimoowoor_benchmark/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "fiimoowoor"
+      ],
+      "parcours": {
+        "etablissement": [
+          "Demande d'inscription de l'établissement",
+          "Soumission des documents réglementaires",
+          "Inspection préalable des locaux",
+          "Validation technique et sanitaire",
+          "Enregistrement au registre national",
+          "Délivrance de l'autorisation d'exploitation",
+          "Affectation des professionnels de santé",
+          "Inspections périodiques et renouvellement"
+        ]
+      }
+    },
+    {
+      "id": "fiimoowoor_public",
+      "name": "FIIMOOWOOR Public",
+      "category": "registres",
+      "subcategory": "portail",
+      "version": "18.0.1.0.0",
+      "description": "FIIMOOWOOR Public offre un portail web public pour la recherche d'établissements de santé. Il permet la recherche multicritères (localisation, spécialité, services), affiche les informations détaillées, intègre la cartographie interactive, les avis et notations, et les horaires d'ouverture.",
+      "features": [
+        "Recherche multicritères",
+        "Informations détaillées",
+        "Cartographie interactive",
+        "Avis et notations",
+        "Horaires d'ouverture"
+      ],
+      "integrations": [
+        "fiimoowoor",
+        "kiiimoowoor"
+      ],
+      "status": "production",
+      "icon": "🌐",
+      "path": "/fiimoowoor/fiimoowoor_public/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "fiimoowoor",
+        "portal"
+      ],
+      "parcours": {
+        "etablissement": [
+          "Demande d'inscription de l'établissement",
+          "Soumission des documents réglementaires",
+          "Inspection préalable des locaux",
+          "Validation technique et sanitaire",
+          "Enregistrement au registre national",
+          "Délivrance de l'autorisation d'exploitation",
+          "Affectation des professionnels de santé",
+          "Inspections périodiques et renouvellement"
+        ]
+      }
+    },
+    {
+      "id": "fiimoowoor_public_native",
+      "name": "FIIMOOWOOR Public Native",
+      "category": "registres",
+      "subcategory": "mobile",
+      "version": "18.0.1.0.0",
+      "description": "FIIMOOWOOR Public Native est l'application mobile native pour iOS et Android. Elle offre la recherche d'établissements avec géolocalisation, la navigation GPS, les notifications de proximité, le mode hors-ligne et l'intégration avec les applications de santé natives.",
+      "features": [
+        "Application iOS/Android",
+        "Géolocalisation et navigation",
+        "Notifications de proximité",
+        "Mode hors-ligne",
+        "Intégration santé native"
+      ],
+      "integrations": [
+        "fiimoowoor_public",
+        "fiimoowoor"
+      ],
+      "status": "production",
+      "icon": "📱",
+      "path": "/fiimoowoor/fiimoowoor_public_native/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "fiimoowoor"
+      ],
+      "parcours": {
+        "etablissement": [
+          "Demande d'inscription de l'établissement",
+          "Soumission des documents réglementaires",
+          "Inspection préalable des locaux",
+          "Validation technique et sanitaire",
+          "Enregistrement au registre national",
+          "Délivrance de l'autorisation d'exploitation",
+          "Affectation des professionnels de santé",
+          "Inspections périodiques et renouvellement"
+        ]
+      }
+    },
+    {
+      "id": "fiimoowoor_kiimoowoor_connector",
+      "name": "FIIMOOWOOR-KIIMOOWOOR Connector",
+      "category": "transversaux",
+      "subcategory": "intégration",
+      "version": "18.0.1.0.0",
+      "description": "FIIMOOWOOR-KIIMOOWOOR Connector assure l'intégration bidirectionnelle entre les registres d'établissements et de professionnels. Il synchronise les données, valide les affectations professionnels-établissements, détecte les incohérences, maintient la cohérence référentielle et génère les rapports de synchronisation.",
+      "features": [
+        "Synchronisation bidirectionnelle",
+        "Validation des affectations",
+        "Détection d'incohérences",
+        "Cohérence référentielle",
+        "Rapports de synchronisation"
+      ],
+      "integrations": [
+        "fiimoowoor",
+        "kiiimoowoor"
+      ],
+      "status": "production",
+      "icon": "🔗",
+      "path": "/fiimoowoor/fiimoowoor_kiimoowoor_connector/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "fiimoowoor",
+        "rps_senegal"
+      ],
+      "parcours": {
+        "etablissement": [
+          "Demande d'inscription de l'établissement",
+          "Soumission des documents réglementaires",
+          "Inspection préalable des locaux",
+          "Validation technique et sanitaire",
+          "Enregistrement au registre national",
+          "Délivrance de l'autorisation d'exploitation",
+          "Affectation des professionnels de santé",
+          "Inspections périodiques et renouvellement"
+        ],
+        "professionnel": [
+          "Inscription et création du dossier professionnel",
+          "Soumission des diplômes et qualifications",
+          "Validation par l'ordre professionnel",
+          "Enregistrement au registre national",
+          "Paiement de la cotisation annuelle",
+          "Délivrance du certificat d'inscription",
+          "Affectation aux établissements de santé",
+          "Renouvellement annuel et mise à jour"
+        ]
+      }
+    },
+    {
+      "id": "social_media",
+      "name": "Social Media",
+      "category": "transversaux",
+      "subcategory": "communication",
+      "version": "18.0.1.0.0",
+      "description": "Social Media intègre les fonctionnalités de communication et d'engagement social dans l'écosystème Moowoor. Il permet le partage d'informations sanitaires, la gestion des campagnes de sensibilisation, l'interaction avec les communautés de patients et la diffusion des actualités de santé publique.",
+      "features": [
+        "Partage d'informations sanitaires",
+        "Campagnes de sensibilisation",
+        "Communautés de patients",
+        "Actualités santé publique",
+        "Engagement social"
+      ],
+      "integrations": [
+        "vaccec",
+        "inasani_base",
+        "kiiimoowoor"
+      ],
+      "status": "production",
+      "icon": "📢",
+      "path": "/social_media/",
+      "authors": "Mamadou Mbagnick DOGUE & Rassol DOGUE",
+      "dependencies": [
+        "base"
+      ]
+    }
+  ],
+  "categories": {
+    "hospital": {
+      "name": "Gestion Hospitalière",
+      "description": "Modules pour la gestion complète des établissements de santé",
+      "color": "#00d4ff"
+    },
+    "pharmacie": {
+      "name": "Régulation Pharmaceutique",
+      "description": "Modules pour la régulation et le contrôle des médicaments",
+      "color": "#7c3aed"
+    },
+    "registres": {
+      "name": "Registres Nationaux",
+      "description": "Registres des professionnels et établissements de santé",
+      "color": "#10b981"
+    },
+    "applications": {
+      "name": "Applications Spécialisées",
+      "description": "Solutions métier pour des domaines médicaux spécifiques",
+      "color": "#fbbf24"
+    },
+    "transversaux": {
+      "name": "Modules Transversaux",
+      "description": "Modules de base et services partagés",
+      "color": "#ef4444"
+    }
+  },
+  "statistics": {
+    "total_modules": 27,
+    "by_category": {
+      "pharmacie": 14,
+      "registres": 6,
+      "hospital": 1,
+      "applications": 3,
+      "transversaux": 3
+    },
+    "by_status": {
+      "production": 27,
+      "beta": 0,
+      "development": 0
+    }
+  },
+  "integration_map": {
+    "core_modules": [
+      "inasani_base",
+      "medical_coverage"
+    ],
+    "hospital_ecosystem": [
+      "VACCEC",
+      "VACCEC Lab",
+      "SAMA Dentaire"
+    ],
+    "regulatory_framework": [
+      "inasani_amm",
+      "inasani_rama",
+      "inasani_inspection"
+    ],
+    "national_registries": [
+      "KIIIMOOWOOR",
+      "FIIIMOOWOOR"
+    ],
+    "specialized_applications": [
+      "pharmacie_senegal",
+      "SAMA Dentaire",
+      "VACCEC Lab"
+    ]
+  }
+}

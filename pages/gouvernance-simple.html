@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gouvernance - Architecture à 3 Niveaux + 25 Registres</title>
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+            color: #e0e6ed;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container { 
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        h1 { 
+            color: #00d4ff;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #00d4ff 0%, #00a8cc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        h2 { 
+            color: #00d4ff;
+            font-size: 1.8em;
+            font-weight: 600;
+            margin: 40px 0 20px 0;
+        }
+        
+        h3 {
+            color: #00d4ff;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
+        h4 {
+            color: #00d4ff;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+        
+        p { color: #b8c5d6; margin: 10px 0; }
+        
+        /* Navigation */
+        nav { 
+            background: rgba(15, 20, 35, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            margin: -40px -40px 30px -40px;
+            border-radius: 16px 16px 0 0;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        nav div { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        
+        nav a { 
+            color: #b8c5d6;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        nav a:hover { 
+            background: rgba(0, 212, 255, 0.1);
+            color: #00d4ff;
+            transform: translateY(-2px);
+        }
+        
+        nav a[style*="background: #00d4ff"],
+        nav a[style*="background:#00d4ff"],
+        nav a[style*="background: rgba(255,255,255,0.1)"] { 
+            background: rgba(255, 255, 255, 0.05) !important;
+        }
+        
+        nav a[style*="background: #00d4ff"]:first-child,
+        nav a[href*="index-simple.html"] {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%) !important;
+            color: #0a0e27 !important;
+            font-weight: 600;
+        }
+        
+        /* Stats */
+        .stats { 
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat { 
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 168, 204, 0.05) 100%);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .stat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.4);
+        }
+        
+        .stat-number { 
+            font-size: 2.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff 0%, #00ffc8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-label { 
+            color: #8b98a8;
+            margin-top: 8px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        /* Cards */
+        .card, .parcours-card, .timeline-step, .module, .career, .registry, .level {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.6) 0%, rgba(15, 20, 35, 0.4) 100%);
+            backdrop-filter: blur(10px);
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover, .parcours-card:hover, .timeline-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+        
+        .timeline-step {
+            cursor: pointer;
+            border-left: 4px solid #00d4ff;
+        }
+        
+        .module, .career, .registry {
+            border-left: 4px solid #00d4ff;
+        }
+        
+        .level {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(0, 168, 204, 0.02) 100%);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+        }
+        
+        /* Icons */
+        .step-icon, .module-icon, .career-icon, .card-icon, .parcours-icon {
+            font-size: 2.5em;
+            float: right;
+            filter: drop-shadow(0 4px 8px rgba(0, 212, 255, 0.3));
+        }
+        
+        /* Titles */
+        .step-title, .module h2, .career h2 {
+            color: #00d4ff;
+            margin: 0 0 10px 0;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
+        .step-description {
+            color: #8b98a8;
+            margin: 10px 0;
+        }
+        
+        /* Tags */
+        .module-tag, .category, .education, .badge, .status {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #0a0e27;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin: 5px 5px 0 0;
+            box-shadow: 0 2px 8px rgba(0, 212, 255, 0.3);
+        }
+        
+        .badge.strategic { background: linear-gradient(135deg, #4caf50 0%, #45a049 100%); color: white; }
+        .badge.regulation { background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); color: white; }
+        .badge.execution { background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%); color: white; }
+        .badge.niveau-1 { background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%); color: white; }
+        .badge.niveau-2 { background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%); color: white; }
+        .badge.niveau-3 { background: linear-gradient(135deg, #3f51b5 0%, #303f9f 100%); color: white; }
+        .badge.niveau-4 { background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%); color: white; }
+        .badge.niveau-5 { background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%); color: white; }
+        
+        .status.production { background: linear-gradient(135deg, #4caf50 0%, #45a049 100%); color: white; }
+        .status.development { background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); color: white; }
+        
+        /* Buttons */
+        .step-details-btn, button {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #0a0e27;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+        }
+        
+        .step-details-btn:hover, button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.95) 0%, rgba(15, 20, 35, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .modal-title {
+            color: #00d4ff;
+            margin: 0;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 2em;
+            cursor: pointer;
+            color: #8b98a8;
+            transition: all 0.3s ease;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+        
+        .modal-close:hover {
+            color: #00d4ff;
+            background: rgba(0, 212, 255, 0.1);
+            transform: rotate(90deg);
+        }
+        
+        .step-details-section {
+            margin: 25px 0;
+        }
+        
+        .step-benefits {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .step-benefits li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #b8c5d6;
+        }
+        
+        .step-benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .document-item {
+            background: rgba(0, 212, 255, 0.05);
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            color: #b8c5d6;
+        }
+        
+        /* Mermaid diagrams */
+        .mermaid {
+            background: rgba(15, 20, 35, 0.6);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 1px solid rgba(0, 212, 255, 0.15);
+        }
+        
+        /* Grids */
+        .cards, .parcours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .parcours-card {
+            text-decoration: none;
+            color: #e0e6ed;
+        }
+        
+        .parcours-card h3 {
+            text-align: center;
+        }
+        
+        .parcours-card p {
+            text-align: center;
+            color: #8b98a8;
+        }
+        
+        .parcours-stats {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 0.9em;
+            color: #6b7785;
+            font-weight: 500;
+        }
+        
+        /* Skills/Features list */
+        .skills, .features {
+            margin: 15px 0;
+        }
+        
+        .skills li, .features li {
+            margin: 8px 0;
+            color: #b8c5d6;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 20, 35, 0.5);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #00ffc8 0%, #00d4ff 100%);
+        }
+        
+        /* Links */
+        a {
+            color: #00d4ff;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: #00ffc8;
+        }
+        
+        strong {
+            color: #00d4ff;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+            <nav>
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <img src="../img/logo.png" alt="MOOWOOR" style="height: 40px; filter: drop-shadow(0 2px 8px rgba(0, 212, 255, 0.3));">
+                <span style="font-size: 1.2em; font-weight: 600; color: #00d4ff;">MOOWOOR</span>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="../index-simple.html">🏠 Accueil</a>
+                <a href="modules-simple.html">📦 Modules</a>
+                <a href="metiers-simple.html">💼 Métiers</a>
+                <a href="gouvernance-simple.html">⚖️ Gouvernance</a>
+                <a href="parcours.html">🗺️ Parcours</a>
+                <a href="dfu.html">👨‍👩‍👧‍👦 DFU</a>
+            </div>
+        </div>
+    </nav>
+
+
+
+        <h1>⚖️ Gouvernance de la Santé Digitale</h1>
+        <p style="font-size: 1.1em; margin-bottom: 30px;">Architecture à 3 niveaux + 25 registres opérationnels pour piloter, réguler et exécuter la transformation digitale</p>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Niveaux de Gouvernance</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">25</div>
+                <div class="stat-label">Registres Opérationnels</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Niveaux Opérationnels</div>
+            </div>
+        </div>
+
+        <div class="level">
+            <h2>🎯 Niveau 1: Pilotage Stratégique</h2>
+            <p>Définition des orientations nationales et coordination des politiques publiques</p>
+        </div>
+
+        <div class="level">
+            <h2>⚖️ Niveau 2: Régulation</h2>
+            <p>Cadre réglementaire et contrôle de la conformité des systèmes et acteurs</p>
+        </div>
+
+        <div class="level">
+            <h2>⚙️ Niveau 3: Exécution</h2>
+            <p>Mise en œuvre opérationnelle et gestion quotidienne des systèmes</p>
+        </div>
+
+        <div class="level">
+            <h2>📋 25 Registres Opérationnels</h2>
+            <p>Registres structurés en 5 niveaux pour la gestion quotidienne du système de santé</p>
+
+            <h3><span class="badge niveau-1">NIVEAU1</span> Niveau 1 - Fondationnel</h3>
+            <p style="color: #8b98a8; margin-bottom: 20px;">Registres de base pour l'identité et les ressources</p>
+
+            <div class="registry">
+                <h4>Registre des Patients</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Informations d'identification, données démographiques, antécédents médicaux, allergies, traitements en cours.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Centraliser toutes les informations essentielles des patients pour un suivi médical optimal</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre des Praticiens</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Données personnelles, qualifications, spécialisations, expérience professionnelle.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Garantir la traçabilité et la qualification de tous les professionnels de santé</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre des Établissements</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Type d'établissement, localisation, services et spécialités, capacités d'accueil.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Cartographier l'offre de soins sur le territoire national</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre des Lits d'Hôpital</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Suivi des disponibilités des lits d'hôpital, y compris les lits généraux, les unités de soins intensifs, etc.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Optimiser la gestion des capacités d'hospitalisation en temps réel</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre des Médicaments</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> DCI, compositions, posologies, indications, effets secondaires.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Référentiel national des médicaments autorisés et leurs caractéristiques</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre des Ressources Médicales</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Inventaire des équipements médicaux, des dispositifs et des fournitures nécessaires pour les soins de santé.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Assurer la disponibilité et la maintenance des équipements médicaux</p>
+            </div>
+
+            <h3><span class="badge niveau-2">NIVEAU2</span> Niveau 2 - Médical</h3>
+            <p style="color: #8b98a8; margin-bottom: 20px;">Registres spécialisés pour les données médicales et cliniques</p>
+
+            <div class="registry">
+                <h4>Registre des Procédures</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Protocoles standardisés pour les examens, les interventions chirurgicales, les traitements.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Standardiser les pratiques médicales selon les meilleures recommandations</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre Clinique</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Diagnostics, observations, prescriptions, résultats d'examens.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Documenter l'ensemble du parcours de soins du patient</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre des Vaccinations</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Types de vaccins administrés, dates d'injection, rappels.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Suivre la couverture vaccinale et planifier les rappels</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre des Allergies</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Allergènes, type de réaction allergique, traitements.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Prévenir les incidents liés aux allergies médicamenteuses et alimentaires</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre des Empoisonnements</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Type d'empoisonnement, circonstances, symptômes et diagnostic, traitement et soins, évolution du patient, prévention et mesures futures.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Surveiller et prévenir les cas d'intoxication et d'empoisonnement</p>
+            </div>
+
+            <h3><span class="badge niveau-3">NIVEAU3</span> Niveau 3 - Organisationnel</h3>
+            <p style="color: #8b98a8; margin-bottom: 20px;">Registres de gestion et organisation des services</p>
+
+            <div class="registry">
+                <h4>Registre des Rendez-vous</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Liste des rendez-vous, dates, médecins, motifs.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Optimiser la planification et réduire les temps d'attente</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre des Listes d'Attente</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Liste des patients en attente, dates d'inscription, devis.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Gérer équitablement l'accès aux soins et aux interventions</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre RH</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Plannings, congés, formations, recrutements.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Optimiser la gestion des ressources humaines du système de santé</p>
+            </div>
+
+            <h3><span class="badge niveau-4">NIVEAU4</span> Niveau 4 - Qualité et Sécurité</h3>
+            <p style="color: #8b98a8; margin-bottom: 20px;">Registres pour la qualité des soins et la sécurité des patients</p>
+
+            <div class="registry">
+                <h4>Registre des Infections Nosocomiales</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Microorganismes, services touchés, mesures prises.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Surveiller et prévenir les infections contractées en milieu hospitalier</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre des Événements Indésirables</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Description des incidents, causes, actions correctives.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Améliorer la sécurité des patients par l'analyse des incidents</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre des Indicateurs Qualité</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Taux d'infections, de réadmissions, de mortalité, scores de satisfaction.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Mesurer et améliorer continuellement la qualité des soins</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre des Erreurs Médicales</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Signalement des incidents et des erreurs médicales pour l'amélioration continue de la sécurité des patients.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Culture de sécurité et apprentissage par l'analyse des erreurs</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre des Indicateurs de Qualité des Soins</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Suivi des indicateurs de performance liés à la qualité des soins fournis.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Benchmarking et amélioration des performances cliniques</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre des Résultats Cliniques</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Enregistrement des résultats cliniques et des mesures de santé pour évaluer l'efficacité des traitements.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Évaluer l'efficacité thérapeutique et les résultats de santé</p>
+            </div>
+
+            <h3><span class="badge niveau-5">NIVEAU5</span> Niveau 5 - Pilotage</h3>
+            <p style="color: #8b98a8; margin-bottom: 20px;">Registres pour la planification stratégique et le pilotage</p>
+
+            <div class="registry">
+                <h4>PTBA</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Plan de travail budgétisé annuel DPRS.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Planifier et suivre les activités et budgets annuels</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre des Coûts</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Dépenses détaillées, recettes, budgets alloués.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Maîtriser les coûts et optimiser l'allocation des ressources</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre de Recherche</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Protocoles, investigateurs, participants, résultats.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Promouvoir la recherche clinique et l'innovation en santé</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre des Politiques</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Lois, règlements, recommandations applicables.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Assurer la conformité réglementaire et l'application des politiques</p>
+            </div>
+
+            <div class="registry">
+                <h4>Registre des Formations</h4>
+                <p><strong style="color: #00d4ff;">Description:</strong> Programmes, participants, budgets, évaluations.</p>
+                <p><strong style="color: #00d4ff;">Objectif:</strong> Développer les compétences et la formation continue des professionnels</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

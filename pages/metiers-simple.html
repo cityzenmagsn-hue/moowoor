@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métiers MOOWOOR - 22 Métiers de la Santé Digitale</title>
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+            color: #e0e6ed;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container { 
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        h1 { 
+            color: #00d4ff;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #00d4ff 0%, #00a8cc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        h2 { 
+            color: #00d4ff;
+            font-size: 1.8em;
+            font-weight: 600;
+            margin: 40px 0 20px 0;
+        }
+        
+        h3 {
+            color: #00d4ff;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
+        h4 {
+            color: #00d4ff;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+        
+        p { color: #b8c5d6; margin: 10px 0; }
+        
+        /* Navigation */
+        nav { 
+            background: rgba(15, 20, 35, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            margin: -40px -40px 30px -40px;
+            border-radius: 16px 16px 0 0;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        nav div { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        
+        nav a { 
+            color: #b8c5d6;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        nav a:hover { 
+            background: rgba(0, 212, 255, 0.1);
+            color: #00d4ff;
+            transform: translateY(-2px);
+        }
+        
+        nav a[style*="background: #00d4ff"],
+        nav a[style*="background:#00d4ff"],
+        nav a[style*="background: rgba(255,255,255,0.1)"] { 
+            background: rgba(255, 255, 255, 0.05) !important;
+        }
+        
+        nav a[style*="background: #00d4ff"]:first-child,
+        nav a[href*="index-simple.html"] {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%) !important;
+            color: #0a0e27 !important;
+            font-weight: 600;
+        }
+        
+        /* Stats */
+        .stats { 
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat { 
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 168, 204, 0.05) 100%);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .stat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.4);
+        }
+        
+        .stat-number { 
+            font-size: 2.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff 0%, #00ffc8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-label { 
+            color: #8b98a8;
+            margin-top: 8px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        /* Cards */
+        .card, .parcours-card, .timeline-step, .module, .career, .registry, .level {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.6) 0%, rgba(15, 20, 35, 0.4) 100%);
+            backdrop-filter: blur(10px);
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover, .parcours-card:hover, .timeline-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+        
+        .timeline-step {
+            cursor: pointer;
+            border-left: 4px solid #00d4ff;
+        }
+        
+        .module, .career, .registry {
+            border-left: 4px solid #00d4ff;
+        }
+        
+        .level {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(0, 168, 204, 0.02) 100%);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+        }
+        
+        /* Icons */
+        .step-icon, .module-icon, .career-icon, .card-icon, .parcours-icon {
+            font-size: 2.5em;
+            float: right;
+            filter: drop-shadow(0 4px 8px rgba(0, 212, 255, 0.3));
+        }
+        
+        /* Titles */
+        .step-title, .module h2, .career h2 {
+            color: #00d4ff;
+            margin: 0 0 10px 0;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
+        .step-description {
+            color: #8b98a8;
+            margin: 10px 0;
+        }
+        
+        /* Tags */
+        .module-tag, .category, .education, .badge, .status {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #0a0e27;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin: 5px 5px 0 0;
+            box-shadow: 0 2px 8px rgba(0, 212, 255, 0.3);
+        }
+        
+        .badge.strategic { background: linear-gradient(135deg, #4caf50 0%, #45a049 100%); color: white; }
+        .badge.regulation { background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); color: white; }
+        .badge.execution { background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%); color: white; }
+        .badge.niveau-1 { background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%); color: white; }
+        .badge.niveau-2 { background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%); color: white; }
+        .badge.niveau-3 { background: linear-gradient(135deg, #3f51b5 0%, #303f9f 100%); color: white; }
+        .badge.niveau-4 { background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%); color: white; }
+        .badge.niveau-5 { background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%); color: white; }
+        
+        .status.production { background: linear-gradient(135deg, #4caf50 0%, #45a049 100%); color: white; }
+        .status.development { background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); color: white; }
+        
+        /* Buttons */
+        .step-details-btn, button {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #0a0e27;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+        }
+        
+        .step-details-btn:hover, button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.95) 0%, rgba(15, 20, 35, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .modal-title {
+            color: #00d4ff;
+            margin: 0;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 2em;
+            cursor: pointer;
+            color: #8b98a8;
+            transition: all 0.3s ease;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+        
+        .modal-close:hover {
+            color: #00d4ff;
+            background: rgba(0, 212, 255, 0.1);
+            transform: rotate(90deg);
+        }
+        
+        .step-details-section {
+            margin: 25px 0;
+        }
+        
+        .step-benefits {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .step-benefits li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #b8c5d6;
+        }
+        
+        .step-benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .document-item {
+            background: rgba(0, 212, 255, 0.05);
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            color: #b8c5d6;
+        }
+        
+        /* Mermaid diagrams */
+        .mermaid {
+            background: rgba(15, 20, 35, 0.6);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 1px solid rgba(0, 212, 255, 0.15);
+        }
+        
+        /* Grids */
+        .cards, .parcours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .parcours-card {
+            text-decoration: none;
+            color: #e0e6ed;
+        }
+        
+        .parcours-card h3 {
+            text-align: center;
+        }
+        
+        .parcours-card p {
+            text-align: center;
+            color: #8b98a8;
+        }
+        
+        .parcours-stats {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 0.9em;
+            color: #6b7785;
+            font-weight: 500;
+        }
+        
+        /* Skills/Features list */
+        .skills, .features {
+            margin: 15px 0;
+        }
+        
+        .skills li, .features li {
+            margin: 8px 0;
+            color: #b8c5d6;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 20, 35, 0.5);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #00ffc8 0%, #00d4ff 100%);
+        }
+        
+        /* Links */
+        a {
+            color: #00d4ff;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: #00ffc8;
+        }
+        
+        strong {
+            color: #00d4ff;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+            <nav>
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <img src="../img/logo.png" alt="MOOWOOR" style="height: 40px; filter: drop-shadow(0 2px 8px rgba(0, 212, 255, 0.3));">
+                <span style="font-size: 1.2em; font-weight: 600; color: #00d4ff;">MOOWOOR</span>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="../index-simple.html">🏠 Accueil</a>
+                <a href="modules-simple.html">📦 Modules</a>
+                <a href="metiers-simple.html">💼 Métiers</a>
+                <a href="gouvernance-simple.html">⚖️ Gouvernance</a>
+                <a href="parcours.html">🗺️ Parcours</a>
+                <a href="dfu.html">👨‍👩‍👧‍👦 DFU</a>
+            </div>
+        </div>
+    </nav>
+
+
+
+        <h1>💼 Métiers de la Santé Digitale</h1>
+        <p style="font-size: 1.1em; margin-bottom: 30px;">22 nouveaux métiers créés par la transformation digitale du système de santé sénégalais</p>
+
+        <div class="career">
+            <span class="career-icon">👥</span>
+            <h2>E-Conseiller Patients</h2>
+            <span class="category">accompagnement</span>
+            <span class="education">Licence (BAC+3)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Guider les patients dans l'utilisation des plateformes de santé en ligne et les aider à comprendre leurs options de traitement</p>
+            <p>L'E-Conseiller Patients accompagne les patients dans leur parcours de santé digitale. Il les guide dans l'utilisation des plateformes en ligne, les aide à comprendre leurs options de traitement et facilite leur gestion de santé numérique. Ce professionnel joue un rôle clé dans l'adoption des outils digitaux par les patients.</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Compétences numériques avancées</li>
+                    <li>Connaissance des plateformes santé</li>
+                    <li>Compétences relationnelles et écoute active</li>
+                    <li>Communication pédagogique</li>
+                    <li>Confidentialité des données santé</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '180,000 XOF', 'mid': '300,000 XOF', 'senior': '450,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">🔗</span>
+            <h2>Responsable Platforme d'Intermédiation Numérique</h2>
+            <span class="category">plateforme</span>
+            <span class="education">Master (BAC+5)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Superviser les plateformes de télémédecine, de prise de rendez-vous et d'accès aux dossiers médicaux électroniques</p>
+            <p>Le Responsable de Plateforme d'Intermédiation Numérique supervise les plateformes de télémédecine, de prise de rendez-vous en ligne et d'accès aux dossiers médicaux électroniques. Il assure la disponibilité, la performance et la sécurité des systèmes.</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Gestion de systèmes d'information</li>
+                    <li>Connaissance des normes santé (HL7, FHIR)</li>
+                    <li>Management d'équipes techniques</li>
+                    <li>Analyse de données santé</li>
+                    <li>Cybersécurité santé</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '350,000 XOF', 'mid': '550,000 XOF', 'senior': '800,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">📊</span>
+            <h2>Attaché en Données Cliniques</h2>
+            <span class="category">données</span>
+            <span class="education">Master (BAC+4)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Collecter, analyser et interpréter les données cliniques pour améliorer les soins et la recherche médicale</p>
+            <p>L'Attaché en Données Cliniques collecte, analyse et interprète les données cliniques pour améliorer les soins et la recherche médicale. Il assure la qualité des données et produit des analyses pour la prise de décision.</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Analyse de données santé</li>
+                    <li>Statistiques médicales</li>
+                    <li>Connaissance des terminologies médicales (SNOMED, CIHI)</li>
+                    <li>Logiciels d'analyse de données</li>
+                    <li>Recherche clinique</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '250,000 XOF', 'mid': '400,000 XOF', 'senior': '600,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">📱</span>
+            <h2>E-Brancardier Digital</h2>
+            <span class="category">logistique</span>
+            <span class="education">Licence Professionnelle (BAC+2/3)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Optimiser les transferts de patients au sein des établissements de santé en utilisant des outils numériques de planification, de suivi et de coordination</p>
+            <p>L'E-Brancardier Digital coordonne les transports médicaux via des applications mobiles et des systèmes de géolocalisation. Il optimise les parcours et assure la traçabilité des transferts de patients.</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Compétences digitales (applications mobiles, tablettes)</li>
+                    <li>Connaissance des établissements de santé</li>
+                    <li>Gestion logistique et planification</li>
+                    <li>Communication professionnelle</li>
+                    <li>Gestion du stress et d'urgence</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '150,000 XOF', 'mid': '250,000 XOF', 'senior': '350,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">🏠</span>
+            <h2>Responsable de Parcours Intégré et Projet de Vie à Domicile</h2>
+            <span class="category">coordination</span>
+            <span class="education">Licence (BAC+3)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Assurer la coordination des soins entre différents prestataires et faciliter le suivi des patients à domicile</p>
+            <p>Le Responsable de Parcours Intégré et Projet de Vie à Domicile assure la coordination des soins entre différents prestataires et facilite le suivi des patients à domicile. Il garantit la continuité et la qualité des soins.</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Coordination de soins multi-acteurs</li>
+                    <li>Gestion de projet santé domicile</li>
+                    <li>Connaissance des services sociaux</li>
+                    <li>Compétences numériques santé domicile</li>
+                    <li>Communication avec familles</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '200,000 XOF', 'mid': '350,000 XOF', 'senior': '500,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">⚖️</span>
+            <h2>Référent/Responsable du Dialogue Éthique</h2>
+            <span class="category">ethique</span>
+            <span class="education">Master (BAC+5)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Aborder les questions éthiques liées à la santé digitale, la confidentialité des données, l'utilisation de l'IA et recueillir les feedback utilisateurs</p>
+            <p>Le Référent du Dialogue Éthique aborde les questions éthiques liées à la santé digitale, telles que la confidentialité des données, les expériences et feedback sur le système de santé et l'utilisation de l'IA. Il conseille les équipes sur les enjeux éthiques.</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Éthique biomédicale et digitale</li>
+                    <li>Droit des données de santé</li>
+                    <li>Philosophie de la santé</li>
+                    <li>Médiation et communication</li>
+                    <li>Connaissance des IA et algorithmes</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '300,000 XOF', 'mid': '500,000 XOF', 'senior': '700,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">👨‍⚕️</span>
+            <h2>Téléconsultant</h2>
+            <span class="category">consultation</span>
+            <span class="education">Doctorat (BAC+8)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Réaliser des consultations médicales à distance via plateforme numérique en garantissant la qualité des soins et le suivi des patients</p>
+            <p>Le Téléconsultant est un médecin diplômé (Doctorat en médecine obligatoire) qui réalise des consultations médicales à distance via des plateformes de télémédecine sécurisées. ⚠️ Important : La téléconsultation est exclusivement réservée aux docteurs en médecine titulaires d'un diplôme reconnu et inscrits à l'Ordre des Médecins. Il diagnostique, prescrit et assure le suivi des patients en ligne.</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Diplôme de Docteur en Médecine</li>
+                    <li>Compétences cliniques et diagnostic</li>
+                    <li>Maîtrise des outils de téléconsultation</li>
+                    <li>Communication à distance et empathie</li>
+                    <li>Gestion des dossiers médicaux électroniques</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '400,000 XOF', 'mid': '600,000 XOF', 'senior': '800,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">📊</span>
+            <h2>Data Manager Santé</h2>
+            <span class="category">données</span>
+            <span class="education">Licence (BAC+3)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Gérer, analyser et sécuriser les données de santé pour optimiser les processus décisionnels et améliorer la qualité des soins</p>
+            <p>Le data manager santé collecte, traite et analyse les données médicales, administratives et opérationnelles pour produire des indicateurs pertinents et supporter la prise de décision</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Analyse de données et statistiques</li>
+                    <li>Maîtrise des outils BI (Power BI, Tableau)</li>
+                    <li>Connaissance des systèmes d'information santé</li>
+                    <li>Sécurité des données et RGPD</li>
+                    <li>Visualisation et reporting</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '250,000 XOF', 'mid': '400,000 XOF', 'senior': '550,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">🔄</span>
+            <h2>Coordinateur Parcours Patient</h2>
+            <span class="category">coordination</span>
+            <span class="education">Licence (BAC+3)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Assurer la fluidité et la continuité du parcours patient dans l'écosystème de santé digitale en coordonnant les différents intervenants et services</p>
+            <p>Le coordinateur de parcours patient utilise les outils numériques pour suivre le patient à travers les différents services, anticiper les besoins et garantir une prise en charge optimale</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Coordination et organisation</li>
+                    <li>Maîtrise des plateformes patient journey</li>
+                    <li>Communication et relationnel</li>
+                    <li>Gestion des plannings et agendas</li>
+                    <li>Connaissance des parcours de soins</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '200,000 XOF', 'mid': '350,000 XOF', 'senior': '500,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">🛠️</span>
+            <h2>Technicien Support Santé Digitale</h2>
+            <span class="category">support</span>
+            <span class="education">Licence Professionnelle (BAC+2/3)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Assurer le support technique et la formation des utilisateurs des solutions de santé digitale Moowoor</p>
+            <p>Le technicien support santé digitale assiste les professionnels de santé dans l'utilisation des applications, résout les problèmes techniques et assure la maintenance des systèmes</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Support technique et helpdesk</li>
+                    <li>Connaissance des applications santé</li>
+                    <li>Formation et pédagogie</li>
+                    <li>Diagnostic et résolution problèmes</li>
+                    <li>Communication avec utilisateurs</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '180,000 XOF', 'mid': '300,000 XOF', 'senior': '420,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">📁</span>
+            <h2>Gestionnaire Dossiers Médicaux Électroniques</h2>
+            <span class="category">gestion</span>
+            <span class="education">Licence Professionnelle (BAC+2/3)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Assurer la gestion, la mise à jour et la sécurité des dossiers médicaux électroniques dans le respect des normes et réglementations</p>
+            <p>Le gestionnaire de dossiers médicaux électroniques supervise la digitalisation, l'archivage et l'accès aux informations médicales tout en garantissant la confidentialité et la conformité</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Gestion documentaire santé</li>
+                    <li>Maîtrise des DME et EMR</li>
+                    <li>Sécurité et confidentialité</li>
+                    <li>Archivage numérique</li>
+                    <li>Extraction de données médicales</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '160,000 XOF', 'mid': '280,000 XOF', 'senior': '380,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">✅</span>
+            <h2>Analyste Qualité Données Santé</h2>
+            <span class="category">qualité</span>
+            <span class="education">Licence (BAC+3)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Garantir la qualité, l'exhaustivité et la conformité des données de santé dans les systèmes d'information</p>
+            <p>L'analyste qualité données santé met en place des procédures de contrôle, identifie les anomalies et assure l'amélioration continue de la qualité des données médicales</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Analyse qualité données</li>
+                    <li>Contrôle et validation</li>
+                    <li>Audit qualité</li>
+                    <li>Statistiques et indicateurs</li>
+                    <li>Connaissance normes santé</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '220,000 XOF', 'mid': '380,000 XOF', 'senior': '520,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">🔗</span>
+            <h2>Spécialiste Intégration Systèmes Santé</h2>
+            <span class="category">intégration</span>
+            <span class="education">Licence (BAC+3)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Assurer l'intégration et l'interopérabilité des différents systèmes d'information santé dans l'écosystème Moowoor</p>
+            <p>Le spécialiste integration conçoit et met en œuvre les interfaces entre les applications santé, garantissant l'échange fluide et sécurisé des informations</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Intégration systèmes</li>
+                    <li>Développement API et connecteurs</li>
+                    <li>Interopérabilité santé (HL7, FHIR)</li>
+                    <li>Tests et validation</li>
+                    <li>Documentation technique</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '300,000 XOF', 'mid': '480,000 XOF', 'senior': '650,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">💡</span>
+            <h2>Conseiller Accompagnement Digital Santé</h2>
+            <span class="category">conseil</span>
+            <span class="education">Licence (BAC+3)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Accompagner les établissements de santé dans leur transformation digitale et l'adoption des solutions Moowoor</p>
+            <p>Le conseiller accompagne les clients dans la définition de leurs besoins, la mise en œuvre des solutions et l'optimisation de leurs processus santé digitale</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Conseil et stratégie</li>
+                    <li>Connaissance écosystème santé</li>
+                    <li>Accompagnement changement</li>
+                    <li>Formation et pédagogie</li>
+                    <li>Analyse processus</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '250,000 XOF', 'mid': '420,000 XOF', 'senior': '600,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">🔧</span>
+            <h2>Superviseur Opérations Digitales Santé</h2>
+            <span class="category">supervision</span>
+            <span class="education">Licence (BAC+3)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Superviser et optimiser les opérations des systèmes de santé digitale pour garantir la performance et la satisfaction des utilisateurs</p>
+            <p>Le superviseur des opérations digitales coordonne les équipes techniques, surveille les performances des systèmes et assure la qualité de service des applications santé</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Supervision et management</li>
+                    <li>Monitoring systèmes</li>
+                    <li>Gestion incidents</li>
+                    <li>Optimisation performance</li>
+                    <li>Reporting et indicateurs</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '280,000 XOF', 'mid': '450,000 XOF', 'senior': '620,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">💊</span>
+            <h2>Pharmacien Digital</h2>
+            <span class="category">pharmacie</span>
+            <span class="education">Master 2 (BAC+5)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Gérer une pharmacie digitale avec conseil en ligne et livraison de médicaments</p>
+            <p>Le pharmacien digital combine expertise pharmaceutique et compétences numériques pour offrir conseil, dispensation et suivi via plateformes digitales.</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Expertise pharmaceutique</li>
+                    <li>Conseil en ligne</li>
+                    <li>Gestion plateforme e-commerce</li>
+                    <li>Pharmacovigilance</li>
+                    <li>Logistique médicaments</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '400,000 XOF', 'mid': '600,000 XOF', 'senior': '850,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">📋</span>
+            <h2>Gestionnaire Registre Santé</h2>
+            <span class="category">registres</span>
+            <span class="education">Licence (BAC+3)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Administrer et maintenir les registres nationaux de santé (professionnels, établissements)</p>
+            <p>Le gestionnaire de registre santé assure la mise à jour, la validation et la sécurité des données des registres nationaux KIIIMOOWOOR et FIIIMOOWOOR.</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Gestion bases de données</li>
+                    <li>Validation administrative</li>
+                    <li>Contrôle qualité données</li>
+                    <li>Reporting statistique</li>
+                    <li>Connaissance réglementation</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '220,000 XOF', 'mid': '380,000 XOF', 'senior': '520,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">🔍</span>
+            <h2>Inspecteur Pharmaceutique Digital</h2>
+            <span class="category">inspection</span>
+            <span class="education">Master 2 (BAC+5)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Réaliser des inspections pharmaceutiques avec outils digitaux et applications mobiles</p>
+            <p>L'inspecteur pharmaceutique digital utilise des applications mobiles et tablettes pour conduire des inspections, collecter des données en temps réel et générer des rapports automatisés.</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Inspection pharmaceutique</li>
+                    <li>Outils mobiles inspection</li>
+                    <li>Analyse risques</li>
+                    <li>Rédaction rapports</li>
+                    <li>Connaissance BPF/BPD</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '350,000 XOF', 'mid': '550,000 XOF', 'senior': '750,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">📞</span>
+            <h2>Coordinateur Télésanté</h2>
+            <span class="category">coordination</span>
+            <span class="education">Licence (BAC+3)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Coordonner les services de télésanté entre patients, professionnels et plateformes</p>
+            <p>Le coordinateur télésanté organise et facilite les consultations à distance, gère les plannings, assure le support technique et garantit la qualité du service.</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Coordination services santé</li>
+                    <li>Support technique</li>
+                    <li>Gestion planning</li>
+                    <li>Plateformes télémédecine</li>
+                    <li>Communication multicanal</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '240,000 XOF', 'mid': '400,000 XOF', 'senior': '550,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">📈</span>
+            <h2>Analyste Parcours Patient</h2>
+            <span class="category">données</span>
+            <span class="education">Master 1 (BAC+4)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Analyser les parcours patients pour optimiser les processus et améliorer l'expérience</p>
+            <p>L'analyste parcours patient étudie les données de parcours, identifie les points de friction, propose des améliorations et mesure l'impact des optimisations.</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Analyse de données</li>
+                    <li>Cartographie parcours</li>
+                    <li>Process mining</li>
+                    <li>Visualisation données</li>
+                    <li>Amélioration continue</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '280,000 XOF', 'mid': '450,000 XOF', 'senior': '650,000 XOF'}</p>
+        </div>
+
+        <div class="career">
+            <span class="career-icon">👩‍⚕️</span>
+            <h2>Infirmier Télésanté</h2>
+            <span class="category">consultation</span>
+            <span class="education">Licence (BAC+3)</span>
+            <p style="margin-top: 15px;"><strong style="color: #00d4ff;">Objectif:</strong> Assurer le suivi infirmier à distance, l'éducation thérapeutique et la coordination de soins via des outils de télésanté</p>
+            <p>L'Infirmier Télésanté accompagne les patients à distance en réalisant des entretiens de suivi, de l'éducation thérapeutique et des actions de prévention via des plateformes sécurisées. Il contribue à la continuité des soins, au triage infirmier et à l'orientation des patients vers le bon niveau de prise en charge. Il travaille en coordination étroite avec les médecins téléconsultants et les équipes terrain.</p>
+            <div class="skills">
+                <strong style="color: #00d4ff;">Compétences requises:</strong>
+                <ul>
+                    <li>Compétences infirmières et évaluation clinique</li>
+                    <li>Maîtrise des outils de télésanté et DME</li>
+                    <li>Communication à distance, écoute et pédagogie</li>
+                    <li>Respect des protocoles et des parcours de soins</li>
+                    <li>Gestion de la confidentialité et des données de santé</li>
+                </ul>
+            </div>
+            <p><strong style="color: #00d4ff;">Salaire:</strong> {'start': '220,000 XOF', 'mid': '350,000 XOF', 'senior': '500,000 XOF'}</p>
+        </div>
+    </div>
+</body>
+</html>
