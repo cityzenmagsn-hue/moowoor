@@ -440,19 +440,19 @@ class PerformanceMonitor {
 // Initialize all animation systems
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize particle background
-    new ParticleBackground('particles');
+    // new ParticleBackground('particles');
 
     // Initialize scroll animations
-    new ScrollAnimationsManager();
+    // new ScrollAnimationsManager();
 
     // Initialize micro-interactions
-    new MicroInteractions();
+    // new MicroInteractions();
 
     // Initialize loading states
-    new LoadingStates();
+    // new LoadingStates();
 
     // Initialize performance monitor
-    new PerformanceMonitor();
+    // new PerformanceMonitor();
 
     // Add CSS for ripple effect
     const rippleCSS = `
@@ -519,6 +519,7 @@ window.MoowoorAnimations = {
 };
 
 // Initialize scroll animations
+/*
 document.addEventListener('DOMContentLoaded', () => {
     const scrollElements = document.querySelectorAll('.scroll-reveal, .scroll-animate');
 
@@ -546,3 +547,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial check
     handleScrollAnimation();
 });
+*/
